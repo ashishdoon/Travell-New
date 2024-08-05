@@ -1012,8 +1012,6 @@ if(window.matchMedia('(max-width: 768px)').matches){
         $(".tr-form-booking-date").removeClass("open");
   });
 
-
-
   // Room And guest
   document.addEventListener('DOMContentLoaded', function () {
     var totalRoomGuest = document.querySelectorAll('.tr-total-room-and-guest');
@@ -1032,48 +1030,7 @@ if(window.matchMedia('(max-width: 768px)').matches){
   });
 };
 
-// document.addEventListener('DOMContentLoaded', function() {
-//   const minRange = document.querySelector('.min-range');
-//   const maxRange = document.querySelector('.max-range');
-//   const minPrice = document.querySelector('.min-price');
-//   const maxPrice = document.querySelector('.max-price');
-//   const minTooltip = document.querySelector('.min-price-title');
-//   const maxTooltip = document.querySelector('.max-price-title');
-//   const slider = document.querySelector('.tr-price-slider');
-//   function updatePriceRange() {
-//     const minValue = parseInt(minRange.value);
-//     const maxValue = parseInt(maxRange.value);
-//     if (minValue > maxValue - 10) {
-//       if (this === minRange) {
-//         minRange.value = maxValue - 10;
-//       } else {
-//         maxRange.value = minValue + 10;
-//       }
-//     }
-//     minPrice.textContent = '$' + minRange.value;
-//     maxPrice.textContent = '$' + maxRange.value;
-//     minTooltip.textContent = '$' + minRange.value;
-//     maxTooltip.textContent = '$' + maxRange.value;
-//     updateTooltipPosition();
-//   }
-//   function updateTooltipPosition() {
-//     const minPercent = (minRange.value / 1000) * 100;
-//     const maxPercent = (maxRange.value / 1000) * 100;
-//     minTooltip.style.left = `calc(${minPercent}%)`;
-//     maxTooltip.style.left = `calc(${maxPercent}%)`;
-//     minTooltip.style.display = 'block';
-//     maxTooltip.style.display = 'block';
-//   }
-
-//   minRange.addEventListener('input', updatePriceRange);
-//   maxRange.addEventListener('input', updatePriceRange);
-//   // minTooltip.addEventListener('input', updatePriceRange);
-//   // maxTooltip.addEventListener('input', updatePriceRange);
-//   // Initial setup
-//   // updatePriceRange.call(minRange);
-//   // updatePriceRange.call(maxRange);
-// });
-
+// Price Range - Listing Wih Date
 document.addEventListener('DOMContentLoaded', function() {
   const priceSections = document.querySelectorAll('.tr-price-range-section');
   priceSections.forEach(function(section) {
@@ -1115,7 +1072,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Filter 
+// Filter - Listing Wih Date
 document.addEventListener('DOMContentLoaded', function() {
   const filterSections = document.querySelectorAll('.tr-filters-section');
   filterSections.forEach(function(section) {
@@ -1147,7 +1104,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// Price Range
+// More Price - Listing Wih Date
 $('.tr-more-price').click(function() {
   if($(this).hasClass('active')){
     $(this).removeClass('active');
@@ -1174,7 +1131,7 @@ $(document).on('click', function(event) {
   }
 });
 
-// In the Map
+// In the Map - Listing Wih Date
 $('.tr-hide-list').click(function() {
   if($("#mapModal").hasClass('remove-hotel-list')) {
     $(this).removeClass('removed-list');
@@ -1185,7 +1142,7 @@ $('.tr-hide-list').click(function() {
   }
 });
 
-// Map and Filter button - On small device
+// Map and Filter button - On small device - Listing Wih Date
 $('#filterModal, #onMapFilterModal').click(function() {
   $(".tr-filters-section").addClass('open');
   $(body).addClass('modal-open');
