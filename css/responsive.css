@@ -1750,7 +1750,10 @@
     position: absolute;
     top: 18px;
   }
-  .tr-search-hotel .tr-nav-tabs.tr-mobile {
+  .tr-search-hotel .tr-form-section .tr-date-section {
+    display: none;
+  }
+  /*.tr-search-hotel .tr-nav-tabs.tr-mobile {
     display: flex;
   }
   .tr-search-hotel .tr-nav-tabs.tr-mobile {
@@ -1764,7 +1767,7 @@
   }
   .tr-search-hotel form.tr-explore-form input[type="text"] {
     width: 100%;
-  }
+  }*/
   /*.tr-search-hotel form {
     background: #FFFFFF;
     border: none;
