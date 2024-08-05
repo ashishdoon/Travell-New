@@ -2209,7 +2209,6 @@
   .tr-title-filter-section .tr-shotby,
   .tr-room-section-2 .tr-vgood,
   .tr-room-section-2 .tr-hotel-price-section .tr-deal,
-  .tr-login-for-more-options,
   #mapModal .tr-room-section-2,
   #mapModal .tr-map-section button.tr-hide-list {
     display: none;
@@ -2273,6 +2272,12 @@
   }
   .tr-room-section-2 .tr-hotel-price-lists .tr-anchor-btn {
     align-self: flex-start;
+  }
+  .tr-login-for-more-options {
+    justify-content: center;
+    right: 0;
+    bottom: 0;
+    text-align: center;
   }
   .more-options-modal {
     width: 100%;

@@ -5016,7 +5016,7 @@ footer .tr-social-links ul li:nth-of-type(3) {
   gap: 30px;
   background: linear-gradient(175.77deg, rgba(255, 255, 255, 0.6) 8.04%, #FFFFFF 113.49%);
   backdrop-filter: blur(16.7px);
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 46.5px 16px;
   position: absolute;
   width: 100%;
