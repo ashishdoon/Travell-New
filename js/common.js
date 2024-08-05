@@ -842,3 +842,191 @@ function closeAllSelect(elmnt) {
 }
 document.addEventListener("click", closeAllSelect);
 
+// Listing Page Without date
+// $('.tr-city-name').on('click', function() {
+//   var $hotelLists = $(this).next('.tr-hotel-lists');
+
+//   // Toggle the 'open' class on the clicked city's hotel lists
+//   $hotelLists.toggleClass('open');
+// });
+
+// $('.tr-city-name').on('click', function() {
+//     // Remove the 'open' class from all hotel lists
+//     $('.tr-hotel-lists').removeClass('open');
+    
+//     // Add the 'open' class to the clicked city's hotel lists
+//     $(this).next('.tr-hotel-lists').addClass('open');
+//   });
+$('.tr-city-wise-hotel-list .tr-city-name').on('click', function() {
+  var hotelLists = $(this).next('.tr-hotel-lists');
+  if (hotelLists.hasClass('open')) {
+    hotelLists.removeClass('open');
+  } else {
+    $('.tr-hotel-lists').removeClass('open');
+    hotelLists.addClass('open');
+  }
+});
+
+
+const searchLocationInput3 = document.getElementById("searchLocation3");
+if (searchLocationInput3) {
+  searchLocationInput3.onclick = function() {
+    recentSearchLocationBox3();
+  }
+}
+
+const recentSearchsLocation3Modal = document.getElementById("recentSearchsLocation3");
+// function searchFormControl3() {
+//   // For Search Location
+//   searchLocationInput3.onclick = function() {
+//     alert("Yes");
+//     recentSearchLocationBox3();
+//   }
+// }
+function recentSearchLocationBox3() {
+  searchLocationInput3.classList.add("is-focus");
+  recentSearchsLocation3Modal.style.display = "block";
+  calendarsModal3.style.display = "none";
+  checkInInput3.classList.remove("is-focus");
+  checkOutInput3.classList.remove("is-focus");
+
+}
+
+const checkInInput3 = document.getElementById("checkInInput3");
+const checkOutInput3 = document.getElementById("checkOutInput3");
+const calendarsModal3 = document.getElementById("calendarsModal3");
+if (checkInInput3 && checkOutInput3) {
+  checkInInput3.onclick = function() {
+    calendarsBox3();
+  }
+  checkOutInput3.onclick = function() {
+    calendarsBox3();
+  }
+  function calendarsBox3() {
+    calendarsModal3.style.display = "flex";
+    checkInInput3.classList.add("is-focus");
+    checkOutInput3.classList.add("is-focus");
+    searchLocationInput3.classList.remove("is-focus");
+    recentSearchsLocation3Modal.style.display = "none";
+  }
+}
+
+// const totalRoomGuest = document.getElementById("totalRoomAndGuest3");
+// if (totalRoomGuest) {
+//   totalRoomGuest.onclick = function() {
+
+//   }
+// }
+
+
+$(document).on('click', function(event) {
+  if($("#recentSearchsLocation3").css('display') === 'block') {
+    if (!$(event.target).closest("#searchLocation3, #recentSearchsLocation3").length) {
+      calendarsModal3.style.display = "none";
+      recentSearchsLocation3Modal.style.display = "none";
+      checkInInput3.classList.remove("is-focus");
+      checkOutInput3.classList.remove("is-focus");
+    }
+  }
+  if($("#calendarsModal3").css('display') === 'flex') {
+    if (!$(event.target).closest("#calendarsModal3, #checkInInput3, #checkOutInput3").length) {
+      calendarsModal3.style.display = "none";
+      recentSearchsLocation3Modal.style.display = "none";
+      checkInInput3.classList.remove("is-focus");
+      checkOutInput3.classList.remove("is-focus");
+    }
+  }
+});
+
+// For Small Device
+if(window.matchMedia('(max-width: 768px)').matches){
+  $(document).on("click", ".tr-mobile-where", function(e){
+    //e.preventDefault(); 
+    var parentFormFields = $(this).closest('.tr-form-fields'); 
+    parentFormFields.find('.tr-form-where').addClass("show");
+  });
+  $(document).on("click", ".tr-form-where.show .tr-close-btn", function(){
+    $(".tr-form-where").removeClass("show");
+  });
+
+  $('.tr-form-where .tr-btn').click(function() {
+    // Get the value of the input field within the closest .tr-form-where container
+    var searchDestinationsInputVal = $(this).closest('.tr-form-where').find('input').val();
+    // Check if the value is retrieved correctly
+    if (searchDestinationsInputVal) {
+      // Update another element and add a class if searchDestinationsInputVal is not empty
+      $(this).closest(".tr-form-fields").find(".tr-location-label").text(searchDestinationsInputVal).addClass("tr-value-filled");
+    }
+    $(".tr-hotel-form .tr-form-where").removeClass("show");
+  });
+  
+  $('#searchLocation3').on('keyup', function(e) {
+    if (event.key === 'Enter') {
+      var searchDestinationsInputVal = $(this).val();
+      console.log(searchDestinationsInputVal);
+      $('#hotelForm3 .tr-location-label').text(searchDestinationsInputVal).addClass("tr-value-filled");
+      $("#hotelForm3 .tr-form-where").removeClass("show");
+    }
+  });
+  
+  $(document).ready(function() {
+    $('.tr-mobile-when').click(function() {
+      $(".tr-form-booking-date").addClass("open");
+      setTimeout(function() {
+        if($(".tr-form-booking-date").hasClass('open')){
+          $('#checkInInput3').click();
+          $('#checkInInput3').focus();
+          $('.custom-calendar').show();
+        }
+      }, 100);
+    });
+  });
+
+  // $('.tr-form-booking-date button').click(function(e) {
+  //   e.preventDefault();
+  //   var checkInDate3 = $(".checkIn").val();
+  //   var checkOutDate3 = $(".checkOut").val();
+  //   if (checkInDate3 && checkOutDate3) {
+  //     e.preventDefault();
+  //     $(this).closest(".tr-form-fields").find(".tr-add-dates").addClass("==========").html(checkInDate3 + '-' + checkOutDate3);
+  //   }
+  //   $(".tr-form-booking-date").removeClass("open");
+  // });
+
+  $('.tr-form-booking-date button').click(function(e) {
+    e.preventDefault();
+    // Get the check-in and check-out dates
+    // Get the check-in and check-out dates using class selectors
+    var parentContainer = $(this).closest('.tr-form-booking-date');
+    // Select the .checkIn and .checkOut elements within this parent container
+    var checkInDate3 = parentContainer.find(".checkIn").val();
+    var checkOutDate3 = parentContainer.find(".checkOut").val();
+    
+    if (checkInDate3 && checkOutDate3) {
+      // Prevent the default action of the button
+      e.preventDefault();
+      // Find the closest '.tr-form-fields' ancestor and the '.tr-add-dates' child
+      $(this).closest(".tr-form-fields").find(".tr-add-dates").html(checkInDate3 + ' - ' + checkOutDate3);
+    }
+        $(".tr-form-booking-date").removeClass("open");
+  });
+
+
+
+  // Room And guest
+  document.addEventListener('DOMContentLoaded', function () {
+    var totalRoomGuest = document.querySelectorAll('.tr-total-room-and-guest');
+    totalRoomGuest.forEach(function (inputField) {
+      inputField.addEventListener('click', function () {
+        // Get the next sibling element
+        var guestsModal = inputField.nextElementSibling;
+
+        // Check if the next sibling exists and has the class 'tr-guests-modal'
+        if (guestsModal && guestsModal.classList.contains('tr-guests-modal')) {
+          // Add the 'open' class to the guests modal
+          guestsModal.style.display = "block";
+        } 
+      });
+    });
+  });
+};

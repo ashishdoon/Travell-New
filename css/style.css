@@ -3791,3 +3791,654 @@ footer .tr-social-links ul li:nth-of-type(3) {
   margin-top: 0;
 }
 /******* Write a Review Modal End *******/
+
+/******* Listing Page withut date - Start *******/
+.tr-heading-section {
+  padding-top: 56px;
+  text-align: center;
+}
+.tr-heading-section h1 {
+  color: #000000;
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 50px;
+  margin-bottom: 12px;
+}
+.tr-heading-section h2 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0;
+}
+.tr-search-hotel {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 33.4px rgba(156, 156, 156, 0.12);
+  border: 1px solid #D6D6D6;
+  border-radius: 12px;
+  width: 768px;
+  margin: 40px auto 0;
+  padding: 27px 60px;
+}
+.tr-search-hotel .tr-mobile,
+.tr-search-hotel .btn-close,
+.tr-search-hotel .tr-nav-tabs.tr-mobile {
+  display: none;
+}
+.tr-search-hotel form .tr-form-fields {
+  display: flex;
+  justify-content: center;
+  background: #F0F3F5;
+  border: 0.6px solid #D6D6D6;
+  border-radius: 12px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 6.6px 9px;
+}
+.tr-search-hotel .tr-form-section .tr-date-section {
+  padding: 0 0 16px 0;
+}
+.tr-search-hotel .tr-form-section .tr-date-section .tr-room-guest {
+  left: 0;
+}
+.tr-search-hotel .col {
+  padding: 0;
+  position: relative;
+}
+.tr-search-hotel .col.tr-form-where label {
+  display: none;
+}
+.tr-search-hotel .tr-form-where input[type="text"] {
+  background-image: url(../images/icons/map-pin-icon.svg);
+  background-repeat: no-repeat;
+  background-position: top 14px left 20px;
+  background-size: 20px;
+  font-size: 16px;
+  color: #222222;
+  line-height: 20px;
+  padding: 15px 44px;
+}
+.tr-search-hotel .tr-form-where input[type="text"]::placeholder {
+  font-size: 16px;
+  color: #222222;
+  opacity: 1;
+}
+.tr-search-hotel .tr-form-where input[type="text"]::-ms-input-placeholder {
+  font-size: 16px;
+  color: #222222;
+}
+.tr-search-hotel .tr-form-who {
+  display: none;
+  padding-right: 24px;
+}
+.tr-search-hotel label {
+  font-size: 14px;
+  font-weight: 600;
+  position: absolute;
+  top: 6px;
+  left: 24px;
+}
+.tr-search-hotel .tr-form-booking-date {
+  display: flex;
+  min-width: 292px;
+  margin-left: 20px;
+  padding-left: 20px;
+  position: relative; 
+}
+.tr-search-hotel .tr-form-booking-date .tr-form-checkin,
+.tr-search-hotel .tr-form-booking-date .tr-form-checkout {
+  width: 50%;
+  position: relative;
+}
+.tr-search-hotel .tr-form-booking-date:before,
+.tr-search-hotel .tr-form-booking-date .tr-form-checkout:after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  width: 1px;
+  height: 32px;
+  background: #DDDDDE;
+}
+.tr-search-hotel .tr-form-booking-date:after {
+  right: 0px;
+}
+.tr-search-hotel .tr-form-booking-date:before {
+  left: 0px;
+}
+.tr-search-hotel .tr-form-booking-date .tr-form-checkout:after {
+  left: -1px;
+}
+.tr-search-hotel input[type="text"] {
+  font-size: 14px;
+  line-height: 21.2px;
+  color: #6A6A6A;
+  border: none;
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 24px 5px 6px 24px;
+}
+.tr-search-hotel input[type="text"]:focus {
+  color: var(--bs-body-color);
+  background-color: #FFFFFF;
+  border-color: #86b7fe;
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
+.tr-search-hotel input[type="text"].is-focus{
+  background-color: #FFFFFF;
+}
+.tr-search-hotel .tr-form-booking-date .tr-form-checkin input[type="text"] {
+  border-radius: 8px 0 0 8px;
+}
+.tr-search-hotel .tr-form-booking-date .tr-form-checkout input[type="text"] {
+  border-radius: 0 8px 8px 0;
+}
+.tr-search-hotel .tr-form-booking-date .tr-form-checkin.tr-right-border:before {
+  background: #DDDDDE;
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 0;
+  width: 1px;
+  height: 32px;
+  z-index: 2;
+}
+.tr-search-hotel .tr-form-booking-date .tr-form-checkin.tr-right-border:after {
+  background: #fff;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  z-index: 1;
+}
+.tr-search-hotel input[type="text"]::placeholder {
+  font-size: 14px;
+  color: #6A6A6A;
+  opacity: 1;
+}
+.tr-search-hotel input[type="text"]::-ms-input-placeholder {
+  font-size: 14px;
+  color: #6A6A6A;
+}
+.tr-search-hotel .tr-form-btn {
+  max-width: 280px;
+  margin: 32px auto 0;
+}
+.tr-search-hotel .tr-btn {
+
+}
+/*Recently Search Modal*/
+.tr-search-hotel .tr-recent-searchs-modal {
+  padding: 16px;
+  position: absolute;
+  width: 326px;
+  left: 0;
+  top: 59px;
+  background: #FFFFFF;
+  border-radius: 0px 0px 12px 12px;
+  box-shadow: 0px 4px 33.4px rgba(156, 156, 156, 0.6);
+  display: none;
+  z-index: 1;
+}
+.tr-search-hotel .tr-recent-searchs-modal .tr-enable-location {
+  background-image: url(../images/icons/location-enable-icon.svg);
+  background-repeat: no-repeat;
+  background-size: 32px;
+  background-position: top 0px left 0px;
+  font-weight: 600;
+  line-height: 32px;
+  padding: 0 0 20px 42px;
+}
+.tr-search-hotel .tr-recent-searchs-modal h5 {
+  font-size: 14px;
+  font-weight: 400;
+  color: #6A6A6A;
+}
+.tr-search-hotel .tr-recent-searchs-modal ul {
+  flex-wrap: wrap;
+}
+.tr-search-hotel .tr-recent-searchs-modal ul li {
+  border-top: 1px solid #D6D6D6;
+  padding: 16px 0;
+}
+.tr-search-hotel .tr-recent-searchs-modal ul li:first-child {
+  padding-top: 0;
+  border-top-color: transparent;
+}
+.tr-search-hotel .tr-recent-searchs-modal ul li:last-child {
+  padding-bottom: 0;
+}
+.tr-search-hotel .tr-recent-searchs-modal .tr-place-info {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 8px 6px;
+}
+.tr-search-hotel .tr-recent-searchs-modal .tr-place-info:hover{
+  background: #F7F7F7;
+  border-radius: 8px;
+}
+.tr-search-hotel .tr-recent-searchs-modal .tr-location-icon {
+  background-color: rgba(214, 214, 214, 0.3);
+  background-image: url(../images/icons/map-pin-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px;
+  border-radius: 100px;
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+}
+.tr-search-hotel .tr-recent-searchs-modal .tr-location-info .tr-hotel-name {
+  font-size: 14px;
+  line-height: 17px;
+  padding-bottom: 4px;
+}
+.tr-search-hotel .tr-recent-searchs-modal .tr-location-info .tr-hotel-city {
+  font-size: 12px;
+  line-height: 14px;
+  color: #6A6A6A;
+}
+/*Calender-1 Modal Section - CheckIn/CheckOut*/
+.tr-search-hotel .tr-form-booking-date .tr-calenders-modal {
+  width: 885px;
+  position: absolute;
+  left: calc(50% - 1200px/2);
+  top: calc(100% + 8px);
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0px 4px 33.4px rgba(156, 156, 156, 0.6);
+  padding: 46px 40px;
+  display: none;
+  z-index: 1;
+}
+.tr-search-hotel .tr-form-booking-date .tr-calenders-modal .custom-calendar {
+  width: 43.7%;
+}
+/*Room and Guest Add/Edit Section*/
+.tr-search-hotel .tr-guests-modal {
+  display: none;
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0px 4px 33.4px rgba(156, 156, 156, 0.12), 0px 4px 33.4px rgba(156, 156, 156, 0.12);
+  width: 400px;
+  position: absolute;
+  top: 59px;
+  right: -49px;  
+  padding: 9px 35px;
+}
+.tr-guests-modal .tr-add-edit-guest {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center; 
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 1px solid #D6D6D6;
+  padding: 16px 0;
+}
+.tr-guests-modal .tr-add-edit-guest:last-child  {
+  border: none;
+}
+.tr-guests-modal label {
+  font-size: 16px;
+  font-weight: 500;
+  position: static;
+}
+.tr-guests-modal .tr-add-edit-guest.tr-total-num-of-rooms {
+  border-bottom: 0.8px solid rgba(94, 94, 94, 0.5);
+}
+.tr-guests-modal .tr-total-num-of-rooms .tr-guest {
+  font-weight: 600;  
+}
+.tr-guests-modal .tr-age {
+  font-size: 14px;
+  color: #6A6A6A;
+  line-height: 17px;
+  padding-top: 4px;
+}
+.tr-guests-modal .tr-qty-box {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 107px;
+}
+.tr-guests-modal input[type="text"] {
+  font-size: 16px;
+  width: 40px;
+  padding: 8px 6px 6px;
+  text-align: center;
+}
+.tr-guests-modal .tr-qty-box .minus,
+.tr-guests-modal .tr-qty-box .plus {
+  background-color: #FFFFFF;
+  background-repeat: no-repeat;
+  background-position: top 0px left 0px;
+  background-size: 34px;
+  border: none;
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+  text-indent: -9999px;
+}
+.tr-guests-modal .tr-qty-box .minus.disabled {
+  background-image: url(../images/icons/minus-circle-icon.svg); 
+}
+.tr-guests-modal .tr-qty-box .plus {
+  background-image: url(../images/icons/plus-circle-icon.svg);
+}
+.tr-guests-modal .tr-qty-box .minus {
+  background-image: url(../images/icons/minus-circle-enable-icon.svg); 
+}
+
+
+/******* Recent Searches - Listing Page - Start *******/
+.tr-recent-searches-hotel-section {
+  margin: 48px 0;
+}
+.tr-recent-searches-hotel-section h3 {
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+}
+.tr-recent-searches-hotel-listing {
+  margin-top: 20px;
+}
+.tr-recent-searches-hotel-lists {
+  display: flex;
+  justify-content: center;
+  gap: 12.73px;
+  overflow: auto;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.tr-recent-searches-hotel-lists::-webkit-scrollbar {
+  display: none;
+}
+.tr-recent-searches-hotel-lists .tr-recent-searches-hotel-list {
+  cursor: pointer;
+  border: 1px solid #D6D6D6;
+  border-radius: 9.54878px;
+  background-image: url(../images/icons/arrow-right-grey.svg);
+  background-repeat: no-repeat;
+  background-position: center right 25px;
+  background-size: 7px;
+  padding: 11.7317px 65.0976px 11.7317px 12.7317px;
+}
+.tr-recent-searches-hotel-lists .tr-recent-searches-hotel-list:hover {
+  background-color: #F0F3F5;
+}
+.tr-recent-searches-hotel-lists .tr-recent-searches-hotel-list .tr-city-name {
+  color: #222222;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+}
+.tr-recent-searches-hotel-lists .tr-recent-searches-hotel-list .tr-booking-dates {
+  color: #6A6A6A;
+  line-height: 17px;
+  margin-top: 6px;
+}
+/******* Recent Searches - Listing Page - End *******/
+
+/******* Partners Start *******/
+.tr-partners-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #D8DCE0;
+  padding-bottom: 39px;
+  overflow: auto;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.tr-partners-section::-webkit-scrollbar {
+  display: none;
+}
+.tr-partners-title {
+  font-size: 16px;
+  line-height: 19px;
+  color: #131313;
+  margin-right: 16px;
+}
+.tr-partners-lists {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+}
+.tr-partners-list img {
+  mix-blend-mode: luminosity;
+  max-width: 100px;
+  max-height: 28px;
+}
+/******* Partners End *******/
+
+/******* YOU MIGHT LIKE THESE/TOP HOTELS - Start *******/
+.tr-more-places {
+  border-bottom: 1px solid #D8DCE0;
+  padding: 20px 0 24px;
+}
+.tr-more-places .tr-sub-title {
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.01em;
+  color: #6A6A6A;
+  margin-top: 8px;
+}
+.tr-more-places-lists {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+.tr-more-places-lists .tr-more-places-list {
+  width: 316px;
+  margin-bottom: 16px;
+  padding: 0 13px;
+}
+.tr-more-places-list .tr-hotel-deatils {
+  min-height: 118px;
+  margin-top: 10px;
+  position: relative;  
+}
+.tr-more-places-list .tr-hotel-img {
+  border-radius: 12px;
+  overflow: hidden;
+}
+.tr-more-places-list .tr-hotel-img:hover img {
+  transform: scale(1.1);
+  transition: all .5s ease;
+}
+.tr-more-places-list .tr-hotel-city {
+  color: #6A6A6A;
+  line-height: 17px;
+  margin-bottom: 1px;
+}
+.tr-more-places-list .tr-hotel-name a {
+  color: #000000;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19px;
+  transition: all .3s ease;
+}
+.tr-more-places-list .tr-hotel-facilities {
+  margin-top: 8px;
+}
+.tr-more-places-list .tr-hotel-facilities ul {
+  display: flex;
+  margin-top: 5px;
+}
+.tr-more-places-list .tr-hotel-facilities ul li {
+  font-weight: 400;
+  line-height: 17px;
+  color: #222222;
+  opacity: 0.8;
+  margin-right: 11px;
+  position: relative;
+}
+.tr-more-places-list .tr-hotel-facilities ul li:before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: -6px;
+  border: 1px solid #222222;
+  opacity: 0.8;
+}
+.tr-more-places-list .tr-hotel-facilities ul li:nth-of-type(1):before {
+  display: none;
+}
+.tr-more-places-list .tr-likes {
+  color: #131313;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.tr-more-places-list .tr-likes .tr-heart {
+  display: inline-block;
+  background-color: #28965A;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  margin-right: 4px;
+  text-align: center;
+}
+/******* YOU MIGHT LIKE THESE/TOP HOTELS - End *******/
+
+/******* City Wise Hotel - START End *******/
+.tr-city-wise-hotels-section {
+  border-bottom: 1px solid #D8DCE0;
+  padding: 40px 0 20px;
+}
+.tr-city-wise-hotels-section .tr-sub-title {
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.01em;
+  color: #6A6A6A;
+  margin-top: 8px;
+}
+.tr-city-wise-hotel-listing {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.tr-city-wise-hotel-lists {
+  font-size: 16px;
+  width: 27.42%;
+  max-width: 320px;
+}
+.tr-city-wise-hotel-lists .tr-city-wise-hotel-list {
+  cursor: pointer;
+  border-bottom: 1px solid #D8DCE0;
+}
+.tr-city-wise-hotel-lists .tr-city-wise-hotel-list:last-child {
+  border-bottom: none;
+}
+.tr-city-wise-hotel-lists .tr-city-name {
+  color: #222222;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.01em;
+  background-image: url(../images/chevron-down.png);
+  background-repeat: no-repeat;
+  background-position: center right 0;
+  background-size: 18px;
+  padding: 20px 0;
+}
+.tr-city-wise-hotel-lists .tr-hotel-lists {
+  display: none;
+}
+.tr-city-wise-hotel-lists .tr-hotel-lists .tr-hotel-list {
+  display: flex;
+  justify-content: space-between;
+  color: #6A6A6A;   
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.01em;
+  margin-bottom: 20px;
+}
+.tr-city-wise-hotel-lists .tr-hotel-lists .tr-hotel-list a {
+  border-bottom: 1px solid transparent;
+  color: #6A6A6A;
+}
+.tr-city-wise-hotel-lists .tr-hotel-lists .tr-hotel-list a:hover {
+  border-color: #6A6A6A;
+}
+.tr-city-wise-hotel-lists .tr-hotel-lists.open {
+  display: block;
+}
+/******* City Wise Hotel - End *******/
+
+/******* Good to Know - Start *******/
+.tr-good-to-know-section {
+  margin-top: 52px;
+  padding-bottom: 20px;
+}
+.tr-good-to-know-section .tr-season-list {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #D6D6D6;
+  padding: 24px 0;
+}
+.tr-good-to-know-section .tr-season-list .tr-season-type {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+  color: #222222;
+  width: 272px;
+}
+.tr-good-to-know-section .tr-season-list .tr-season-desc {
+  font-size: 15px;  
+  line-height: 22px;
+  color: #222222;
+  width: calc(100% - 272px);
+}
+.tr-good-to-know-section .tr-season-list .tr-season-desc .tr-season-heading {
+  color: #000000;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.01em;
+  margin-bottom: 8px;
+}
+.tr-good-to-know-section .tr-season-list .tr-season-desc p {
+  color: #6A6A6A;
+}
+.tr-good-to-know-section .tr-season-list .tr-season-desc p strong {
+  color: #222222;
+}
+/******* Good to Know - End *******/
+
+/*******TOP TIPS FOR FINDING LONDON HOTEL DEALS - START *******/
+.tr-tips-finding-hotel {
+  border-bottom: 1px solid #D8DCE0;
+  padding: 60px 0 40px;
+}
+.tr-tips-finding-hotel ul li {
+  background-image: url(../images/icons/check-circle-icon.svg);
+  background-repeat: no-repeat;
+  background-position: top 0px left 0px;
+  background-size: 20px;
+  color: #6A6A6A;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.01em;
+  padding: 0 0 28px 32px;
+}
+.tr-tips-finding-hotel ul {
+  margin-top: 24px;
+}
+.tr-tips-finding-hotel ul li:last-child {
+  padding-bottom: 0;
+}
+/*******TOP TIPS FOR FINDING LONDON HOTEL DEALS - END *******/
+/******* Listing Page withut date - End *******/
