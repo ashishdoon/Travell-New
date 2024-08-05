@@ -842,6 +842,7 @@ function closeAllSelect(elmnt) {
 }
 document.addEventListener("click", closeAllSelect);
 
+
 // Listing Page Without date
 // $('.tr-city-name').on('click', function() {
 //   var $hotelLists = $(this).next('.tr-hotel-lists');
@@ -1029,4 +1030,169 @@ if(window.matchMedia('(max-width: 768px)').matches){
       });
     });
   });
+};
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   const minRange = document.querySelector('.min-range');
+//   const maxRange = document.querySelector('.max-range');
+//   const minPrice = document.querySelector('.min-price');
+//   const maxPrice = document.querySelector('.max-price');
+//   const minTooltip = document.querySelector('.min-price-title');
+//   const maxTooltip = document.querySelector('.max-price-title');
+//   const slider = document.querySelector('.tr-price-slider');
+//   function updatePriceRange() {
+//     const minValue = parseInt(minRange.value);
+//     const maxValue = parseInt(maxRange.value);
+//     if (minValue > maxValue - 10) {
+//       if (this === minRange) {
+//         minRange.value = maxValue - 10;
+//       } else {
+//         maxRange.value = minValue + 10;
+//       }
+//     }
+//     minPrice.textContent = '$' + minRange.value;
+//     maxPrice.textContent = '$' + maxRange.value;
+//     minTooltip.textContent = '$' + minRange.value;
+//     maxTooltip.textContent = '$' + maxRange.value;
+//     updateTooltipPosition();
+//   }
+//   function updateTooltipPosition() {
+//     const minPercent = (minRange.value / 1000) * 100;
+//     const maxPercent = (maxRange.value / 1000) * 100;
+//     minTooltip.style.left = `calc(${minPercent}%)`;
+//     maxTooltip.style.left = `calc(${maxPercent}%)`;
+//     minTooltip.style.display = 'block';
+//     maxTooltip.style.display = 'block';
+//   }
+
+//   minRange.addEventListener('input', updatePriceRange);
+//   maxRange.addEventListener('input', updatePriceRange);
+//   // minTooltip.addEventListener('input', updatePriceRange);
+//   // maxTooltip.addEventListener('input', updatePriceRange);
+//   // Initial setup
+//   // updatePriceRange.call(minRange);
+//   // updatePriceRange.call(maxRange);
+// });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const priceSections = document.querySelectorAll('.tr-price-range-section');
+  priceSections.forEach(function(section) {
+    const minRange = section.querySelector('.min-range');
+    const maxRange = section.querySelector('.max-range');
+    const minPrice = section.querySelector('.min-price');
+    const maxPrice = section.querySelector('.max-price');
+    const minTooltip = section.querySelector('.min-price-title');
+    const maxTooltip = section.querySelector('.max-price-title');
+    const slider = section.querySelector('.tr-price-slider');
+    function updatePriceRange() {
+      const minValue = parseInt(minRange.value);
+      const maxValue = parseInt(maxRange.value);
+      if (minValue > maxValue - 10) {
+        if (this === minRange) {
+          minRange.value = maxValue - 10;
+        } else {
+          maxRange.value = minValue + 10;
+        }
+      }
+      minPrice.textContent = '$' + minRange.value;
+      maxPrice.textContent = '$' + maxRange.value;
+      minTooltip.textContent = '$' + minRange.value;
+      maxTooltip.textContent = '$' + maxRange.value;
+      updateTooltipPosition();
+    }
+    function updateTooltipPosition() {
+      const minPercent = (minRange.value / 1000) * 100;
+      const maxPercent = (maxRange.value / 1000) * 100;
+      minTooltip.style.left = `calc(${minPercent}%)`;
+      maxTooltip.style.left = `calc(${maxPercent}%)`;
+      minTooltip.style.display = 'block';
+      maxTooltip.style.display = 'block';
+    }
+    minRange.addEventListener('input', updatePriceRange);
+    maxRange.addEventListener('input', updatePriceRange);
+    // Initial call to update the tooltips
+    //updatePriceRange();
+  });
+});
+
+// Filter 
+document.addEventListener('DOMContentLoaded', function() {
+  const filterSections = document.querySelectorAll('.tr-filters-section');
+  filterSections.forEach(function(section) {
+    const checkboxes = section.querySelectorAll('.filter');
+    const sectionId = section.getAttribute('data-section');
+    const selectedData = document.querySelector(`.selected-data[data-section="${sectionId}"]`);
+
+    checkboxes.forEach(function(checkbox) {
+      checkbox.addEventListener('change', function() {
+        updateSelectedData(section, selectedData);
+      });
+    });
+  });
+  function updateSelectedData(section, selectedData) {
+    const checkboxes = section.querySelectorAll('.filter');
+    selectedData.innerHTML = '';
+    const selectedValues = [];
+    checkboxes.forEach(function(checkbox) {
+      if (checkbox.checked) {
+        selectedValues.push(checkbox.value);
+      }
+    });
+    selectedValues.forEach(function(value) {
+      const div = document.createElement('div');
+      div.classList.add('tr-filter-selected');
+      div.textContent = value;
+      selectedData.appendChild(div);
+    });
+  }
+});
+
+// Price Range
+$('.tr-more-price').click(function() {
+  if($(this).hasClass('active')){
+    $(this).removeClass('active');
+    $(".more-options-modal").remove();
+  } else {
+    $(".tr-hotel-price-lists .tr-more-price").removeClass('active');
+    $(".tr-hotel-price-lists .more-options-modal").remove();
+    $(this).addClass('active');
+    const priceListsSection = $(this).closest('.tr-hotel-price-lists');
+    const priceListsMore = priceListsSection.find('.tr-hotel-price-list:nth-of-type(n+3)').clone();
+    const priceListsModal = $("<div class='more-options-modal'></div>");
+    $(priceListsSection).append(priceListsModal);
+    const priceLists = $("<div class='tr-hotel-price-lists'></div>");
+    $(priceListsModal).append(priceLists);
+    priceLists.append(priceListsMore);
+  }
+});
+$(document).on('click', function(event) {
+  if($(body).find('.more-options-modal')){
+    if (!$(event.target).closest('.more-options-modal,.tr-more-price').length) {
+      $(this).removeClass('active');
+      $(".more-options-modal").remove();
+    }
+  }
+});
+
+// In the Map
+$('.tr-hide-list').click(function() {
+  if($("#mapModal").hasClass('remove-hotel-list')) {
+    $(this).removeClass('removed-list');
+    $("#mapModal").removeClass('remove-hotel-list');
+  }else {
+    $(this).addClass('removed-list');
+    $("#mapModal").addClass('remove-hotel-list');
+  }
+});
+
+// Map and Filter button - On small device
+$('#filterModal, #onMapFilterModal').click(function() {
+  $(".tr-filters-section").addClass('open');
+  $(body).addClass('modal-open');
+});
+if(window.matchMedia('(max-width: 768px)').matches){
+    $('.tr-filters-section h4.tr-filter-label').click(function() {
+      $(".tr-filters-section").removeClass('open');
+      $(body).removeClass('modal-open');
+    });
 };
