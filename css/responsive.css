@@ -1753,10 +1753,10 @@
   .tr-search-hotel .tr-nav-tabs.tr-mobile {
     display: flex;
   }
-/*  .tr-search-hotel .tr-form-section .tr-date-section {
+  .tr-search-hotel .tr-form-section .tr-date-section {
     display: none;
   }
-  .tr-search-hotel .tr-nav-tabs.tr-mobile {
+  /*.tr-search-hotel .tr-nav-tabs.tr-mobile {
     border-bottom: 1px solid #D6D6D6;
     width: calc(100% + 52px);
     margin: -24px -24px 24px -28px;
@@ -2083,7 +2083,7 @@
   }
 
   .tr-recent-searches-hotel-section {
-    margin: 20px 0 40px;
+    padding-top: 20px;
   }
   .tr-recent-searches-hotel-section h3 {
     font-size: 18px;
@@ -2100,7 +2100,7 @@
 
   .tr-partners-section {
     justify-content: left;
-    padding-bottom: 20px;
+    padding: 40px 0 20px;
   }
   .tr-partners-title {
     min-width: 105px;
@@ -2204,7 +2204,7 @@
   }
 
 
-  .tr-listing-with-dates {
+  .tr-listing-with-dates-1 {
     padding-top: 10px;
   }
   .tr-shortmap-and-shotby-section .tr-short-map,
@@ -2326,6 +2326,12 @@
     background: #D8DCE0;
     height: 1px;
   }
+  .tr-filter-selected-section {
+    gap: 5px;
+    border: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
   .tr-map-and-filter {
     display: flex;
   }
@@ -2355,6 +2361,63 @@
   .tr-hotel-on-map {
     width: 200px;
     left: 54px;
+  }
+
+
+  .tr-listing-without-dates-1 .tr-partners-section {
+    display: none;
+  }
+  .tr-listing-without-dates-1 .tr-title-filter-section p {
+    display: none;
+  }
+  .tr-listing-without-dates-1 .tr-title-filter-section {
+    padding: 20px 0 0;
+  }
+  .tr-listing-without-dates-1 .tr-room-section-2 .tr-hotel-deatils {
+    border-bottom: 1px solid #D6D6D6;
+    padding: 24px 0 20px; 
+  }
+  .tr-listing-without-dates-1 .tr-room-section-2 .tr-hotel-deatils:last-child {
+    border: none;
+  }
+  .tr-listing-without-dates-1 .tr-room-section-2 .tr-hotel-deatil {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 10px;
+    padding: 0;
+  }
+  .tr-listing-without-dates-1 .tr-room-section-2 .tr-hotel-location {
+    order: 1;
+  }
+  .tr-listing-without-dates-1 .tr-room-section-2 .tr-heading-with-rating {
+    order: 2;
+    width: 100%;
+    margin: 2px 0 8px;
+  }
+  .tr-listing-without-dates-1 .tr-room-section-2 .tr-mobile {
+    order: 3;
+    width: 100%;
+  }
+  .tr-listing-without-dates-1 .tr-room-section-2 .tr-hotel-deatil .tr-hotel-facilities {
+    margin-top: 8px;
+  }
+  .tr-listing-without-dates-1 .tr-room-section-2 .tr-hotel-deatil .tr-more-facilities ul li {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .tr-listing-without-dates-1 .tr-room-section-2 .tr-hotel-deatil .tr-hotel-facilities ul li {
+    font-size: 14px;
+    line-height: 17px;
+    margin-right: 16px;
+    width: auto;
+  }
+  .tr-listing-without-dates-1 .tr-view-availability {
+    order: 4;
+    width: 100%;
+  }
+  .tr-listing-without-dates-1 .tr-view-availability button.tr-btn {
+    width: 100%;
   }
 }
 

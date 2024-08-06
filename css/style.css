@@ -408,6 +408,9 @@ header .tr-nav-tabs > div.active span {
 header .tr-nav-tabs > div.active span:hover {
   background-color: #FFFFFF;
 }
+header .tr-nav-tabs.show.non-clickable div {
+  pointer-events: none;
+}
 header .tr-mobile {
   display: none;
 }
@@ -3840,9 +3843,6 @@ footer .tr-social-links ul li:nth-of-type(3) {
 .tr-search-hotel .tr-form-section .tr-date-section {
   padding: 0 0 16px 0;
 }
-.tr-search-hotel .tr-form-section .tr-date-section .tr-room-guest {
-  left: 0;
-}
 .tr-search-hotel .tr-form-section .tr-date-section .tr-room-guest.active + .tr-add-edit-guest-count .tr-guests-modal {
   display: block;
 }
@@ -4144,7 +4144,7 @@ footer .tr-social-links ul li:nth-of-type(3) {
 
 /******* Recent Searches - Listing Page - Start *******/
 .tr-recent-searches-hotel-section {
-  margin: 48px 0;
+  padding-top: 48px;
 }
 .tr-recent-searches-hotel-section h3 {
   font-size: 20px;
@@ -4198,7 +4198,7 @@ footer .tr-social-links ul li:nth-of-type(3) {
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid #D8DCE0;
-  padding-bottom: 39px;
+  padding: 48px 0 39px;
   overflow: auto;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
@@ -4450,7 +4450,7 @@ footer .tr-social-links ul li:nth-of-type(3) {
 /******* Listing Page without date - End *******/
 
 /******* Listing Page with dates - Start *******/
-.tr-listing-with-dates {
+.tr-listing-with-dates-1 {
   padding-top: 32px;
   padding-bottom: 32px;
 }
@@ -4523,7 +4523,7 @@ footer .tr-social-links ul li:nth-of-type(3) {
 .custom-select .select-items {
   top: calc(100% + 1px);
 }
-.tr-title-filter-section .tr-filter-selected-section {
+.tr-filter-selected-section {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -5122,7 +5122,9 @@ footer .tr-social-links ul li:nth-of-type(3) {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
-  padding-top: 10px;
+  border: none;
+  margin-left: 0;
+  padding-left: 0;
 }
 #mapModal .tr-filter-selected {
   font-size: 12px;
@@ -5320,3 +5322,136 @@ footer .tr-social-links ul li:nth-of-type(3) {
 }
 /******* Map Mosal - End *******/
 /******* Listing Page with dates - End *******/
+
+
+.tr-listing-without-dates-1 {
+
+}
+.tr-listing-without-dates-1 .tr-filters-section .tr-filter-lists .tr-filter-list {
+  margin-top: 12px;
+}
+.tr-listing-without-dates-1 .tr-filter-lists h5 {
+  padding-bottom: 4px;
+}
+.tr-listing-without-dates-1 .tr-filter-lists ul li a {
+  color: #09707A;
+}
+.tr-listing-without-dates-1 .tr-title-filter-section {
+  width: 100%;
+  padding: 0 0 24px;
+}
+.tr-listing-without-dates-1 .tr-room-section-2 .tr-hotel-deatil {
+  width: calc(100% - 260px);
+  padding: 0 0 0 24px;
+  position: relative;
+}
+.tr-listing-without-dates-1 .tr-room-section-2 .tr-hotel-deatil > .tr-like-review {
+  margin-top: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.accordion {
+  margin-top: 16px;
+}
+.accordion-items {
+  display: flex;
+  border-bottom: 1px solid #D6D6D6;
+}
+.accordion-item {
+  border: none;
+}
+.accordion-item button {
+  background-color: #FFFFFF;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-size: 16px;
+  line-height: 19px;
+  color: #131313;
+  padding: 11px 20px;
+}
+.accordion-item button[aria-expanded="true"] {
+  border-bottom: 2px solid #000000;
+  font-weight: 600;
+  pointer-events: none;
+}
+.accordion-items-content {
+  min-height: 120px;
+}
+.accordion-items-content .accordion-collapse {
+  padding-top: 16px;
+}
+
+.tr-listing-without-dates-1 .tr-room-section-2 .tr-hotel-deatil .tr-more-facilities ul {
+  margin-bottom: 16px;
+}
+.tr-listing-without-dates-1 .tr-room-section-2 .tr-hotel-deatil .tr-more-facilities ul:last-child {
+  margin-bottom: 0;
+}
+.tr-listing-without-dates-1 .tr-room-section-2 .tr-hotel-deatil .tr-more-facilities ul li {
+  font-size: 16px;
+  line-height: 19px;
+  color: #222222;
+}
+.tr-listing-without-dates-1 .tr-room-section-2 .tr-hotel-deatil .tr-hotel-facilities {
+  padding: 0;
+}
+.tr-listing-without-dates-1 .tr-room-section-2 .tr-hotel-deatil .tr-hotel-facilities ul {
+  gap: 0;
+  row-gap: 20px;
+}
+.tr-listing-without-dates-1 .tr-room-section-2 .tr-hotel-deatil .tr-hotel-facilities ul li {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 28px;
+  width: 33.33%;
+  text-align: left;
+}
+.tr-listing-without-dates-1 .tr-room-section-2 .tr-hotel-deatil .tr-hotel-facilities ul li svg {
+  width: 20px;
+  margin: -4px 8px 0 0;
+}
+.tr-room-section-2 .accordion .tr-like-review {
+  margin-top: 0;
+}
+.tr-room-section-2 .accordion .tr-vgood {
+  margin: 0 7px 0 0;
+}
+.tr-view-availability {
+  margin-top: 12px;
+  text-align: right;
+}
+.tr-listing-without-dates-1 .tr-view-availability button.tr-btn {
+  font-weight: 600;
+  color: #FF4B01;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  border: 1px solid #FF4B01;
+  width: 180px;
+  padding: 11.2px 10px;
+}
+
+.tr-date-section input[type="text"].tr-room-guest {
+  left: 0;
+  background-image: url(../images/chevron-down.png);
+  background-repeat: no-repeat;
+  background-position: top 1px right 0;
+  background-size: 18px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+  color: #000000;
+  width: 145px;
+}
+.tr-date-section input[type="text"].tr-room-guest::placeholder {
+  font-size: 16px;
+  color: #000000;
+  opacity: 1;
+}
+.tr-date-section input[type="text"].tr-room-guest::-ms-input-placeholder {
+  font-size: 16px;
+  color: #000000;
+}

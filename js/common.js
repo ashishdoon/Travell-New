@@ -211,9 +211,12 @@ function closeSearchForm() {
 overLay.onclick = function() {
   closeSearchForm();
 }
-btnClose.onclick = function() {
-  closeSearchForm();
+if(btnClose) {
+  btnClose.onclick = function() {
+    closeSearchForm();
+  } 
 }
+
 
 $(document).ready(function() {
   $('form#exploreForm').submit(function(e) {
@@ -1078,28 +1081,32 @@ document.addEventListener('DOMContentLoaded', function() {
   filterSections.forEach(function(section) {
     const checkboxes = section.querySelectorAll('.filter');
     const sectionId = section.getAttribute('data-section');
-    const selectedData = document.querySelector(`.selected-data[data-section="${sectionId}"]`);
 
     checkboxes.forEach(function(checkbox) {
       checkbox.addEventListener('change', function() {
-        updateSelectedData(section, selectedData);
+        updateSelectedData(section, sectionId);
       });
     });
   });
-  function updateSelectedData(section, selectedData) {
+
+  function updateSelectedData(section, sectionId) {
     const checkboxes = section.querySelectorAll('.filter');
-    selectedData.innerHTML = '';
+    const selectedDataElements = document.querySelectorAll(`.selected-data[data-section="${sectionId}"]`);
     const selectedValues = [];
     checkboxes.forEach(function(checkbox) {
       if (checkbox.checked) {
         selectedValues.push(checkbox.value);
       }
     });
-    selectedValues.forEach(function(value) {
-      const div = document.createElement('div');
-      div.classList.add('tr-filter-selected');
-      div.textContent = value;
-      selectedData.appendChild(div);
+
+    selectedDataElements.forEach(function(selectedData) {
+      selectedData.innerHTML = '';
+      selectedValues.forEach(function(value) {
+        const div = document.createElement('div');
+        div.classList.add('tr-filter-selected');
+        div.textContent = value;
+        selectedData.appendChild(div);
+      });
     });
   }
 });
