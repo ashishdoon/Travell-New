@@ -1160,3 +1160,26 @@ if(window.matchMedia('(max-width: 768px)').matches){
       $(body).removeClass('modal-open');
     });
 };
+
+// Add focus class on focus
+$('.tr-field input').on('focus', function() {
+  $('.tr-field').removeClass('is-focus');
+  $(this).closest('.tr-field').addClass('is-focus');
+});
+// Remove focus class on blur and check input values
+$('.tr-field input').on('blur', function() {
+  $(this).closest('.tr-field').removeClass('is-focus');
+  checkInputValues();
+});
+// Function to check if inputs have values and add/remove .tr-value-field class
+function checkInputValues() {
+  $('.tr-field input').each(function() {
+    if ($(this).val()) {
+      $(this).closest('.tr-field').addClass('tr-value-field');
+    } else {
+      $(this).closest('.tr-field').removeClass('tr-value-field');
+    }
+  });
+}
+// Initial check on page load
+checkInputValues();

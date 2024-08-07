@@ -2419,6 +2419,91 @@
   .tr-listing-without-dates-1 .tr-view-availability button.tr-btn {
     width: 100%;
   }
+
+  /******* SignIn/SignUp Modal Start *******/
+  .tr-authentication .modal-content {
+    border-radius: 0;
+    border: 0;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow-y: auto;
+  }
+  .tr-auth-section {
+    padding: 0 24px 24px;
+  }
+  .tr-auth-section .tr-auth-header {
+    background-color: #FFFFFF;
+    width: calc(100% + 48px);
+    height: 52px;
+    margin-left: -24px;
+    padding: 8.6px;
+    position: sticky;
+    top: 0;
+  }
+  .tr-auth-section h5 {
+    font-size: 16px;
+    line-height: 34px;
+  }
+  .tr-auth-section h3 {
+    font-size: 22px;
+    line-height: 26px;
+    padding: 0 0 32px 0;
+  }
+  .tr-authentication button.btn-close,
+  .tr-authentication.tr-login-modal button.btn-close, 
+  .tr-authentication.tr-reset-pswd button.btn-close {
+    box-shadow: none;
+    top: 12px;
+    right: auto;
+    left: 12px;
+  }
+  .tr-auth-section p {
+    margin-top: 10px;
+  }
+  .tr-auth-section .tr-field-label {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    top: 14px;
+    left: 40px;
+  }
+  .tr-auth-section .tr-field:before {
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    left: 16px;
+  }
+  .tr-auth-section .tr-field.is-focus .tr-field-label, 
+  .tr-auth-section .tr-field.tr-value-field .tr-field-label {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    color: #6A6A6A;
+    top: 8px;
+  }
+  .tr-auth-section input {
+    font-size: 14px;
+    line-height: 18px;
+    padding: 22px 16px 4.4px 40px;
+  }
+  .tr-auth-section .tr-or {
+    margin: 32px 0;
+  }
+  .tr-auth-section .tr-auth-options button {
+    font-size: 14px;
+    line-height: 17px;
+    padding: 12.7px 16px;
+  }
+  .tr-auth-section .tr-auth-options button svg {
+    top: 9px;
+    left: 16px;
+  }
+  /******* SignIn/SignUp Modal End *******/
+
 }
 
 @media screen and (max-width: 576px) {

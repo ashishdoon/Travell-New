@@ -5455,3 +5455,229 @@ footer .tr-social-links ul li:nth-of-type(3) {
   font-size: 16px;
   color: #000000;
 }
+
+
+/******* SignIn/SignUp Modal - Start *******/
+.tr-authentication .modal-dialog {
+  max-width: 566px;
+}
+.tr-authentication .modal-content {
+  border-radius: 12px;
+}
+.tr-authentication button.btn-close {
+  background-image: url(../images/chevron-down-left-icon.svg);
+  background-repeat: no-repeat;
+  background-size: 8px;
+  background-position: center;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 6.4px rgba(156, 156, 156, 0.22);
+  border-radius: 100px;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 24px;
+  left: 40px;
+  opacity: 1;
+  text-indent: -9999px;
+}
+.tr-authentication.tr-login-modal button.btn-close,
+.tr-authentication.tr-reset-pswd button.btn-close {
+  background: transparent var(--bs-btn-close-bg) center/1em auto no-repeat;
+  right: 40px;
+  left: auto;
+}
+.tr-authentication button.tr-btn {
+  font-weight: 600;
+}
+.tr-auth-section {
+  padding: 24px 40px;
+}
+.tr-auth-section .tr-auth-header {
+  border-bottom: 1px solid #D6D6D6;
+  margin-bottom: 24px;
+  padding: 0 0 24px 0;
+  text-align: center;
+}
+.tr-auth-section h3 {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 31px;
+  padding: 0 0 24px 0;
+}
+.tr-auth-section h5 {
+  font-size: 20px;
+  line-height: 32px;
+  margin-bottom: 0;
+}
+.tr-auth-section h6 {
+  font-size: 16px;
+  line-height: 19px;
+  margin: 4px 0 10px 0;
+}
+.tr-auth-section p {
+  color: #222222;
+  font-weight: 400;
+  margin-top: 8px;
+}
+.tr-auth-section a {
+  color: #222222;
+  border-bottom: 1px solid #222222;
+}
+.tr-auth-section a:hover {
+  border-color: transparent;
+}
+.tr-auth-section .tr-field-row {
+  margin-bottom: 24px;
+}
+.tr-auth-section .tr-field {
+  position: relative;
+}
+.tr-auth-section .tr-field:before {
+  content: "";
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 14.5px;
+  left: 20px;
+  z-index: 1;
+}
+.tr-auth-section .tr-first-name-field:before,
+.tr-auth-section .tr-surname-field:before {
+  background-image: url(../images/icons/user-icon.svg);
+}
+.tr-auth-section .tr-city-field:before {
+  background-image: url(../images/icons/map-pin-icon.svg);
+}
+.tr-auth-section .tr-email-field:before {
+  background-image: url(../images/icons/email-icon.svg);
+}
+.tr-auth-section .tr-password-field:before {
+  background-image: url(../images/icons/eye-icon.svg);
+}
+.tr-auth-section .tr-field-label {
+  background-color: transparent;
+  font-size: 16px;
+  line-height: 19px;
+  color: #6A6A6A;
+  position: absolute;
+  top: 16.5px;
+  left: 50px;
+  transition: all .2s ease;
+}
+.tr-auth-section input {
+  background-color: #F0F3F5;
+  background-repeat: no-repeat;
+  border: 1px solid #F0F3F5;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 19px;
+  color: #6A6A6A;
+  padding: 26px 16px 5.4px 50px;
+  width: 100%;
+}
+.tr-auth-section input:focus {
+  box-shadow: 1px 0px 14px rgba(156, 156, 156,0.8);
+  outline: none;
+}
+.tr-auth-section input:-webkit-autofill {
+          box-shadow: 0 0 0 30px #F0F3F5 inset !important;
+  -webkit-box-shadow: 0 0 0 30px #F0F3F5 inset !important;
+}
+.tr-auth-section .tr-check-box {
+  color: #222222;
+  font-weight: 400;
+  line-height: 17px;
+}
+.tr-auth-section .tr-field.is-focus .tr-field-label,
+.tr-auth-section .tr-field.tr-value-field .tr-field-label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  color: #000000;
+  top: 9px;
+}
+.tr-auth-section .tr-validation-message {
+  display: block;
+  color: #CD2E20;
+  margin-top: 4px;
+}
+.tr-auth-section .tr-or {
+  line-height: 17px;
+  color: #6A6A6A;
+  margin: 24px 0;
+  position: relative;
+  text-align: center;
+}
+.tr-auth-section .tr-or:before, 
+.tr-auth-section .tr-or:after {
+  content: "";
+  position: absolute;
+  top: 9px;
+  flex-grow: 1;
+  background: #d9e2e8;
+  height: 1px;
+  font-size: 0;
+  line-height: 0;
+  width: 46%;
+}
+.tr-auth-section .tr-or:before {
+  left: 0;
+}
+.tr-auth-section .tr-or:after {
+  right: 0;
+}
+.tr-auth-section .tr-auth-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.tr-auth-section .tr-auth-options button {
+  background-color: #FFFFFF;
+  border: 1px solid #D6D6D6;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 19px;
+  color: #222222;
+  padding: 15.7px 16px;
+  width: 100%;
+  position: relative;
+  transition: all .3s ease;
+}
+.tr-auth-section .tr-auth-options button:hover {
+  background-color: #FF4B01;
+  border-color: #FF4B01;
+  color: #FFFFFF;
+}
+.tr-auth-section .tr-auth-options button svg {
+  position: absolute;
+  top: 13px;
+  left: 16px;
+}
+.tr-auth-section .tr-forgot-btn {
+  margin-top: 24px;
+  text-align: right;
+}
+.tr-auth-section .tr-forgot-btn button.tr-anchor-btn {
+  color: #131313;
+  border-color: #131313;
+}
+.tr-auth-section .tr-forgot-btn button.tr-anchor-btn:hover {
+  border-color: transparent;
+}
+.tr-auth-section .alert {
+  background-color: #ECF9FB;
+  background-image: url(../images/icons/check-circle-sea-blue-icon.svg);
+  background-repeat: no-repeat;
+  background-position: top 14px left 20px;
+  background-size: 20px;
+  border: none;
+  font-size: 16px;
+  line-height: 17px;
+  color: #09707A;
+  margin-bottom: 24px;
+  padding: 17.5px 20px 17.5px 44px;
+}
+/******* SignIn/SignUp Modal - End *******/
