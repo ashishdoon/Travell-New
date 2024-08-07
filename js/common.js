@@ -873,20 +873,12 @@ $('.tr-city-wise-hotel-list .tr-city-name').on('click', function() {
 
 
 const searchLocationInput3 = document.getElementById("searchLocation3");
+const recentSearchsLocation3Modal = document.getElementById("recentSearchsLocation3");
 if (searchLocationInput3) {
   searchLocationInput3.onclick = function() {
     recentSearchLocationBox3();
   }
 }
-
-const recentSearchsLocation3Modal = document.getElementById("recentSearchsLocation3");
-// function searchFormControl3() {
-//   // For Search Location
-//   searchLocationInput3.onclick = function() {
-//     alert("Yes");
-//     recentSearchLocationBox3();
-//   }
-// }
 function recentSearchLocationBox3() {
   searchLocationInput3.classList.add("is-focus");
   recentSearchsLocation3Modal.style.display = "block";
@@ -906,21 +898,14 @@ if (checkInInput3 && checkOutInput3) {
   checkOutInput3.onclick = function() {
     calendarsBox3();
   }
-  function calendarsBox3() {
-    calendarsModal3.style.display = "flex";
-    checkInInput3.classList.add("is-focus");
-    checkOutInput3.classList.add("is-focus");
-    searchLocationInput3.classList.remove("is-focus");
-    recentSearchsLocation3Modal.style.display = "none";
-  }
 }
-
-// const totalRoomGuest = document.getElementById("totalRoomAndGuest3");
-// if (totalRoomGuest) {
-//   totalRoomGuest.onclick = function() {
-
-//   }
-// }
+function calendarsBox3() {
+  calendarsModal3.style.display = "flex";
+  checkInInput3.classList.add("is-focus");
+  checkOutInput3.classList.add("is-focus");
+  searchLocationInput3.classList.remove("is-focus");
+  recentSearchsLocation3Modal.style.display = "none";
+}
 
 
 $(document).on('click', function(event) {
@@ -940,6 +925,16 @@ $(document).on('click', function(event) {
       checkOutInput3.classList.remove("is-focus");
     }
   }
+  // // Handle clicks on the calendar dates
+  // $('#calendarsModal3, #checkInCalendar3, #checkOutCalendar3').on('click', 'td', function(event) {
+  //   // Prevent the document click event from hiding the modal
+  //   event.stopPropagation();
+  // });
+
+  // Handle clicks on the input fields to prevent closing the modal
+  $('#calendarsModal3').on('click', function(event) {
+    event.stopPropagation();
+  });
 });
 
 // For Small Device
