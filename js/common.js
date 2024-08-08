@@ -906,8 +906,6 @@ function calendarsBox3() {
   searchLocationInput3.classList.remove("is-focus");
   recentSearchsLocation3Modal.style.display = "none";
 }
-
-
 $(document).on('click', function(event) {
   if($("#recentSearchsLocation3").css('display') === 'block') {
     if (!$(event.target).closest("#searchLocation3, #recentSearchsLocation3").length) {
@@ -919,7 +917,7 @@ $(document).on('click', function(event) {
     }
   }
   if($("#calendarsModal3").css('display') === 'flex') {
-    if (!$(event.target).closest("#calendarsModal3, #checkInInput3, #checkOutInput3").length) {
+    if (!$(event.target).closest("#calendarsModal3, #checkInInput3, #checkOutInput3, .tr-view-availability-btn").length) {
       calendarsModal3.style.display = "none";
       recentSearchsLocation3Modal.style.display = "none";
       checkInInput3.classList.remove("is-focus");
@@ -937,6 +935,12 @@ $(document).on('click', function(event) {
     event.stopPropagation();
   });
 });
+if(window.matchMedia('(min-width: 769px)').matches){
+  $('.tr-view-availability-btn').on('click', function() {
+    $('html, body').animate({ scrollTop: $('#checkInInput3').offset().top - 160 }, 500);
+    calendarsBox3();
+  });
+};
 
 // For Small Device
 if(window.matchMedia('(max-width: 768px)').matches){
@@ -970,7 +974,8 @@ if(window.matchMedia('(max-width: 768px)').matches){
   });
   
   $(document).ready(function() {
-    $('.tr-mobile-when').click(function() {
+    $('.tr-mobile-when, .tr-view-availability-btn').click(function() {
+      $('html, body').animate({ scrollTop: $('.tr-search-hotel').offset().top - 75 }, 500);
       $(".tr-form-booking-date").addClass("open");
       setTimeout(function() {
         if($(".tr-form-booking-date").hasClass('open')){
