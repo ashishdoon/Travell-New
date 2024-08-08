@@ -913,6 +913,7 @@ $(document).on('click', function(event) {
     if (!$(event.target).closest("#searchLocation3, #recentSearchsLocation3").length) {
       calendarsModal3.style.display = "none";
       recentSearchsLocation3Modal.style.display = "none";
+      searchLocationInput3.classList.remove("is-focus");
       checkInInput3.classList.remove("is-focus");
       checkOutInput3.classList.remove("is-focus");
     }
