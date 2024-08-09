@@ -2661,19 +2661,17 @@
   .tr-gallery-popup .tr-gallery-category {
     flex-wrap: wrap;
   }
-  .tr-gallery-popup .tr-galleries-left-column, 
-  .tr-gallery-popup .tr-galleries-right-column {
-    width: 100%;
-  }
-  .tr-gallery-popup .tr-galleries-left-column ul li, 
-  .tr-gallery-popup .tr-galleries-right-column ul li {
+  .tr-gallery-popup .tr-gallery-category ul li {
     padding: 4px;
-  }
-  .tr-gallery-popup .tr-galleries-left-column ul li:nth-of-type(1) {
-    width: 100%;
-  }
-  .tr-gallery-popup .tr-galleries-left-column ul li:nth-of-type(3) {
     width: 50%;
+  }
+  .tr-gallery-popup .tr-gallery-category ul li:nth-of-type(6n+5),
+  .tr-gallery-popup .tr-gallery-category ul li:nth-of-type(6n+6) {
+    width: 50%;
+  }
+  .tr-gallery-popup .tr-gallery-category ul li:nth-of-type(6n+1),
+  .tr-gallery-popup .tr-gallery-category ul li:nth-of-type(6n+6) {
+    width: 100%;
   }
   /******* Gallery Modal End *******/
 
