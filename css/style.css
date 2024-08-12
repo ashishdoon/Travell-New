@@ -2680,6 +2680,9 @@ header .tr-mobile {
   transform: scale(1.1);
   transition: all .5s ease;
 }
+.tr-nearby-hotel-list .tr-hotel-name {
+  width: calc(100% - 82px);
+}
 .tr-nearby-hotel-list .tr-hotel-name a {
   color: #000000;
   font-size: 18px;

@@ -1551,6 +1551,9 @@
   .tr-nearby-hotel-list .tr-hotel-img {
     border-radius: 12px 12px 0 0;
   }
+  .tr-nearby-hotel-list .tr-hotel-name {
+    width: calc(100% - 40px);
+  }
   .tr-nearby-hotel-list .tr-hotel-name a {
     font-size: 14px;
     line-height: 150%;
