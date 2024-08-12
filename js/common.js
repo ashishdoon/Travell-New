@@ -469,19 +469,21 @@ $(document).ready(function() {
   const readMoreBtn = $('.read-more-btn');
   const fullText = content.html();
 
-  if (fullText.length > maxLength) {
-    const truncatedText = fullText.slice(0, maxLength);
-    content.html(truncatedText);
-    content.addClass('less-content');
-    //$('.content-container').addClass('show-more');
+  if(fullText) {
+    if (fullText.length > maxLength) {
+      const truncatedText = fullText.slice(0, maxLength);
+      content.html(truncatedText);
+      content.addClass('less-content');
+      //$('.content-container').addClass('show-more');
 
-    readMoreBtn.show();
+      readMoreBtn.show();
 
-    readMoreBtn.on('click', function() {
-      content.html(fullText);
-      content.removeClass('less-content');
-      $(this).hide();
-    });
+      readMoreBtn.on('click', function() {
+        content.html(fullText);
+        content.removeClass('less-content');
+        $(this).hide();
+      });
+    }
   }
 });
 
@@ -1101,6 +1103,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Filter - Listing Wih Date
 document.addEventListener('DOMContentLoaded', function() {
   const filterSections = document.querySelectorAll('.tr-filters-section');
+
   filterSections.forEach(function(section) {
     const checkboxes = section.querySelectorAll('.filter');
     const sectionId = section.getAttribute('data-section');
@@ -1114,25 +1117,54 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function updateSelectedData(section, sectionId) {
     const checkboxes = section.querySelectorAll('.filter');
-    const selectedDataElements = document.querySelectorAll(`.selected-data[data-section="${sectionId}"]`);
-    const selectedValues = [];
+    const selectedDataElement = document.querySelector(`.selected-data[data-section="${sectionId}"]`);
+    selectedDataElement.innerHTML = ''; // Clear previous data
+
     checkboxes.forEach(function(checkbox) {
       if (checkbox.checked) {
-        selectedValues.push(checkbox.value);
-      }
-    });
-
-    selectedDataElements.forEach(function(selectedData) {
-      selectedData.innerHTML = '';
-      selectedValues.forEach(function(value) {
+        const labelText = checkbox.closest('label').textContent.trim();
         const div = document.createElement('div');
         div.classList.add('tr-filter-selected');
-        div.textContent = value;
-        selectedData.appendChild(div);
-      });
+        div.textContent = labelText;
+        selectedDataElement.appendChild(div);
+      }
     });
   }
 });
+// document.addEventListener('DOMContentLoaded', function() {
+//   const filterSections = document.querySelectorAll('.tr-filters-section');
+//   filterSections.forEach(function(section) {
+//     const checkboxes = section.querySelectorAll('.filter');
+//     const sectionId = section.getAttribute('data-section');
+
+//     checkboxes.forEach(function(checkbox) {
+//       checkbox.addEventListener('change', function() {
+//         updateSelectedData(section, sectionId);
+//       });
+//     });
+//   });
+
+//   function updateSelectedData(section, sectionId) {
+//     const checkboxes = section.querySelectorAll('.filter');
+//     const selectedDataElements = document.querySelectorAll(`.selected-data[data-section="${sectionId}"]`);
+//     const selectedValues = [];
+//     checkboxes.forEach(function(checkbox) {
+//       if (checkbox.checked) {
+//         selectedValues.push(checkbox.value);
+//       }
+//     });
+
+//     selectedDataElements.forEach(function(selectedData) {
+//       selectedData.innerHTML = '';
+//       selectedValues.forEach(function(value) {
+//         const div = document.createElement('div');
+//         div.classList.add('tr-filter-selected');
+//         div.textContent = value;
+//         selectedData.appendChild(div);
+//       });
+//     });
+//   }
+// });
 
 // More Price - Listing Wih Date
 $('.tr-more-price').click(function() {
