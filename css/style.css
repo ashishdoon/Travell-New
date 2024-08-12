@@ -1258,12 +1258,28 @@ header .tr-mobile {
   left: 0px;
   bottom: -29px;
 }
-.tr-overview-section p {
+.tr-overview-section .tr-overview-content {
+  padding-bottom: 20px;
+}
+.tr-overview-section .tr-overview-content p.tr-content {
   font-size: 16px;
   line-height: 28px;
   color: #222222;
-  padding-bottom: 20px;
+  overflow: hidden;
+  white-space: pre-wrap;
 }
+.tr-overview-section .tr-overview-content button.tr-anchor-btn {
+  margin-top: 15px;
+}
+.tr-overview-section .tr-overview-content .tr-content.less-content::after {
+  content: "...";
+  display: inline;
+}
+.tr-overview-section .tr-overview-content .show-more .read-more-btn {
+  display: inline-block;
+}
+
+
 .tr-overview-section .tr-overview-details ul li .tr-rating {
   font-weight: 700;
   font-size: 22px;

@@ -463,6 +463,28 @@ $(window).scroll(function() {
   }
 });
 
+$(document).ready(function() {
+  const maxLength = 230;
+  const content = $('.tr-content');
+  const readMoreBtn = $('.read-more-btn');
+  const fullText = content.html();
+
+  if (fullText.length > maxLength) {
+    const truncatedText = fullText.slice(0, maxLength);
+    content.html(truncatedText);
+    content.addClass('less-content');
+    //$('.content-container').addClass('show-more');
+
+    readMoreBtn.show();
+
+    readMoreBtn.on('click', function() {
+      content.html(fullText);
+      content.removeClass('less-content');
+      $(this).hide();
+    });
+  }
+});
+
 // Things to Know -Overview Section
 $(document).on("click", ".tr-things-know #moreButton", function(){
   $(".tr-things-know li").addClass('show');

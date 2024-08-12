@@ -685,10 +685,12 @@
   .tr-overview-section .tr-overview-details ul::-webkit-scrollbar {
     display: none;
   }
-  .tr-overview-section p {
+  .tr-overview-section .tr-overview-content {
+    padding-bottom: 24px;
+  }
+  .tr-overview-section .tr-overview-content p.tr-content {
     font-size: 14px;
     line-height: 18px;
-    padding: 0 0 24px;
   }
 
   .tr-overview-section .tr-things-know {
