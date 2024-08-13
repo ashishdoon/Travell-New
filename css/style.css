@@ -1367,6 +1367,12 @@ header .tr-mobile {
   padding: 6px 12px;
   line-height: 20px;
 }
+.tr-room-section .tr-room-filters .tr-filter-list label br {
+  display: none;
+}
+.tr-room-section .tr-room-filters .tr-filter-list label:hover {
+  background: #F0F3F5;
+}
 .tr-room-section .tr-room-filters .tr-filter-list svg {
   margin: -4px 8px 0 0;
 }
