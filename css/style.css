@@ -5214,6 +5214,12 @@ footer .tr-social-links ul li:nth-of-type(3) {
   width: 100%;
   margin-top: 10px;
 }
+#mapModal .tr-room-section-2 .tr-hotel-price-section .tr-deal,
+#mapModal .tr-room-section-2 .tr-hotel-price-lists .tr-anchor-btn,
+#mapModal .tr-room-section-2 .tr-hotel-price-lists .tr-hotel-price-list:not(:first-child),
+#mapModal .tr-login-for-more-options {
+  display: none;
+}
 #mapModal .tr-room-section-2 .tr-hotel-price-lists .tr-hotel-price-list {
   margin-bottom: 0;
 }

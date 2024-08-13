@@ -1100,6 +1100,18 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+
+// Filter and Hotel Listing Append in Map Modal
+$('.tr-filters-section .tr-filter-lists').each(function() {
+  var FilterLists = $(this).clone();
+  $('#mapModal .tr-filters-section').append(FilterLists);
+});
+$('.tr-room-section-2 .tr-hotel-deatils').each(function() {
+  var HotelLists = $(this).clone();
+  $('#mapModal .tr-room-section-2').append(HotelLists);
+});
+
+
 // Filter - Listing Wih Date
 document.addEventListener('DOMContentLoaded', function() {
   const filterSections = document.querySelectorAll('.tr-filters-section');
@@ -1131,40 +1143,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
-// document.addEventListener('DOMContentLoaded', function() {
-//   const filterSections = document.querySelectorAll('.tr-filters-section');
-//   filterSections.forEach(function(section) {
-//     const checkboxes = section.querySelectorAll('.filter');
-//     const sectionId = section.getAttribute('data-section');
-
-//     checkboxes.forEach(function(checkbox) {
-//       checkbox.addEventListener('change', function() {
-//         updateSelectedData(section, sectionId);
-//       });
-//     });
-//   });
-
-//   function updateSelectedData(section, sectionId) {
-//     const checkboxes = section.querySelectorAll('.filter');
-//     const selectedDataElements = document.querySelectorAll(`.selected-data[data-section="${sectionId}"]`);
-//     const selectedValues = [];
-//     checkboxes.forEach(function(checkbox) {
-//       if (checkbox.checked) {
-//         selectedValues.push(checkbox.value);
-//       }
-//     });
-
-//     selectedDataElements.forEach(function(selectedData) {
-//       selectedData.innerHTML = '';
-//       selectedValues.forEach(function(value) {
-//         const div = document.createElement('div');
-//         div.classList.add('tr-filter-selected');
-//         div.textContent = value;
-//         selectedData.appendChild(div);
-//       });
-//     });
-//   }
-// });
 
 // More Price - Listing Wih Date
 $('.tr-more-price').click(function() {
