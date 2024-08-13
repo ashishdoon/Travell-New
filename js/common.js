@@ -1110,7 +1110,16 @@ $('.tr-room-section-2 .tr-hotel-deatils').each(function() {
   var HotelLists = $(this).clone();
   $('#mapModal .tr-room-section-2').append(HotelLists);
 });
-
+$('#mapModal .carousel').each(function() {
+  var currentId = $(this).attr('id');
+  if (currentId) {
+    var newId = currentId + '-1';
+    $(this).attr('id', newId);
+    $('button[data-bs-target="#' + currentId + '"]').each(function() {
+      $(this).attr('data-bs-target', '#' + newId);
+    });
+  }
+});
 
 // Filter - Listing Wih Date
 document.addEventListener('DOMContentLoaded', function() {
