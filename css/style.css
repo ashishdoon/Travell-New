@@ -1493,6 +1493,9 @@ header .tr-mobile {
   width: 25px;
   margin-right: 10px;
 }
+.tr-room-section .tr-hotel-deatil ul li br {
+  display: none;
+}
 
 .tr-room-section .tr-hotel-price-lists {
   display: flex;
