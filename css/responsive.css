@@ -2514,6 +2514,54 @@
   }
   /******* SignIn/SignUp Modal End *******/
 
+
+  /******* Explore Listing Page - Start *******/
+  .tr-explore-listing-section .container {
+    padding: 0;
+  }
+  .tr-explore-listing .tr-explore-left-section {
+    width: 100%;
+    height: auto;
+    padding: 18px 24px;
+  }
+  .tr-explore-filter .tr-explore-filter-slider,
+  .tr-museum .tr-tickets-silder,
+  .tr-market .tr-market-slider {
+    width: calc(100% + 24px);
+  }
+  .tr-market .tr-store-details {
+    position: static;
+    padding: 8px 0;
+  }
+  .tr-market .tr-location-with-review,
+  .tr-market .tr-store-details .tr-like-review {
+    display: none;
+  }
+  .tr-market .tr-store-details .tr-store-type,
+  .tr-market .tr-store-details .tr-store-name a {
+    color: #000000;
+  }
+  .tr-explore-listing .tr-map-section {
+    width: 100%;
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+  }
+  .tr-explore-listing  .tr-hotel-on-map {
+    width: 100%;
+    max-width: 250px;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  .tr-explore-listing .tr-map-section button.btn-close {
+    display: block;
+  }
+  /******* Explore Listing Page - End *******/
 }
 
 @media screen and (max-width: 576px) {

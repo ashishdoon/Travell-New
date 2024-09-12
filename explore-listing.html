@@ -26,41 +26,78 @@
       $(document).ready(function(){
         $('.tr-search-by-category').slick({
           autoplay: true,
-          autoplaySpeed: 2000,  // 2 seconds
-          dots: false,           // Show navigation dots
-          arrows: false,         // Show next/prev arrows
-          infinite: true,       // Infinite loop
-          slidesToShow: 1,      // Show 1 slide at a time
-          slidesToScroll: 1,     // Scroll 1 slide at a time
+          autoplaySpeed: 2000,  
+          dots: false,           
+          arrows: false,         
+          infinite: false,       
+          slidesToShow: 1,      
+          slidesToScroll: 1,     
           vertical: true,
+        });
+        $('.tr-tickets-silder').slick({
+          autoplay: false,
+          autoplaySpeed: 2000,  
+          dots: false,           
+          arrows: true,         
+          infinite: false,       
+          slidesToShow: 1.4,      
+          slidesToScroll: 1,
+          responsive: [
+            {
+              breakpoint: 768, 
+              settings: {
+                arrows: false, 
+                slidesToShow: 1.5,  
+                slidesToScroll: 1
+              }
+            }
+          ]    
         });
         $('.tr-explore-filter-slider').slick({
           autoplay: false,
-          autoplaySpeed: 2000,  // 2 seconds
-          dots: false,           // Show navigation dots
-          arrows: true,         // Show next/prev arrows
-          infinite: true,       // Infinite loop
-          slidesToShow: 3,      // Show 1 slide at a time
-          slidesToScroll: 1,     // Scroll 1 slide at a time
-          variableWidth: true
+          autoplaySpeed: 2000,  
+          dots: false,           
+          arrows: true,         
+          infinite: true,       
+          slidesToShow: 3,      
+          slidesToScroll: 1,     
+          variableWidth: true,
+          responsive: [
+            {
+              breakpoint: 768, 
+              settings: {
+                arrows: false,
+              }
+            }
+          ]  
         });
         $('.tr-experience-slider').slick({
           autoplay: false,
-          autoplaySpeed: 2000,  // 2 seconds
-          dots: true,           // Show navigation dots
-          arrows: false,         // Show next/prev arrows
-          infinite: true,       // Infinite loop
-          slidesToShow: 3,      // Show 1 slide at a time
-          slidesToScroll: 1     // Scroll 1 slide at a time
+          autoplaySpeed: 2000,  
+          dots: true,           
+          arrows: false,         
+          infinite: true,       
+          slidesToShow: 3,      
+          slidesToScroll: 1     
         });
         $('.tr-market-slider').slick({
           autoplay: false,
-          autoplaySpeed: 2000,  // 2 seconds
-          dots: false,           // Show navigation dots
-          arrows: true,         // Show next/prev arrows
-          infinite: false,       // Infinite loop
-          slidesToShow: 3,      // Show 1 slide at a time
-          slidesToScroll: 1     // Scroll 1 slide at a time
+          autoplaySpeed: 2000,  
+          dots: false,           
+          arrows: true,         
+          infinite: false,       
+          slidesToShow: 3,      
+          slidesToScroll: 1,
+          responsive: [
+            {
+              breakpoint: 768, 
+              settings: {
+                arrows: false, 
+                slidesToShow: 2.5,  
+                slidesToScroll: 1
+              }
+            }
+          ]     
         });
 
       });
@@ -377,7 +414,7 @@
                         <div>“Market”</div>
                       </div>
                     </div>
-                    <button class="tr-btn">Search</button>
+                    <button type="button" class="tr-btn">Search</button>
                   </div>
                   <div class="tr-explore-search-modal">
                     <div class="tr-explore-search-feild">
@@ -391,8 +428,8 @@
                           <div class="tr-place-info">
                             <div class="tr-location-icon"></div>
                             <div class="tr-location-info">
-                              <div class="tr-hotel-name">Long Island Restaurant</div>
-                              <div class="tr-hotel-city">Restaurant</div>
+                              <div class="tr-name">Long Island Restaurant</div>
+                              <div class="tr-category">Restaurant</div>
                             </div>
                           </div>
                         </li>
@@ -400,8 +437,8 @@
                           <div class="tr-place-info">
                             <div class="tr-location-icon"></div>
                             <div class="tr-location-info">
-                              <div class="tr-hotel-name">Long Island Restaurant</div>
-                              <div class="tr-hotel-city">Restaurant</div>
+                              <div class="tr-name">Long Island Restaurant</div>
+                              <div class="tr-category">Restaurant</div>
                             </div>
                           </div>
                         </li>
@@ -430,7 +467,7 @@
                     </div>
                     <div class="tr-filter-list">
                       <input type="checkbox" name="" id="filter5" class="filter" value="category4">
-                      <label for="filter4">Market</label>
+                      <label for="filter5">Market</label>
                     </div>
                   </form>
                 </div>
@@ -439,7 +476,7 @@
                   <div class="tr-heading-with-save">
                     <div class="tr-category">Museum</div>
                     <h3><a href="javascript:void(0);" target="_blank">Hotel London</a></h3>
-                    <button class="tr-save">Save</button>
+                    <button type="button" class="tr-save">Save</button>
                   </div>
                   <div class="tr-image">
                     <div id="Slider1" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
@@ -484,6 +521,32 @@
                       <li>until 17:10</li>
                     </ul>
                   </div>
+                  <div class="tr-tickets tr-tickets-silder">
+                    <div>
+                      <ul>
+                        <li><span class="tr-rating">89%</span></li>
+                        <li>2.5 hours.</li>
+                      </ul>
+                      <h5>Tickets to Tower of London</h5>
+                      <span>Ticket</span>
+                    </div>
+                    <div>
+                      <ul>
+                        <li><span class="tr-rating">89%</span></li>
+                        <li>2.5 hours.</li>
+                      </ul>
+                      <h5>Tickets to Tower of London</h5>
+                      <span>Ticket</span>
+                    </div>
+                    <div>
+                      <ul>
+                        <li><span class="tr-rating">89%</span></li>
+                        <li>2.5 hours.</li>
+                      </ul>
+                      <h5>Tickets to Tower of London</h5>
+                      <span>Ticket</span>
+                    </div>
+                  </div>
                 </div>
                 
                 <div class="tr-historical-monument">
@@ -493,7 +556,9 @@
                     <button class="tr-save tr-saved">Saved</button>
                   </div>
                   <div class="tr-image">
-                    <img loading="lazy" src="images/hotel-explore-2.png" alt="">
+                    <a href="javascript:void(0);">
+                      <img loading="lazy" src="images/hotel-explore-2.png" alt="">
+                    </a>
                   </div>
                   <div class="tr-location-with-review">
                     <div class="tr-location">City of London</div>
@@ -519,23 +584,23 @@
                   <div class="tr-heading-with-save">
                     <div class="tr-category">Experience</div>
                     <h3><a href="javascript:void(0);" target="_blank">London in a Day Tour with Westminster</a></h3>
-                    <button class="tr-save">Save</button>
+                    <button type="button" class="tr-save">Save</button>
                   </div>
                   <div class="tr-experience-slider">
                     <div class="tr-store">
-                      <img loading="lazy" src="images/experience-1.png" alt="">
+                      <a href="javascript:void(0);"><img src="images/experience-1.png" alt=""></a>
                     </div>
                     <div class="tr-store">
-                      <img loading="lazy" src="images/experience-2.png" alt="">
+                      <a href="javascript:void(0);"><img src="images/experience-2.png" alt=""></a>
                     </div>
                     <div class="tr-store">
-                      <img loading="lazy" src="images/experience-3.png" alt="">
+                      <a href="javascript:void(0);"><img src="images/experience-3.png" alt=""></a>
                     </div>
                     <div class="tr-store">
-                      <img loading="lazy" src="images/experience-1.png" alt="">
+                      <a href="javascript:void(0);"><img src="images/experience-1.png" alt=""></a>
                     </div>
                     <div class="tr-store">
-                      <img loading="lazy" src="images/experience-2.png" alt="">
+                      <a href="javascript:void(0);"><img src="images/experience-2.png" alt=""></a>
                     </div>
                   </div>
                   <div class="tr-location-with-review">
@@ -564,11 +629,11 @@
                       <div class="tr-category">Restaurant</div>
                       <h3><a href="javascript:void(0);" target="_blank">La Dame de Pic London</a></h3>
                     </div>
-                    <button class="tr-save">Save</button>
+                    <button type="button" class="tr-save">Save</button>
                   </div>
                   <div class="tr-row">
                     <div class="tr-image">
-                      <img loading="lazy" src="images/restaurant-1.png" alt="">
+                      <a href="javascript:void(0);"><img loading="lazy" src="images/restaurant-1.png" alt=""></a>
                     </div>
                     <div class="tr-restaurant-details">
                       <div class="tr-location-with-review">
@@ -614,11 +679,11 @@
                   <div class="tr-heading-with-save">
                     <div class="tr-category">Market</div>
                     <h3><a href="javascript:void(0);" target="_blank">Camden Market</a></h3>
-                    <button class="tr-save">Save</button>
+                    <button type="button" class="tr-save">Save</button>
                   </div>
                   <div class="tr-market-slider">
                     <div class="tr-store">
-                      <img loading="lazy" src="images/market-1.png" alt="">
+                      <a href="javascript:void(0);"><img loading="lazy" src="images/market-1.png" alt=""></a>
                       <div class="tr-store-details">
                         <div class="tr-like-review">
                           <div class="tr-heart">
@@ -627,11 +692,11 @@
                           <div class="tr-ranting-percent">89%</div>
                         </div>
                         <div class="tr-store-type">Clothing Store</div>
-                        <h5 class="tr-store-name">Louis Vuitton</h5>
+                        <h5 class="tr-store-name"><a href="javascript:void(0);">Louis Vuitton</a></h5>
                       </div>
                     </div>
                     <div class="tr-store">
-                      <img loading="lazy" src="images/market-2.png" alt="">
+                      <a href="javascript:void(0);"><img loading="lazy" src="images/market-2.png" alt=""></a>
                       <div class="tr-store-details">
                         <div class="tr-like-review">
                           <div class="tr-heart">
@@ -640,11 +705,11 @@
                           <div class="tr-ranting-percent">89%</div>
                         </div>
                         <div class="tr-store-type">Clothing Store</div>
-                        <h5 class="tr-store-name">Louis Vuitton</h5>
+                        <h5 class="tr-store-name"><a href="javascript:void(0);">Louis Vuitton</a></h5>
                       </div>
                     </div>
                     <div class="tr-store">
-                      <img loading="lazy" src="images/market-3.png" alt="">
+                      <a href="javascript:void(0);"><img loading="lazy" src="images/market-3.png" alt=""></a>
                       <div class="tr-store-details">
                         <div class="tr-like-review">
                           <div class="tr-heart">
@@ -653,11 +718,11 @@
                           <div class="tr-ranting-percent">89%</div>
                         </div>
                         <div class="tr-store-type">Clothing Store</div>
-                        <h5 class="tr-store-name">Louis Vuitton</h5>
+                        <h5 class="tr-store-name"><a href="javascript:void(0);">Louis Vuitton</a></h5>
                       </div>
                     </div>
                     <div class="tr-store">
-                      <img loading="lazy" src="images/market-1.png" alt="">
+                      <a href="javascript:void(0);"><img loading="lazy" src="images/market-1.png" alt=""></a>
                       <div class="tr-store-details">
                         <div class="tr-like-review">
                           <div class="tr-heart">
@@ -666,11 +731,11 @@
                           <div class="tr-ranting-percent">89%</div>
                         </div>
                         <div class="tr-store-type">Clothing Store</div>
-                        <h5 class="tr-store-name">Louis Vuitton</h5>
+                        <h5 class="tr-store-name"><a href="javascript:void(0);">Louis Vuitton</a></h5>
                       </div>
                     </div>
                     <div class="tr-store">
-                      <img loading="lazy" src="images/market-2.png" alt="">
+                      <a href="javascript:void(0);"><img loading="lazy" src="images/market-2.png" alt=""></a>
                       <div class="tr-store-details">
                         <div class="tr-like-review">
                           <div class="tr-heart">
@@ -679,7 +744,7 @@
                           <div class="tr-ranting-percent">89%</div>
                         </div>
                         <div class="tr-store-type">Clothing Store</div>
-                        <h5 class="tr-store-name">Louis Vuitton</h5>
+                        <h5 class="tr-store-name"><a href="javascript:void(0);">Louis Vuitton</a></h5>
                       </div>
                     </div>
                   </div>
@@ -694,10 +759,77 @@
                   </div>
                 </div>
 
+                <button type="button" class="tr-btn tr-load-more">Load More</button>
+
+                <div class="tr-map-and-filter">
+                  <button type="button" class="tr-explore-map-btn map"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_2464_12970)"><path d="M0.583984 3.4974V12.8307L4.66732 10.4974L9.33398 12.8307L13.4173 10.4974V1.16406L9.33398 3.4974L4.66732 1.16406L0.583984 3.4974Z" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4.66602 1.16406V10.4974" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9.33398 3.5V12.8333" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2464_12970"><rect width="14" height="14" fill="white"></rect></clipPath></defs></svg>Map</button>
+                </div>
                 <div class="tr-explore-overlay"></div>
               </div>
 
               <div class="tr-map-section">
+                <button type="button" class="btn-close"></button>
+                <div class="tr-hotel-on-map">
+                  <form>
+                    <input type="text" class="form-control" id="" placeholder="Search on map" name="" autocomplete="off">
+                    <div class="tr-recent-searchs-modal" id="">
+                      <div class="tr-enable-location">Around Current Location</div>
+                      <h5>Recent searches</h5>
+                      <ul>
+                        <li>
+                          <div class="tr-place-info">
+                            <div class="tr-location-icon"></div>
+                            <div class="tr-location-info">
+                              <div class="tr-hotel-name">London Hotels</div>
+                              <div class="tr-hotel-city">England, United Kingdom</div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="tr-place-info">
+                            <div class="tr-location-icon"></div>
+                            <div class="tr-location-info">
+                              <div class="tr-hotel-name">Morocco</div>
+                              <div class="tr-hotel-city">North Africa</div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <button type="button" hidden="" class="tr-btn">Countinue</button>                        
+                  </form>
+                </div>
+                <div class="tr-map-tooltip tr-explore-listing">
+                  <div class="tr-historical-monument">
+                    <div class="tr-heading-with-save">
+                      <h3><a href="javascript:void(0);" target="_blank">Oxford Street</a></h3>
+                      <button class="tr-save">Saved</button>
+                    </div>
+                    <div class="tr-image">
+                      <a href="javascript:void(0);">
+                        <img loading="lazy" src="images/hotel-explore-2.png" alt="">
+                      </a>
+                    </div>
+                    <div class="tr-location-with-review">
+                      <div class="tr-location">City of London</div>
+                      <div class="tr-like-review">
+                        <div class="tr-heart">
+                          <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                        </div>
+                        <div class="tr-ranting-percent">89%</div>
+                      </div>
+                    </div>
+                    <div class="tr-more-inform">
+                      <ul>
+                        <li><span>Open</span>until 17:10</li>
+                        <li>5 hours.</li>
+                      </ul>
+                      <ul>
+                        <li>until 17:10</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
                 <img src="images/map-1.png" class="tr-temp-img" alt="map"/>
               </div>
             </div>            

@@ -1243,3 +1243,12 @@ $('.tr-explore-overlay').click(function() {
   $(this).css({"display": "none",});
   $('.tr-recent-searchs-modal').css({"display": "none",});
 });
+
+$('.tr-explore-map-btn').click(function() {
+  $(".tr-explore-listing .tr-map-section").css({"display": "block",});
+  $("body").addClass('modal-open');
+});
+$('.tr-explore-listing .btn-close').click(function() {
+  $(".tr-explore-listing .tr-map-section").css({"display": "none",});
+  $("body").removeClass('modal-open');
+});
