@@ -5957,12 +5957,15 @@ h2.tr-title {
   top: 4.5px;
   right: 0;
 }
+.tr-explore-listing button.tr-saved {
+  background-image: url(../images/icons/saved-black-icon.svg);
+}
 
-.tr-explore-listing .tr-hotal-image {
+.tr-explore-listing .tr-image {
   width: 100%;
   margin: 10px 0 12px;
 }
-.tr-explore-listing .tr-hotel-deatils .tr-hotal-image .carousel-inner {
+.tr-explore-listing .tr-image .carousel-inner {
   border-radius: 8px;
 }
 .tr-explore-listing  .carousel-indicators {
@@ -6009,6 +6012,16 @@ h2.tr-title {
 }
 .tr-explore-listing .carousel .carousel-indicators .slider-count {
   display: none;
+}
+
+.tr-museum {
+  padding-bottom: 30px;
+}
+.tr-historical-monument {
+  padding-bottom: 30px;
+}
+.tr-historical-monument img {
+  border-radius: 8px;
 }
 
 .tr-experience {
@@ -6123,6 +6136,16 @@ h2.tr-title {
   opacity: 1;
   text-transform: uppercase;
 }
+.tr-charges {
+  margin-top: 5px;
+}
+.tr-charges a {
+  color: #222222;
+  border-bottom: 1px solid #000000;
+}
+.tr-charges a:hover {
+  border-color: transparent;
+}
 .tr-food-type ul {
   display: flex;
   flex-wrap: wrap;
@@ -6132,7 +6155,6 @@ h2.tr-title {
   font-weight: 400;
   line-height: 17px;
   color: #222222;
-  opacity: 0.8;
   position: relative;
 }
 .tr-food-type ul li:not(:first-child) {
@@ -6143,8 +6165,30 @@ h2.tr-title {
   position: absolute;
   bottom: 0px;
   left: 0px;
-  opacity: 0.8;
 }
+
+.tr-delivery-type ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5px;
+}
+.tr-delivery-type ul li {
+  background-repeat: no-repeat;
+  background-position: top 1px left 0px;
+  background-size: 16px;
+  font-weight: 400;
+  line-height: 17px;
+  color: #222222;
+  padding: 0 10px 0 20px;
+  position: relative;
+}
+.tr-delivery-type ul li.tr-yes {
+  background-image: url(../images/icons/check-icon.svg);
+}
+.tr-delivery-type ul li.tr-no {
+    background-image: url(../images/icons/close-icon.svg);
+}
+
 .tr-location-with-review {
   display: flex;
   justify-content: space-between;
@@ -6159,11 +6203,11 @@ h2.tr-title {
 .tr-restaurant {
   padding-bottom: 30px;
 }
-.tr-restaurant .tr-hotal-image {
+.tr-restaurant .tr-image {
   width: 108px;
   margin-right: 15px;
 }
-.tr-restaurant .tr-hotal-image img {
+.tr-restaurant .tr-image img {
   border-radius: 8px;
 }
 .tr-restaurant .tr-restaurant-details {
