@@ -1225,3 +1225,21 @@ function checkInputValues() {
 }
 // Initial check on page load
 checkInputValues();
+
+
+// Explore Lisitin 
+$('.tr-explore-search-feild').click(function() {
+  $(".tr-explore-left-section").addClass('tr-search-open');
+  $(".tr-explore-search-modal").addClass('open');
+  $(".tr-explore-overlay").css({"display": "block",});
+  $('.tr-explore-search-modal .tr-search-field').on('focus', function() {
+    $('.tr-recent-searchs-modal').css({"display": "block",});
+  });
+});
+
+$('.tr-explore-overlay').click(function() {
+  $(".tr-explore-left-section").removeClass('tr-search-open');
+  $(".tr-explore-search-modal").removeClass('open');
+  $(this).css({"display": "none",});
+  $('.tr-recent-searchs-modal').css({"display": "none",});
+});
