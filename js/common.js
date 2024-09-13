@@ -1227,7 +1227,7 @@ function checkInputValues() {
 checkInputValues();
 
 
-// Explore Lisitin 
+// Explore Listing
 $('.tr-explore-search-feild').click(function() {
   $(".tr-explore-left-section").addClass('tr-search-open');
   $(".tr-explore-search-modal").addClass('open');

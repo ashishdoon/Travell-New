@@ -2533,7 +2533,6 @@
     position: static;
     padding: 8px 0;
   }
-  .tr-market .tr-location-with-review,
   .tr-market .tr-store-details .tr-like-review {
     display: none;
   }
