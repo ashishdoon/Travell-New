@@ -5719,9 +5719,9 @@ footer .tr-social-links ul li:nth-of-type(3) {
   margin-bottom: -32px;
 }
 .tr-explore-listing .tr-explore-left-section {
-  width: 375px;
+  width: 520px;
   height: 100vh;
-  padding: 18px 24px;
+  padding: 35px 45px 18px 0;
   position: relative;
   transition: all .3s ease;
   overflow: auto;
@@ -5745,7 +5745,7 @@ footer .tr-social-links ul li:nth-of-type(3) {
 }
 
 .tr-explore-search {
-  margin: 15px 0 30px;
+  margin: 24px 0;
   position: relative;
 }
 .tr-explore-search .tr-explore-search-feild {
@@ -5753,14 +5753,14 @@ footer .tr-social-links ul li:nth-of-type(3) {
 }
 .tr-explore-search .tr-search-field {
   font-size: 16px;
-  line-height: 22px;
+  line-height: 16.4px;
   color: #6A6A6A;
-  border: none;
-  background-color: transparent;
+  background-color: #F7F7F7;
+  border: 1px solid #EDEDED;
   border-radius: 30px;
-  padding: 15px 60px 15px 20px;
-  box-shadow: 1px 0px 12px rgba(156, 156, 156, 0.5);
+  padding: 13px 60px 13px 35px;
   width: 100%;
+  height: 44px;
 }
 .tr-explore-search input[type="text"]:focus {
   color: var(--bs-body-color);
@@ -5772,8 +5772,8 @@ footer .tr-social-links ul li:nth-of-type(3) {
 }
 .tr-explore-search .tr-search-by-category {
   position: absolute !important;
-  top: 13.8px;
-  left: 97px;
+  top: 13px;
+  left: 112px;
 }
 .tr-explore-search .tr-search-by-category div:not(:first-child) {
   display: none;
@@ -5788,8 +5788,8 @@ footer .tr-social-links ul li:nth-of-type(3) {
   background-position: center;
   background-size: 16px;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   position: absolute;
   top: 6px;
   right: 6px;
@@ -5810,7 +5810,7 @@ footer .tr-social-links ul li:nth-of-type(3) {
 }
 .tr-explore-search .tr-explore-search-modal .tr-search-field {
   box-shadow: none;
-  border-radius: 30px 30px 0 0;
+/*  border-radius: 30px 30px 0 0;*/
 }
 /*Recently Search Modal*/
 .tr-explore-search .tr-recent-searchs-modal {
@@ -5883,7 +5883,7 @@ footer .tr-social-links ul li:nth-of-type(3) {
 }
 
 .tr-explore-filter {
-  margin: 30px 0;
+  margin: 24px 0;
 }
 .tr-explore-filter .tr-explore-filter-slider {
   display: flex;
@@ -6018,7 +6018,7 @@ footer .tr-social-links ul li:nth-of-type(3) {
 .tr-historical-monument,
 .tr-experience,
 .tr-market {
-  padding-bottom: 30px;
+  padding-bottom: 24px;
 }
 .slick-list {
   margin-left: -2px;
@@ -6097,7 +6097,7 @@ footer .tr-social-links ul li:nth-of-type(3) {
 
 .tr-explore-listing .tr-tickets {
   color: #232A2F;
-  margin-top: 30px;
+  margin-top: 24px;
 }
 .tr-explore-listing .tr-tickets .slick-list {
   margin-left: -5px;
@@ -6257,26 +6257,32 @@ footer .tr-social-links ul li:nth-of-type(3) {
 
 .tr-explore-listing .tr-explore-overlay {
   display: none;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
   position: absolute;
   top: 0;
-  right: 0;
+  right: 100%;
   bottom: 0;
-  left: 0;
-  width: 100%;
+  width: 3000px;
   z-index: 9;
 }
 
-.tr-explore-listing .tr-map-section {
-  width: calc(100% - 375px);
+.tr-explore-listing .tr-explore-right-section {
+  width: calc(100% - 520px);
   height: 100vh;
+  padding-top: 35px;
   position: relative;
   transition: all .3s ease;
 }
-.tr-explore-listing .tr-map-section .tr-temp-img {
+.tr-explore-listing .tr-map-section {
+  border-radius: 8px;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+/*.tr-explore-listing .tr-map-section .tr-temp-img {
   width: 100%;
   height: 100%;
-}
+}*/
 .tr-explore-listing .tr-map-section .tr-map-tooltip {
   background-color: #FFFFFF;
   border-radius: 10px;

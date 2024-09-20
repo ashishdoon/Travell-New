@@ -40,7 +40,7 @@
           dots: false,           
           arrows: true,         
           infinite: false,       
-          slidesToShow: 1.4,      
+          slidesToShow: 2.1,      
           slidesToScroll: 1,
           responsive: [
             {
@@ -762,73 +762,75 @@
             <div class="tr-map-and-filter">
               <button type="button" class="tr-explore-map-btn map"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_2464_12970)"><path d="M0.583984 3.4974V12.8307L4.66732 10.4974L9.33398 12.8307L13.4173 10.4974V1.16406L9.33398 3.4974L4.66732 1.16406L0.583984 3.4974Z" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4.66602 1.16406V10.4974" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9.33398 3.5V12.8333" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2464_12970"><rect width="14" height="14" fill="white"></rect></clipPath></defs></svg>Map</button>
             </div>
-            <div class="tr-explore-overlay"></div>
           </div>
 
-          <div class="tr-map-section">
-            <button type="button" class="btn-close"></button>
-            <div class="tr-hotel-on-map">
-              <form>
-                <input type="text" class="form-control" id="" placeholder="Search on map" name="" autocomplete="off">
-                <div class="tr-recent-searchs-modal" id="">
-                  <div class="tr-enable-location">Around Current Location</div>
-                  <h5>Recent searches</h5>
-                  <ul>
-                    <li>
-                      <div class="tr-place-info">
-                        <div class="tr-location-icon"></div>
-                        <div class="tr-location-info">
-                          <div class="tr-hotel-name">London Hotels</div>
-                          <div class="tr-hotel-city">England, United Kingdom</div>
+          <div class="tr-explore-right-section">
+            <div class="tr-map-section">
+              <button type="button" class="btn-close"></button>
+              <div class="tr-hotel-on-map">
+                <form>
+                  <input type="text" class="form-control" id="" placeholder="Search on map" name="" autocomplete="off">
+                  <div class="tr-recent-searchs-modal" id="">
+                    <div class="tr-enable-location">Around Current Location</div>
+                    <h5>Recent searches</h5>
+                    <ul>
+                      <li>
+                        <div class="tr-place-info">
+                          <div class="tr-location-icon"></div>
+                          <div class="tr-location-info">
+                            <div class="tr-hotel-name">London Hotels</div>
+                            <div class="tr-hotel-city">England, United Kingdom</div>
+                          </div>
                         </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="tr-place-info">
-                        <div class="tr-location-icon"></div>
-                        <div class="tr-location-info">
-                          <div class="tr-hotel-name">Morocco</div>
-                          <div class="tr-hotel-city">North Africa</div>
+                      </li>
+                      <li>
+                        <div class="tr-place-info">
+                          <div class="tr-location-icon"></div>
+                          <div class="tr-location-info">
+                            <div class="tr-hotel-name">Morocco</div>
+                            <div class="tr-hotel-city">North Africa</div>
+                          </div>
                         </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <button type="button" hidden="" class="tr-btn">Countinue</button>                        
+                </form>
+              </div>
+              <div class="tr-map-tooltip tr-explore-listing">
+                <div class="tr-historical-monument">
+                  <div class="tr-heading-with-save">
+                    <h3><a href="javascript:void(0);" target="_blank">Oxford Street</a></h3>
+                    <button class="tr-save">Saved</button>
+                  </div>
+                  <div class="tr-image">
+                    <a href="javascript:void(0);">
+                      <img loading="lazy" src="images/hotel-explore-2.png" alt="">
+                    </a>
+                  </div>
+                  <div class="tr-location-with-review">
+                    <div class="tr-location">City of London</div>
+                    <div class="tr-like-review">
+                      <div class="tr-heart">
+                        <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                       </div>
-                    </li>
-                  </ul>
-                </div>
-                <button type="button" hidden="" class="tr-btn">Countinue</button>                        
-              </form>
-            </div>
-            <div class="tr-map-tooltip tr-explore-listing">
-              <div class="tr-historical-monument">
-                <div class="tr-heading-with-save">
-                  <h3><a href="javascript:void(0);" target="_blank">Oxford Street</a></h3>
-                  <button class="tr-save">Saved</button>
-                </div>
-                <div class="tr-image">
-                  <a href="javascript:void(0);">
-                    <img loading="lazy" src="images/hotel-explore-2.png" alt="">
-                  </a>
-                </div>
-                <div class="tr-location-with-review">
-                  <div class="tr-location">City of London</div>
-                  <div class="tr-like-review">
-                    <div class="tr-heart">
-                      <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                      <div class="tr-ranting-percent">89%</div>
                     </div>
-                    <div class="tr-ranting-percent">89%</div>
+                  </div>
+                  <div class="tr-more-inform">
+                    <ul>
+                      <li><span>Open</span>until 17:10</li>
+                      <li>5 hours.</li>
+                    </ul>
+                    <ul>
+                      <li>until 17:10</li>
+                    </ul>
                   </div>
                 </div>
-                <div class="tr-more-inform">
-                  <ul>
-                    <li><span>Open</span>until 17:10</li>
-                    <li>5 hours.</li>
-                  </ul>
-                  <ul>
-                    <li>until 17:10</li>
-                  </ul>
-                </div>
               </div>
+              <img src="images/map-2.png" class="tr-temp-img" alt="map"/>
             </div>
-            <img src="images/map-1.png" class="tr-temp-img" alt="map"/>
+            <div class="tr-explore-overlay"></div>
           </div>
         </div>       
       </div>
