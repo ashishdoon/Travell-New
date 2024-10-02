@@ -638,6 +638,7 @@
     font-size: 14px;
     line-height: 18px;
     color: #222222;
+    margin-top: 0;
     padding: 8px 0 3px;
   }
   .tr-hotel-informations .tr-hotel-info .tr-raiting a {
@@ -2524,21 +2525,28 @@
     height: auto;
     padding: 18px 24px;
   }
-  .tr-explore-filter .tr-explore-filter-slider,
-  .tr-museum .tr-tickets-silder,
-  .tr-market .tr-market-slider {
-    width: calc(100% + 24px);
+  .tr-explore-listing .tr-museum .tr-image,
+  .tr-explore-listing .tr-historical-monument .tr-image,
+  .tr-explore-listing .tr-experience .tr-experience-slider,
+  .tr-explore-listing .tr-knights-bridge,
+  .tr-explore-listing .tr-market .tr-market-slider {
+    width: calc(100% + 48px);
+    margin: 10px 0 8px -24px;
   }
-  .tr-market .tr-store-details {
-    position: static;
-    padding: 8px 0;
+  .tr-explore-listing .tr-image .carousel-inner,
+  .tr-explore-listing .tr-historical-monument .tr-image img,
+  .tr-explore-listing .tr-experience-slider,
+  .tr-explore-listing .tr-knights-bridge img,
+  .tr-market .tr-store img {
+    border-radius: 0;
   }
-  .tr-market .tr-store-details .tr-like-review {
-    display: none;
+  .tr-explore-listing .tr-experience .slick-list,
+  .tr-explore-listing .tr-market .tr-market-slider .slick-list {
+    margin-left: -4px;
   }
-  .tr-market .tr-store-details .tr-store-type,
-  .tr-market .tr-store-details .tr-store-name a {
-    color: #000000;
+  .tr-knights-bridge .tr-details {
+    width: calc(100% - 48px);
+    left: 24px;
   }
   .tr-explore-listing .tr-map-section {
     width: 100%;
@@ -2561,6 +2569,290 @@
     display: block;
   }
   /******* Explore Listing Page - End *******/
+
+  /******* Explore Details Page - Start *******/
+  .tr-explore-details .tr-desktop {
+    display: none;
+  }
+  .tr-explore-details .tr-mobile {
+    display: block;
+  }
+  .tr-explore-details .tr-explore-information .tr-left-col {
+    order: 2;
+  }
+  .tr-explore-details .tr-explore-information .tr-right-col {
+    order: 1;
+  }
+  .tr-explore-galleries {
+    margin: 0px -24px 24px;
+    width: calc(100% + 48px);
+  }
+  .tr-explore-details .tr-explore-information {
+    position: relative;
+    margin-top: 0;
+  }
+  .tr-explore-details .tr-hotel-informations {
+    position: static;
+  }
+  .tr-explore-details .tr-hotel-certificated {
+    display: block;
+    border-bottom: 1px solid #D8DCE0;
+    margin-top: 24px;
+    padding-bottom: 24px;
+  }
+  .tr-admission-tickets {
+    margin-top: 24px;
+  }
+  .tr-admission-tickets .tr-details {
+    display: block;
+  }
+  .tr-admission-tickets .tr-ticket-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .tr-admission-tickets .tr-price {
+    margin-top: 0;
+  }
+  .tr-explore-details .tr-hotel-certificated .tr-families-favourite {
+    display: inline-block;
+    padding: 13.938px 20px;
+  }
+  .tr-explore-details .tr-hotel-certificated .tr-families-favourite p {
+    display: none;
+  }
+  .tr-admission-tickets {
+    border: none;
+    box-shadow: 0px 4px 33px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+  .tr-explore-details .tr-about-section {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid #D8DCE0;
+    margin: 24px 0 0;
+    padding: 24px 0 0;
+    overflow: hidden;
+  }
+  .tr-explore-details .tr-about-section h3 {
+    order: 1;
+  }
+  .tr-explore-details .tr-overview-section {
+    order: 2;
+    border: none;
+    margin: 24px 0;
+    width: 100%;
+  }
+  .tr-explore-details .tr-about {
+    order: 3;
+  } 
+  .tr-explore-details .tr-improve-lisitng {
+    order: 4;
+    margin: 24px 0;
+  }
+  .tr-improve-lisitng button.tr-anchor-btn {
+    background-image: url(../images/icons/edit-icon.svg);
+    background-position: top 2px left 0px;
+    background-size: 14px;
+    font-size: 16px;
+    line-height: 19px;
+    padding-left: 26px;
+  }
+  .tr-highlighted-reviews {
+    margin-top: 0;
+  }
+  .tr-highlighted-reviews .tr-customer-review:not(:first-child) {
+    margin-top: 24px;
+  }
+  .tr-recommended-write-review {
+    margin-top: 0;
+    padding: 20px 13px;
+  }
+  .tr-recommended-write-review .tr-details {
+    display: block;
+  }
+  .tr-recommended-write-review .tr-details p {
+    margin-bottom: 30px;
+  }
+  .tr-recommended-actions label {
+    margin: 0 9px 0 0;
+  }
+  .tr-about-founder {
+    border-top: 1px solid #D8DCE0;
+    margin: 24px 0;
+    padding-top: 24px;
+  }
+  .tr-founder-details {
+    display: block;
+  }
+  .tr-founder-details .tr-image {
+    width: 100%;
+  }
+  .tr-founder-details .tr-details {
+    width: 100%;
+    padding: 24px 0 0;
+  }
+  .tr-explore-details .tr-Location-section {
+    border-top: none;
+    border-bottom: 1px solid #D8DCE0;
+    margin: 0 0 24px 0;
+    padding: 0 0 18px;
+  }
+  .tr-neighborhood {
+    margin-top: 18px;
+  }
+  .tr-neighborhood h3 {
+    font-size: 18px;
+  }
+  .tr-explore-details .tr-nearby-hotel {
+    margin-bottom: 0;
+  } 
+  .tr-explore-details .tr-customer-review .tr-customer-details .tr-customer-name {
+    display: block;
+  }
+  .tr-explore-details .tr-customer-review .tr-customer-details .tr-customer-detail .tr-recommended-title {
+    margin-left: 0;
+  }
+  .tr-explore-details .tr-recommended-title {
+    background-position: top 4px left 0px;
+    background-size: 14px;
+    font-size: 15px;
+    padding-left: 20px;
+  }
+
+  #timingChangeModal .modal-dialog,
+  #timingEditModal .modal-dialog {
+    max-width: 100%;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+  }
+  #timingChangeModal .modal-content,
+  #timingEditModal .modal-content {
+    border-radius: 24px 24px 0 0;
+    padding: 0 24px 40px
+  }
+  #timingChangeModal .modal-header,
+  #timingEditModal .modal-header {
+    display: block;
+    margin-bottom: 24px;
+    padding: 14px 0;
+    position: relative;
+  }
+  #timingChangeModal .modal-header h5,
+  #timingEditModal .modal-header h5 {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 28px;
+    color: #0A0A0A;
+    padding-left: 56px;
+  }
+  #timingChangeModal .tr-day-time {
+    margin-bottom: 20px;
+  }
+  #timingChangeModal button.tr-anchor-btn {
+    width: 32px;
+    height: 32px;
+    margin-left: 10px;
+  }
+  #timingChangeModal button.tr-anchor-btn svg {
+    width: 16px;
+  }
+  #timingEditModal .tr-weekday .tr-day {
+    width: 30px;
+    height: 30px;
+  }
+  #timingEditModal .tr-weekday .tr-day span {
+    font-size: 14px;
+    line-height: 28.4px;
+  }
+  #timingEditModal .tr-field label {
+    font-size: 16px;
+    margin-right: 30px;
+  }
+  #timingEditModal .tr-timing-field {
+    gap: 15px;
+  }
+  #timingEditModal .tr-timing-field input[type="text"] {
+    font-size: 14px;
+  }
+  #timingEditModal button.tr-add-more-hours {
+    font-size: 16px;
+  }
+
+  #timingModal .modal-dialog {
+    min-width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+  #timingModal .modal-content {
+    border-radius: 0;
+    padding: 0 24px 20px;
+  }
+  #timingModal .modal-header {
+    display: block;
+    width: calc(100% + 48px);
+    margin: 0 0 20px -24px;
+    padding: 14px 24px;
+  }
+  #timingModal .modal-header h5 {
+    background-image: none;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 28px;
+    color: #0A0A0A;
+    padding-left: 56px;
+  }
+  #timingModal .tr-day-time {
+    margin-top: 12px;
+  }
+
+  #improveListingModal .modal-dialog {
+    max-width: 100%;
+    margin: 0;
+  }
+  #improveListingModal .modal-content {
+    border-radius: 0;
+    padding: 0 24px 20px;
+  }
+  #improveListingModal .modal-header {
+    display: block;
+    width: calc(100% + 48px);
+    margin: 0 0 20px -24px;
+    padding: 14px 24px;
+  }
+  #improveListingModal .modal-header h5 {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 28px;
+    color: #0A0A0A;
+    padding-left: 56px;
+  }
+  #timingChangeModal button.btn-close,
+  #timingEditModal button.tr-back-btn,
+  #improveListingModal button.btn-close,
+  #timingModal button.btn-close {
+    background-image: url(../images/arrow-left.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10px;
+    box-shadow: none;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 13px;
+    left: -5px;
+    opacity: 1;
+  }
+  #timingChangeModal button.btn-close {
+    top: 20px;
+  }
+  #improveListingModal button.btn-close,
+  #timingModal button.btn-close {
+    left: 10px;
+  }
+  /******* Explore Details Page - End *******/
 }
 
 @media screen and (max-width: 576px) {

@@ -58,7 +58,7 @@
           autoplaySpeed: 2000,  
           dots: false,           
           arrows: true,         
-          infinite: false,       
+          infinite: true,       
           slidesToShow: 3,      
           slidesToScroll: 1,     
           variableWidth: true,
@@ -398,17 +398,8 @@
         <div class="tr-explore-listing">  
           <div class="tr-explore-left-section">
 
-            <div class="tr-title-section">
-              <h2 class="tr-title">Things to do in London</h2>
-              <button type="button" class="tr-anchor-btn tr-share" data-bs-toggle="modal" data-bs-target="#shareModal">Share</button>
-            </div>
-            <div class="tr-total-search">3590 Attractions found in London</div>
-            <!-- Below element When We don't have data - Start -->
-            <div class="tr-let-us-know-more" style="display: none;">
-              <p>Tell us so that we can learn and show better results to you in the future!</p>
-              <button type="button" class="tr-btn tr-let-us-know-more-btn">Let us know more</button>
-            </div>
-            <!-- Below element When We don't have data - Start -->
+            <h2 class="tr-title">Things to do in London</h2>
+
             <div class="tr-explore-search">
               <div class="tr-explore-search-feild">
                 <div class="tr-search-field">
@@ -458,31 +449,32 @@
               <form class="tr-filter-lists tr-explore-filter-slider">
                 <div class="tr-filter-list">
                   <input type="checkbox" name="" id="filter1" class="filter" value="category1">
-                  <label for="filter1" class="tr-top-attractions"><span>Top Attractions</span></label>
+                  <label for="filter1" class="top-attractions">Top Attractions</label>
                 </div>
                 <div class="tr-filter-list">
                   <input type="checkbox" name="" id="filter2" class="filter" value="category2">
-                  <label for="filter2"><span>Hotel</span></label>
+                  <label for="filter2">Hotel</label>
                 </div>
                 <div class="tr-filter-list">
                   <input type="checkbox" name="" id="filter3" class="filter" value="category3">
-                  <label for="filter3"><span>Experience</span></label>
+                  <label for="filter3">Experience</label>
                 </div>
                 <div class="tr-filter-list">
                   <input type="checkbox" name="" id="filter4" class="filter" value="category4">
-                  <label for="filter4"><span>Restaurant</span></label>
+                  <label for="filter4">Restaurant</label>
                 </div>
                 <div class="tr-filter-list">
                   <input type="checkbox" name="" id="filter5" class="filter" value="category4">
-                  <label for="filter5"><span>Market</span></label>
+                  <label for="filter5">Market</label>
                 </div>
               </form>
             </div>
 
             <div class="tr-museum">
-              <div class="tr-heading-with-distance">
-                <div class="tr-category">Attraction</div>
-                <div class="tr-distance">1.2 km from Tower of London</div>
+              <div class="tr-heading-with-save">
+                <div class="tr-category">Museum</div>
+                <h3><a href="javascript:void(0);" target="_blank">Hotel London</a></h3>
+                <button type="button" class="tr-save">Save</button>
               </div>
               <div class="tr-image">
                 <div id="Slider1" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
@@ -509,72 +501,65 @@
                   <button class="carousel-control-next" type="button" data-bs-target="#Slider1" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
                 </div>
               </div>
-              <div class="tr-details">
-                <div class="tr-type">Tower</div>
-                <h3><a href="javascript:void(0);" target="_blank">Hotel London</a></h3>
+              <div class="tr-location-with-review">
                 <div class="tr-location">City of London</div>
-                <div class="tr-more-inform">
-                  <ul>
-                    <li><span>Open</span>until 5 PM</li>
-                    <li>5 hours.</li>
-                  </ul>
-                </div>
                 <div class="tr-like-review">
                   <div class="tr-heart">
                     <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                   </div>
                   <div class="tr-ranting-percent">89%</div>
                 </div>
-                <!--
-                <div class="tr-tickets tr-tickets-silder">
-                  <div>
-                    <ul>
-                      <li><span class="tr-rating">89%</span></li>
-                      <li>2.5 hours.</li>
-                    </ul>
-                    <h5>Tickets to Tower of London</h5>
-                    <span>Ticket</span>
-                  </div>
-                  <div>
-                    <ul>
-                      <li><span class="tr-rating">89%</span></li>
-                      <li>2.5 hours.</li>
-                    </ul>
-                    <h5>Tickets to Tower of London</h5>
-                    <span>Ticket</span>
-                  </div>
-                  <div>
-                    <ul>
-                      <li><span class="tr-rating">89%</span></li>
-                      <li>2.5 hours.</li>
-                    </ul>
-                    <h5>Tickets to Tower of London</h5>
-                    <span>Ticket</span>
-                  </div>
+              </div>
+              <div class="tr-more-inform">
+                <ul>
+                  <li><span>Open</span>until 17:10</li>
+                  <li>5 hours.</li>
+                </ul>
+                <ul>
+                  <li>until 17:10</li>
+                </ul>
+              </div>
+              <div class="tr-tickets tr-tickets-silder">
+                <div>
+                  <ul>
+                    <li><span class="tr-rating">89%</span></li>
+                    <li>2.5 hours.</li>
+                  </ul>
+                  <h5>Tickets to Tower of London</h5>
+                  <span>Ticket</span>
                 </div>
-                -->
+                <div>
+                  <ul>
+                    <li><span class="tr-rating">89%</span></li>
+                    <li>2.5 hours.</li>
+                  </ul>
+                  <h5>Tickets to Tower of London</h5>
+                  <span>Ticket</span>
+                </div>
+                <div>
+                  <ul>
+                    <li><span class="tr-rating">89%</span></li>
+                    <li>2.5 hours.</li>
+                  </ul>
+                  <h5>Tickets to Tower of London</h5>
+                  <span>Ticket</span>
+                </div>
               </div>
             </div>
             
             <div class="tr-historical-monument">
-              <div class="tr-heading-with-distance">
-                <div class="tr-category">Street</div>
-                <div class="tr-distance">1.2 km from Tower of London</div>
+              <div class="tr-heading-with-save">
+                <div class="tr-category">Historical Monument</div>
+                <h3><a href="javascript:void(0);" target="_blank">Oxford Street</a></h3>
+                <button class="tr-save tr-saved">Saved</button>
               </div>
               <div class="tr-image">
                 <a href="javascript:void(0);">
                   <img loading="lazy" src="images/hotel-explore-2.png" alt="">
                 </a>
               </div>
-              <div class="tr-details">
-                <h3><a href="javascript:void(0);" target="_blank">Oxford Street</a></h3>
+              <div class="tr-location-with-review">
                 <div class="tr-location">City of London</div>
-                <div class="tr-more-inform">
-                  <ul>
-                    <li><span>Open</span>until 5 PM</li>
-                    <li>5 hours.</li>
-                  </ul>
-                </div>
                 <div class="tr-like-review">
                   <div class="tr-heart">
                     <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path></svg>
@@ -582,12 +567,22 @@
                   <div class="tr-ranting-percent">89%</div>
                 </div>
               </div>
+              <div class="tr-more-inform">
+                <ul>
+                  <li><span>Open</span>until 17:10</li>
+                  <li>5 hours.</li>
+                </ul>
+                <ul>
+                  <li>until 17:10</li>
+                </ul>
+              </div>
             </div>
 
             <div class="tr-experience">
-              <div class="tr-heading-with-distance">
-                <div class="tr-category">Tour</div>
-                <div class="tr-distance">1.2 km from Tower of London</div>
+              <div class="tr-heading-with-save">
+                <div class="tr-category">Experience</div>
+                <h3><a href="javascript:void(0);" target="_blank">London in a Day Tour with Westminster</a></h3>
+                <button type="button" class="tr-save">Save</button>
               </div>
               <div class="tr-experience-slider">
                 <div class="tr-store">
@@ -606,52 +601,83 @@
                   <a href="javascript:void(0);"><img src="images/experience-2.png" alt=""></a>
                 </div>
               </div>
-              <div class="tr-details">
-                <h3><a href="javascript:void(0);" target="_blank">London in a Day Tour with Westminster</a></h3>
+              <div class="tr-location-with-review">
                 <div class="tr-location">City of London</div>
-                <div class="tr-more-inform">
-                  <ul>
-                    <li><span>Open</span>until 17:10</li>
-                    <li>5 hours.</li>
-                  </ul>
-                </div>
                 <div class="tr-like-review">
                   <div class="tr-heart">
                     <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                   </div>
                   <div class="tr-ranting-percent">89%</div>
                 </div>
+              </div>
+              <div class="tr-more-inform">
+                <ul>
+                  <li><span>Open</span>until 17:10</li>
+                  <li>5 hours.</li>
+                </ul>
+              </div>
+              <div class="tr-charges">
+                <a href="javascript:void:(0);">From Rs 5000/person</a>
               </div>
             </div>
 
-            <div class="tr-knights-bridge">
-              <div class="tr-image">
-                <a href="javascript:void(0);">
-                  <img loading="lazy" src="images/knights-bridge.png" alt="">
-                </a>
-              </div>
-              <div class="tr-details">
-                <h3><a href="javascript:void(0);" target="_blank">La Dame de Pic London</a></h3>
-                <div class="tr-location">Knightsbridge</div>
-                <div class="tr-more-inform">
-                  <ul>
-                    <li><span>Open</span>until 5 PM</li>
-                    <li>5 hours.</li>
-                  </ul>
+            <div class="tr-restaurant">
+              <div class="tr-heading-with-save">
+                <div class="">
+                  <div class="tr-category">Restaurant</div>
+                  <h3><a href="javascript:void(0);" target="_blank">La Dame de Pic London</a></h3>
                 </div>
-                <div class="tr-like-review">
-                  <div class="tr-heart">
-                    <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                <button type="button" class="tr-save">Save</button>
+              </div>
+              <div class="tr-row">
+                <div class="tr-image">
+                  <a href="javascript:void(0);"><img loading="lazy" src="images/restaurant-1.png" alt=""></a>
+                </div>
+                <div class="tr-restaurant-details">
+                  <div class="tr-location-with-review">
+                    <div class="tr-location">Knightsbridge</div>
+                    <div class="tr-like-review">
+                      <div class="tr-heart">
+                        <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                      </div>
+                      <div class="tr-ranting-percent">89%</div>
+                    </div>
                   </div>
-                  <div class="tr-ranting-percent">89%</div>
+                  <div class="tr-more-inform">
+                    <ul>
+                      <li><span>Open</span>until 17:10</li>
+                      <li>$$</li>
+                    </ul>
+                  </div>
+                  <div class="tr-more-inform">
+                    <ul>
+                      <li>Free WIFI</li>
+                      <li>Speak English</li>
+                    </ul>
+                  </div>
+                  <div class="tr-food-type">
+                    <ul>
+                      <li>Indian</li>
+                      <li>Cafe</li>
+                      <li>Burgers</li>
+                    </ul>
+                  </div>
+                  <div class="tr-delivery-type">
+                    <ul>
+                      <li class="tr-yes">Outdoor Seating</li>
+                      <li class="tr-yes">Delivery</li>
+                      <li class="tr-no">Takeout</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div class="tr-market">
-              <div class="tr-heading-with-distance">
-                <div class="tr-category">Shopping Area</div>
-                <div class="tr-distance">1.2 km from Tower of London</div>
+              <div class="tr-heading-with-save">
+                <div class="tr-category">Market</div>
+                <h3><a href="javascript:void(0);" target="_blank">Camden Market</a></h3>
+                <button type="button" class="tr-save">Save</button>
               </div>
               <div class="tr-market-slider">
                 <div class="tr-store">
@@ -720,70 +746,13 @@
                   </div>
                 </div>
               </div>
-              <div class="tr-details">
-                <h3><a href="javascript:void(0);" target="_blank">Camden Market</a></h3>
+              <div class="tr-location-with-review">
                 <div class="tr-location">City of London</div>
-                <div class="tr-more-inform">
-                  <ul>
-                    <li><span>Open</span>until 17:10</li>
-                    <li>5 hours.</li>
-                  </ul>
-                </div>
                 <div class="tr-like-review">
                   <div class="tr-heart">
                     <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                   </div>
                   <div class="tr-ranting-percent">89%</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="tr-restaurant">
-              <div class="tr-heading-with-distance">
-                <div class="tr-category">Shopping Area</div>
-                <div class="tr-distance">1.2 km from Tower of London</div>
-              </div>
-              <div class="tr-row">
-                <div class="tr-image">
-                  <a href="javascript:void(0);"><img loading="lazy" src="images/restaurant-1.png" alt=""></a>
-                </div>
-                <div class="tr-restaurant-details">
-                  <div class="tr-details">
-                    <h3><a href="javascript:void(0);" target="_blank">La Dame de Pic London</a></h3>
-                    <div class="tr-location">City of London</div>
-                    <div class="tr-like-review">
-                      <div class="tr-heart">
-                        <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                      </div>
-                      <div class="tr-ranting-percent">89%</div>
-                    </div>
-                    <div class="tr-more-inform">
-                      <ul>
-                        <li><span>Open</span>until 17:10</li>
-                        <li>$$</li>
-                      </ul>
-                    </div>
-                    <div class="tr-more-inform">
-                      <ul>
-                        <li>Free WIFI</li>
-                        <li>Speak English</li>
-                      </ul>
-                    </div>
-                    <div class="tr-food-type">
-                      <ul>
-                        <li>Indian</li>
-                        <li>Cafe</li>
-                        <li>Burgers</li>
-                      </ul>
-                    </div>
-                    <div class="tr-delivery-type">
-                      <ul>
-                        <li class="tr-yes">Outdoor Seating</li>
-                        <li class="tr-yes">Delivery</li>
-                        <li class="tr-no">Takeout</li>
-                      </ul>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -830,17 +799,16 @@
               </div>
               <div class="tr-map-tooltip tr-explore-listing">
                 <div class="tr-historical-monument">
-                  <div class="tr-heading-with-distance">
-                    <div class="tr-category">Shopping Area</div>
-                    <div class="tr-distance">1.2 km from Tower of London</div>
+                  <div class="tr-heading-with-save">
+                    <h3><a href="javascript:void(0);" target="_blank">Oxford Street</a></h3>
+                    <button class="tr-save">Saved</button>
                   </div>
                   <div class="tr-image">
                     <a href="javascript:void(0);">
                       <img loading="lazy" src="images/hotel-explore-2.png" alt="">
                     </a>
                   </div>
-                  <div class="tr-details">
-                    <h3><a href="javascript:void(0);" target="_blank">Oxford Street</a></h3>
+                  <div class="tr-location-with-review">
                     <div class="tr-location">City of London</div>
                     <div class="tr-like-review">
                       <div class="tr-heart">
@@ -851,8 +819,11 @@
                   </div>
                   <div class="tr-more-inform">
                     <ul>
-                      <li><span>Open</span>until 5 PM</li>
+                      <li><span>Open</span>until 17:10</li>
                       <li>5 hours.</li>
+                    </ul>
+                    <ul>
+                      <li>until 17:10</li>
                     </ul>
                   </div>
                 </div>
@@ -950,16 +921,13 @@
               <img loading="lazy" src="images/room-image-1.png" alt="Room Image">
             </div>
             <div class="tr-share-details">
-              <span class="tr-hotel-name">Things to do in London</span>
-              <p>3590 Attractions found in London</p>
-              <!--
+              <span class="tr-hotel-name">Hyatt Regency Houston West</span>
               <span class="tr-rating">4.83</span>
               <span class="tr-bedrooms">
                 <span>2 bedrooms</span>
                 <span>3 beds</span>
                 <span>2 bathrooms</span>
               </span>
-              -->
             </div>
           </div>
           <div class="tr-share-options">
@@ -989,6 +957,234 @@
             </div>
           </div>
           <div class="tr-alert tr-copy-alert">Link copied</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery Modal-->
+    <div class="tr-gallery-popup">
+      <div class="tr-gallery-header">
+        <div class="tr-gallery-action">
+          <div class="tr-close-button">
+            <button type="button" class="btn-close"></button>
+          </div>
+          <div class="tr-share-save">
+            <a href="javascript:void(0);" class="tr-share" data-bs-toggle="modal" data-bs-target="#shareModal">Share</a>
+            <a href="javascript:void(0);" class="tr-save">Save</a>
+          </div>
+        </div>
+        <ul class="tr-galleries-nav-tab">
+          <li><a href="#galleryOutdoor" class="active">Outdoor</a></li>
+          <li><a href="#galleryCommonAreas">Common Areas</a></li>
+          <li><a href="#galleryRooms">Rooms</a></li>
+          <li><a href="#galleryPool">Pool</a></li>
+          <li><a href="#galleryFoodDining">Food &amp; Dining</a></li>
+          <li><a href="#galleryGym">Gym</a></li>
+          <li><a href="#galleryOthers">Others</a></li>
+        </ul>
+      </div>
+      
+      <div class="tr-gallery-categories">
+        <div class="tr-galleries-section" id="galleryOutdoor">
+          <h3>Outdoor</h3>
+          <div class="tr-gallery-category">
+            <div class="tr-galleries-left-column">
+              <ul>
+                <li data-bs-toggle="modal" data-bs-target="#gallerySliderModal"><img loading="lazy" src="images/gallery-img-1.png" alt="Outdoor Pictures 1"></li>
+                <li data-bs-toggle="modal" data-bs-target="#gallerySliderModal"><img loading="lazy" src="images/gallery-img-2.png" alt="Outdoor Pictures 2"></li>
+                <li data-bs-toggle="modal" data-bs-target="#gallerySliderModal"><img loading="lazy" src="images/gallery-img-3.png" alt="Outdoor Pictures 3"></li>
+              </ul>
+            </div>
+            <div class="tr-galleries-right-column">
+              <ul>
+                <li data-bs-toggle="modal" data-bs-target="#gallerySliderModal"><img loading="lazy" src="images/gallery-img-4.png" alt="Outdoor Pictures 4"></li>
+                <li data-bs-toggle="modal" data-bs-target="#gallerySliderModal"><img loading="lazy" src="images/gallery-img-5.png" alt="Outdoor Pictures 5"></li>
+                <li data-bs-toggle="modal" data-bs-target="#gallerySliderModal"><img loading="lazy" src="images/gallery-img-6.png" alt="Outdoor Pictures 6"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="tr-galleries-section" id="galleryCommonAreas">
+          <h3>Common Areas</h3>
+          <div class="tr-gallery-category">
+            <div class="tr-galleries-left-column">
+              <ul>
+                <li data-bs-toggle="modal" data-bs-target="#gallerySliderModal"><img loading="lazy" src="images/gallery-img-7.png" alt="Common Areas Pictures 7"></li>
+                <li data-bs-toggle="modal" data-bs-target="#gallerySliderModal"><img loading="lazy" src="images/gallery-img-8.png" alt="Common Areas Pictures 8"></li>
+                <li data-bs-toggle="modal" data-bs-target="#gallerySliderModal"><img loading="lazy" src="images/gallery-img-9.png" alt="Common Areas Pictures 9"></li>
+              </ul>
+            </div>
+            <div class="tr-galleries-right-column">
+              <ul>
+                <li data-bs-toggle="modal" data-bs-target="#gallerySliderModal"><img loading="lazy" src="images/gallery-img-10.png" alt="Common Areas Pictures 10"></li>
+                <li data-bs-toggle="modal" data-bs-target="#gallerySliderModal"><img loading="lazy" src="images/gallery-img-11.png" alt="Common Areas Pictures 11"></li>
+                <li data-bs-toggle="modal" data-bs-target="#gallerySliderModal"><img loading="lazy" src="images/gallery-img-12.png" alt="Common Areas Pictures 12"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="tr-galleries-section" id="galleryRooms">
+          <h3>Room</h3>
+        </div>
+        <div class="tr-galleries-section" id="galleryPool">
+          <h3>Pool</h3>
+        </div>
+        <div class="tr-galleries-section" id="galleryFoodDining">
+          <h3>Food &amp; Dining</h3>
+        </div>
+        <div class="tr-galleries-section" id="galleryGym">
+          <h3>Gym</h3>
+        </div>
+        <div class="tr-galleries-section" id="galleryOthers">
+          <h3>Others</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery Slider Modal -->
+    <div class="modal" id="gallerySliderModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div id="gallerySlider" class="carousel slide" data-bs-ride="carousel">
+              <!-- Indicators/dots -->
+              <div class="carousel-indicators">
+                <!--Button comming from JS-->
+              </div>
+              <!-- The slideshow/carousel -->
+              <div class="carousel-inner">
+                <!--Images comming from JS-->
+              </div>
+              <!-- Left and right controls/icons -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#gallerySlider" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+              <button class="carousel-control-next" type="button" data-bs-target="#gallerySlider" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Write a Review Modal-->
+    <div class="tr-write-review-modal">
+      <div class="tr-popup-content">
+        <h3>Write a review</h3>
+        <div class="tr-write-review-content">
+          <div class="tr-hotel-reviews-details">
+            <div class="tr-main-image">
+              <img loading="lazy" src="https://cdn-sb.mozu.com/44945-m1/cms/files/1dc480d7-12b4-402a-a226-fd68e22d9f9c" alt="Room Image">
+            </div>
+            <div class="tr-hotel-info">
+              <h4 class="tr-hotel-name">Hyatt Regency Houston West</h4>
+              <div class="tr-hotel-address">Plot no: 6, Sector 35-B,Chandigarh 160 035</div>
+              <div class="tr-rated">
+                <span class="tr-star"><img src="images/icons/star-fill-icon.svg"></span>
+                <span class="tr-star"><img src="images/icons/star-fill-icon.svg"></span>
+                <span class="tr-star"><img src="images/icons/star-fill-icon.svg"></span>
+                <span class="tr-star"><img src="images/icons/star-fill-icon.svg"></span>
+                <span class="tr-star"><img src="images/icons/star-blank-icon.svg"></span>
+                <span>Excellent</span>
+              </div> 
+            </div>
+          </div>
+          <form>
+            <div class="tr-overall-rating">
+              <div class="tr-rating">
+                <label>How would you rate your experience?</label>
+                <div class="tr-stars">
+                  <input type="radio" name="expStar" id="expStar5" value="5"><label for="expStar5"></label>
+                  <input type="radio" name="expStar" id="expStar4" value="4"><label for="expStar4"></label>
+                  <input type="radio" name="expStar" id="expStar3" value="3"><label for="expStar3"></label>
+                  <input type="radio" name="expStar" id="expStar2" value="2"><label for="expStar2"></label>
+                  <input type="radio" name="expStar" id="expStar1" value="1"><label for="expStar1"></label>
+                </div>
+              </div>
+            </div>
+            <div class="tr-go-with">
+              <label>Who did you go with?</label>
+              <ul>
+                <li>Business</li>
+                <li class="selected">Couple</li>
+                <li>Family</li>
+                <li>Friends</li>
+                <li>Solo</li>
+              </ul>
+            </div>
+            <div class="tr-review-types">
+              <div class="tr-rating">
+                <label>Cleanliness :</label>
+                <div class="tr-stars">
+                  <input type="radio" name="cleanlinessStar" id="cleanlinessStar5" value="5"><label for="cleanlinessStar5"></label>
+                  <input type="radio" name="cleanlinessStar" id="cleanlinessStar4" value="4"><label for="cleanlinessStar4"></label>
+                  <input type="radio" name="cleanlinessStar" id="cleanlinessStar3" value="3"><label for="cleanlinessStar3"></label>
+                  <input type="radio" name="cleanlinessStar" id="cleanlinessStar2" value="2"><label for="cleanlinessStar2"></label>
+                  <input type="radio" name="cleanlinessStar" id="cleanlinessStar1" value="1"><label for="cleanlinessStar1"></label>
+                </div>
+              </div>
+              <div class="tr-rating">
+                <label>Location :</label>
+                <div class="tr-stars">
+                  <input type="radio" name="locationStar" id="locationStar5" value="5"><label for="locationStar5"></label>
+                  <input type="radio" name="locationStar" id="locationStar4" value="4"><label for="locationStar4"></label>
+                  <input type="radio" name="locationStar" id="locationStar3" value="3"><label for="locationStar3"></label>
+                  <input type="radio" name="locationStar" id="locationStar2" value="2"><label for="locationStar2"></label>
+                  <input type="radio" name="locationStar" id="locationStar1" value="1"><label for="locationStar1"></label>
+                </div>
+              </div>
+            </div>
+            <div class="tr-review-types">
+              <div class="tr-rating">
+                <label>Service :</label>
+                <div class="tr-stars">
+                  <input type="radio" name="serviceStar" id="serviceStar5" value="5"><label for="serviceStar5"></label>
+                  <input type="radio" name="serviceStar" id="serviceStar4" value="4"><label for="serviceStar4"></label>
+                  <input type="radio" name="serviceStar" id="serviceStar3" value="3"><label for="serviceStar3"></label>
+                  <input type="radio" name="serviceStar" id="serviceStar2" value="2"><label for="serviceStar2"></label>
+                  <input type="radio" name="serviceStar" id="serviceStar1" value="1"><label for="serviceStar1"></label>
+                </div>
+              </div>
+              <div class="tr-rating">
+                <label>Value :</label>
+                <div class="tr-stars">
+                  <input type="radio" name="valueStar" id="valueStar5" value="5"><label for="valueStar5"></label>
+                  <input type="radio" name="valueStar" id="valueStar4" value="4"><label for="valueStar4"></label>
+                  <input type="radio" name="valueStar" id="valueStar3" value="3"><label for="valueStar3"></label>
+                  <input type="radio" name="valueStar" id="valueStar2" value="2"><label for="valueStar2"></label>
+                  <input type="radio" name="valueStar" id="valueStar1" value="1"><label for="valueStar1"></label>
+                </div>
+              </div>
+            </div>
+            <div class="tr-review-msg">
+              <label>Write a review</label>
+              <textarea class="form-control" id="" placeholder="Type your review here" name=""></textarea>
+            </div>
+            <div class="tr-review-image">
+              <label>Add some photos (optional)</label>
+              <div class="tr-file-upload">
+                <!--<button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>-->
+                <div class="tr-image-upload-wrap">
+                  <input class="tr-file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                  <div class="tr-drag-image">
+                    <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_441_7517)"><path d="M15.8385 12.6667C15.8385 13.0203 15.6981 13.3594 15.448 13.6095C15.198 13.8595 14.8588 14 14.5052 14H2.50521C2.15159 14 1.81245 13.8595 1.5624 13.6095C1.31235 13.3594 1.17188 13.0203 1.17188 12.6667V5.33333C1.17188 4.97971 1.31235 4.64057 1.5624 4.39052C1.81245 4.14048 2.15159 4 2.50521 4H5.17188L6.50521 2H10.5052L11.8385 4H14.5052C14.8588 4 15.198 4.14048 15.448 4.39052C15.6981 4.64057 15.8385 4.97971 15.8385 5.33333V12.6667Z" stroke="#6A6A6A" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.49479 11.3333C9.96755 11.3333 11.1615 10.1394 11.1615 8.66667C11.1615 7.19391 9.96755 6 8.49479 6C7.02203 6 5.82812 7.19391 5.82812 8.66667C5.82812 10.1394 7.02203 11.3333 8.49479 11.3333Z" stroke="#6A6A6A" stroke-linecap="round" stroke-linejoin="round"/></g><defs><clipPath id="clip0_441_7517"><rect width="16" height="16" fill="white" transform="translate(0.5)"/></clipPath></defs></svg>
+                    <div>Click to add photos</div>
+                    <span>or drag and drop</span>
+                  </div>
+                </div>
+                <div class="tr-file-upload-content">
+                  <img class="tr-file-upload-image" src="#" alt="your image" />
+                  <div class="image-title-wrap">
+                    <button type="button" onclick="removeUpload()" class="tr-remove-image">
+                      <i class="fa fa-times" aria-hidden="true"></i>
+                      <!--<span class="image-title">Uploaded Image</span>-->
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="tr-popup-btn">Submit</button>
+          </form>
         </div>
       </div>
     </div>

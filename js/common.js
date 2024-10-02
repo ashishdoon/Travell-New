@@ -301,7 +301,7 @@ $('.tr-mobile-nav-section .btn-nav-close').on('click', function(){
 
 
 // Gallery Modal
-$(document).on("click", ".tr-show-all-photos, .tr-hotel-galleries img", function(){
+$(document).on("click", ".tr-show-all-photos, .tr-hotel-galleries img, .tr-explore-galleries img", function(){
   $(".tr-gallery-popup").addClass("open");
   $(body).addClass("modal-open");
 });
@@ -633,7 +633,7 @@ $(document).on("click", ".tr-travel-sites #showLessDeal", function(){
 
 
 // Write a Review - Right Col Desktop
-$(document).on("click", ".tr-enjoyed-the-stay .tr-write-review", function(){
+$(document).on("click", ".tr-enjoyed-the-stay .tr-write-review, .write-review", function(){
   $(".tr-write-review-modal").addClass("open");
   $(body).addClass('modal-open');
 });
@@ -1251,4 +1251,29 @@ $('.tr-explore-map-btn').click(function() {
 $('.tr-explore-listing .btn-close').click(function() {
   $(".tr-explore-listing .tr-map-section").css({"display": "none",});
   $("body").removeClass('modal-open');
+});
+
+
+// Explore Details
+$('.tr-more-packages-btn').click(function() {
+  if($(this).hasClass('active')){
+    $(this).removeClass('active');
+    $(".tr-more-packages-modal").removeClass('open');
+  } else {
+    $(this).addClass('active');
+    $(".tr-more-packages-modal").addClass('open');
+  }
+});
+$(document).on('click', function(event) {
+    if (!$(event.target).closest('.tr-more-packages-btn').length) {
+      $(".tr-more-packages-btn").removeClass('active');
+      $(".tr-more-packages-modal").removeClass('open');
+    }
+});
+
+// Explore Details - Write a Review - Jump to All Review
+$(document).ready(function() {
+  $('.tr-explore-details .tr-jump-to-all-review, .tr-explore-details .tr-show-all-review-btn').on('click', function() {
+    $('html,body').animate({ scrollTop: $(".tr-reviews-mentioned").offset().top - 60},'fast');
+  });
 });

@@ -1,0 +1,2094 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Explore Details</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-datepicker.min.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/calendar.css" media="screen">
+    <link rel="stylesheet" href="css/responsive.css">
+  </head>
+  <body>
+    <!--HEADER-->
+    <header id="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="tr-header">
+              <div class="tr-hamburgers-logo">
+                <div class="tr-hamburgers"></div>
+                <div class="tr-logo">
+                  <a href="/">
+                    <img loading="lazy" src="images/travell-small-logo.png" alt="travell-logo">
+                  </a>
+                </div>
+              </div>
+              <div class="tr-logo tr-desktop">
+                <a href="/">
+                  <img loading="lazy" src="images/travell-logo.png" alt="travell-logo">
+                </a>
+              </div>
+              <div class="tr-search-info-section" id="hotelSearchInfos">
+                <div class="tr-utility-nav" >
+                  <div class="nav-item tr-location">Add location</div>
+                  <div class="nav-item tr-dates">Add date</div>
+                  <div class="nav-item tr-guest">Add guests</div>
+                  <div class="nav-item tr-search-btn-icon">
+                    <button class="tr-btn tr-serach-modal"></button>
+                  </div>
+                  <button class="tr-edit-btn tr-mobile"></button>
+                </div>
+              </div>
+              <div class="tr-nav-tabs">
+                <div class="tr-explore-tab" data-tab="exploreForm"><span><img src="images/icons/compass-icon.svg" alt="Compass Icon">Explore</span></div>
+                <div class="tr-hotel-tab active" data-tab="hotelForm"><span><img src="images/icons/clarity_building-line-black-icon.svg" alt="Clarity Building Line Icon"/>Hotel</span></div>
+              </div>
+              <div class="tr-login-section">
+                <!--Below Button for signin - currently it hide-->
+                <button class="tr-login" style="display: none;">Sign in</button>
+                <button class="tr-logged"><div class="tr-username">R</div></button>
+                <div class="tr-myaccount-modal">
+                  <div class="tr-mz-myaccount-info">
+                    <ul>
+                      <li class="tr-my-profile-link"><a href="javascript:void(0);">My profile</a></li>
+                      <li class="tr-my-trip-link"><a href="javascript:void(0);">My trips</a></li>
+                    </ul>
+                  </div>
+                  <div class="tr-mz-myaccount-info">
+                    <ul>
+                      <li class="tr-my-settings-link"><a href="javascript:void(0);">Settings</a></li>
+                      <li class="tr-logout-link"><a href="javascript:void(0);">Logout</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tr-find-hotels">
+        <div class="tr-explore-and-hotel-form">
+          <button type="button" class="btn-close" id="btnClose"></button>
+          <div class="tr-nav-tabs tr-mobile">
+            <div class="tr-explore-tab" data-tab="exploreForm"><span><img src="images/icons/compass-icon.svg" alt="Compass Icon">Explore</span></div>
+            <div class="tr-hotel-tab active" data-tab="hotelForm"><span><img src="images/icons/clarity_building-line-black-icon.svg" alt="Clarity Building Line Icon"/>Hotel</span></div>
+          </div>
+          <form class="tr-explore-form" id="exploreForm">
+            <div class="tr-form-section">
+              <div class="tr-form-fields">
+                <div class="col tr-mobile">
+                  <div class="tr-mobile-where">
+                    <label class="tr-lable">Where to?</label>
+                    <div class="tr-location-label">Search location</div>
+                  </div>
+                </div>
+                <div class="col tr-form-where">
+                  <div class="tr-mobile tr-close-btn">Where are you going?</div>
+                  <input type="text" class="form-control" id="searchLocation" placeholder="Search location" name="where" autocomplete="off">
+                  <div class="tr-recent-searchs-modal" id="recentSearchLocation">
+                    <div class="tr-enable-location">Around Current Location</div>
+                    <h5>Recent searches</h5>
+                    <ul>
+                      <li>
+                        <div class="tr-place-info">
+                          <div class="tr-location-icon"></div>
+                          <div class="tr-location-info">
+                            <div class="tr-hotel-name">London Hotels</div>
+                            <div class="tr-hotel-city">England, United Kingdom</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="tr-place-info">
+                          <div class="tr-location-icon"></div>
+                          <div class="tr-location-info">
+                            <div class="tr-hotel-name">Morocco</div>
+                            <div class="tr-hotel-city">North Africa</div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col tr-form-btn">
+                    <button type="button" class="tr-btn tr-mobile">Countinue</button>                        
+                  </div>
+                </div>
+              </div>
+              <div class="col tr-form-btn">
+                <button type="submit" class="tr-btn tr-popup-btn" id="hotelSearchSubmit">Search</button>
+              </div>
+            </div>
+          </form>
+          <form class="tr-hotel-form open" id="hotelForm">
+            <div class="tr-form-section">
+              <div class="tr-form-fields">
+                <div class="col tr-mobile">
+                  <div class="tr-mobile-where">
+                    <label class="tr-lable">Where to?</label>
+                    <div class="tr-location-label">Search destinations</div>
+                  </div>
+                </div>
+                <div class="col tr-mobile">
+                  <div class="tr-mobile-when">
+                    <label class="tr-lable">When</label>
+                    <div class="tr-add-dates">Add dates</div>
+                  </div>
+                </div>
+                <div class="col tr-form-where">
+                  <div class="tr-mobile tr-close-btn">Where are you going?</div>
+                  <label for="searchDestinations">Where</label>
+                  <input type="text" class="form-control" id="searchDestinations" placeholder="Search destinations" name="" autocomplete="off">
+                  <div class="tr-recent-searchs-modal" id="recentSearchsDestination">
+                    <div class="tr-enable-location">Around Current Location</div>
+                    <h5>Recent searches</h5>
+                    <ul>
+                      <li>
+                        <div class="tr-place-info">
+                          <div class="tr-location-icon"></div>
+                          <div class="tr-location-info">
+                            <div class="tr-hotel-name">London Hotels</div>
+                            <div class="tr-hotel-city">England, United Kingdom</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="tr-place-info">
+                          <div class="tr-location-icon"></div>
+                          <div class="tr-location-info">
+                            <div class="tr-hotel-name">Morocco</div>
+                            <div class="tr-hotel-city">North Africa</div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col tr-form-btn">
+                    <button type="button" class="tr-btn tr-mobile">Countinue</button>                        
+                  </div>
+                </div>
+                <div class="col tr-form-booking-date">
+                  <div class="tr-form-checkin">
+                    <label for="checkInInput1">Check in</label>
+                    <input type="text" value="" class="form-control checkIn" id="checkInInput1" placeholder="Add dates" name="" autocomplete="off" readonly>
+                  </div>
+                  <div class="tr-form-checkout">
+                    <label for="checkOutInput1">Check out</label>
+                    <input type="text" value=""class="form-control checkOut" id="checkOutInput1" placeholder="Add dates" name="checkOut" autocomplete="off" readonly>
+                  </div>
+                  <div class="tr-calenders-modal" id="calendarsModal">
+                    <div id="calendarPair1" class="calendarPair">
+                      <div class="navigation">
+                        <button type="button" class="prevMonth" id="prevMonth1">Previous</button>
+                        <button type="button" class="nextMonth" id="nextMonth1">Next</button>
+                      </div>
+                      <div class="custom-calendar checkInCalendar" id="checkInCalendar1">
+                        <div class="monthYear"></div>
+                        <div class="calendarBody"></div>
+                      </div>
+                      <div class="custom-calendar checkOutCalendar" id="checkOutCalendar1">
+                        <div class="monthYear"></div>
+                        <div class="calendarBody"></div>
+                      </div>
+                      <button type="button" class="tr-clear-details" hidden id="reset1">Clear dates</button>
+                    </div>
+                  </div>
+                  <div class="col tr-form-btn">
+                    <button type="button" class="tr-btn tr-mobile">Next</button>                        
+                  </div>
+                </div>
+
+                <div class="col tr-form-who">
+                  <label for="totalRoomAndGuest">Who</label>
+                  <input type="text" class="form-control" id="totalRoomAndGuest" placeholder="Add guests" name="" autocomplete="off" readonly>
+                  <div class="tr-guests-modal" id="guestQtyModal">
+                    <div class="tr-add-edit-guest tr-total-num-of-rooms">
+                      <div class="tr-guest-type">
+                        <label class="tr-guest">Room</label>
+                      </div>
+                      <div class="tr-qty-box">
+                        <button class="minus disabled" value="minus">-</button>
+                        <input type="text" id="totalRoom" value="0" id="" min="1" max="10" name="" readonly/>
+                        <button class="plus" value="plus">+</button>
+                      </div>
+                    </div>
+                    <div class="tr-add-edit-guest tr-total-guest">
+                      <div class="tr-guest-type">
+                        <label class="tr-guest">Adults</label>
+                        <div class="tr-age">Ages 13 or above</div>
+                      </div>
+                      <div class="tr-qty-box">
+                        <button class="minus disabled" value="minus">-</button>
+                        <input type="text" id="totalAdultsGuest" value="0" id="" min="1" max="10" name="" readonly/>
+                        <button class="plus" value="plus">+</button>
+                      </div>
+                    </div>
+                    <div class="tr-add-edit-guest tr-total-children">
+                      <div class="tr-guest-type">
+                        <label class="tr-guest">Children</label>
+                        <div class="tr-age">Ages 2 - 12</div>
+                      </div>
+                      <div class="tr-qty-box">
+                        <button class="minus disabled" value="minus">-</button>
+                        <input type="text" id="totalChildrenGuest" value="0" id="" min="1" max="10" name="" readonly/>
+                        <button class="plus" value="plus">+</button>
+                      </div>
+                    </div>
+                    <div class="tr-add-edit-guest tr-total-infants">
+                      <div class="tr-guest-type">
+                        <label class="tr-guest">Infants</label>
+                        <div class="tr-age">Under 2</div>
+                      </div>
+                      <div class="tr-qty-box">
+                        <button class="minus disabled" value="minus">-</button>
+                        <input type="text" id="totalChildrenInfants" value="0" id="" min="1" max="10" name="" readonly/>
+                        <button class="plus" value="plus">+</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col tr-form-btn">
+                <button type="submit" class="tr-btn tr-popup-btn" id="hotelSearchSubmit">Search</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation-->
+    <div class="tr-mobile-nav-section">
+      <div class="tr-mobile-nav-content">
+        <button type="button" class="btn-nav-close" id=""></button>
+        <div class="tr-nav-header">
+          <div class="tr-logo">
+            <img src="images/travell-small-logo.png" alt="travell small logo">
+          </div>
+          <div class="tr-location">London</div>
+        </div>
+        <div class="tr-mobile-nav-lists">
+          <ul>
+            <li><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 7.49984L10 1.6665L17.5 7.49984V16.6665C17.5 17.1085 17.3244 17.5325 17.0118 17.845C16.6993 18.1576 16.2754 18.3332 15.8333 18.3332H4.16667C3.72464 18.3332 3.30072 18.1576 2.98816 17.845C2.67559 17.5325 2.5 17.1085 2.5 16.6665V7.49984Z" stroke="#222222" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.5 18.3333V10H12.5V18.3333" stroke="#222222" stroke-linecap="round" stroke-linejoin="round"/></svg>Explore</li>
+            <li><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 7.49984L10 1.6665L17.5 7.49984V16.6665C17.5 17.1085 17.3244 17.5325 17.0118 17.845C16.6993 18.1576 16.2754 18.3332 15.8333 18.3332H4.16667C3.72464 18.3332 3.30072 18.1576 2.98816 17.845C2.67559 17.5325 2.5 17.1085 2.5 16.6665V7.49984Z" stroke="#222222" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.5 18.3333V10H12.5V18.3333" stroke="#222222" stroke-linecap="round" stroke-linejoin="round"/></svg>Hotels</li>
+            <li><svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.6677 8.21686L11.4782 8.25293L11.4075 8.43241L8.58835 15.5894L7.6097 15.7757L8.3748 9.30726L8.4309 8.83302L7.96178 8.92232L3.5739 9.75759L3.37156 9.79611L3.30699 9.99171L2.47522 12.5116L1.87823 12.6253L1.98228 9.2217L1.98466 9.14395L1.95388 9.07252L0.606627 5.94522L1.20367 5.83157L2.90392 7.86957L3.03583 8.02769L3.23812 7.98919L7.626 7.15392L8.09517 7.0646L7.86869 6.64412L4.77982 0.909331L5.75841 0.723048L11.0099 6.34373L11.1416 6.48469L11.3311 6.44861L15.7902 5.59979C16.0247 5.55515 16.2673 5.60549 16.4647 5.73973L16.6615 5.45033L16.4647 5.73973C16.6621 5.87398 16.798 6.08113 16.8426 6.31561C16.8873 6.55009 16.8369 6.79271 16.7027 6.99007L16.9921 7.18692L16.7027 6.99007C16.5685 7.18744 16.3613 7.3234 16.1268 7.36803L11.6677 8.21686Z" stroke="black" stroke-width="0.7"></path></svg>Flights</li>
+            <li><svg width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0835 9.43359H14.8335M3.58349 9.43359H5.83349M17.4116 5.68359L15.9485 1.78191C15.7289 1.19645 15.1693 0.808594 14.544 0.808594H6.12299C5.49773 0.808594 4.93804 1.19645 4.7185 1.78191L3.25537 5.68359M17.4116 5.68359L17.6299 6.26568C17.7524 6.59225 18.0646 6.80859 18.4133 6.80859C18.9068 6.80859 19.293 7.23341 19.2463 7.72462L18.8335 12.0586M17.4116 5.68359H18.9585M3.25537 5.68359L3.03708 6.26568C2.91462 6.59225 2.60243 6.80859 2.25366 6.80859C1.76023 6.80859 1.37395 7.23341 1.42073 7.72462L1.83349 12.0586M3.25537 5.68359H1.70849M1.83349 12.0586L1.95418 13.3258C2.0275 14.0957 2.67408 14.6836 3.44742 14.6836H3.5835M1.83349 12.0586V12.0586C1.55735 12.0586 1.3335 12.2824 1.3335 12.5586V15.0586C1.3335 15.4728 1.66928 15.8086 2.0835 15.8086H2.8335C3.24771 15.8086 3.5835 15.4728 3.5835 15.0586V14.6836M3.5835 14.6836H17.0835M17.0835 14.6836H17.2196C17.9929 14.6836 18.6395 14.0957 18.7128 13.3258L18.8335 12.0586M17.0835 14.6836V15.0586C17.0835 15.4728 17.4193 15.8086 17.8335 15.8086H18.5835C18.9977 15.8086 19.3335 15.4728 19.3335 15.0586V12.5586C19.3335 12.2825 19.1096 12.0586 18.8335 12.0586V12.0586M6.24161 3.33425L5.41255 5.82142C5.25067 6.30707 5.61214 6.80859 6.12406 6.80859H14.5429C15.0548 6.80859 15.4163 6.30707 15.2544 5.82142L14.4254 3.33425C14.2212 2.72174 13.648 2.68359 13.0024 2.68359H7.66463C7.01899 2.68359 6.44578 2.72174 6.24161 3.33425Z" stroke="black" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Cars</li>
+          </ul>
+        </div>
+        <div class="tr-mobile-nav-lists">
+          <ul>
+            <li><svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.6719 6.14307H3.33854C2.41807 6.14307 1.67188 6.88926 1.67188 7.80973V16.1431C1.67188 17.0635 2.41807 17.8097 3.33854 17.8097H16.6719C17.5923 17.8097 18.3385 17.0635 18.3385 16.1431V7.80973C18.3385 6.88926 17.5923 6.14307 16.6719 6.14307Z" stroke="#222222" stroke-linecap="round" stroke-linejoin="round"></path><path d="M13.3385 17.8091V4.47575C13.3385 4.03372 13.1629 3.6098 12.8504 3.29724C12.5378 2.98468 12.1139 2.80908 11.6719 2.80908H8.33854C7.89651 2.80908 7.47259 2.98468 7.16003 3.29724C6.84747 3.6098 6.67188 4.03372 6.67188 4.47575V17.8091" stroke="#222222" stroke-linecap="round" stroke-linejoin="round"></path></svg>Write a review</li>
+            <li><svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.6719 6.14307H3.33854C2.41807 6.14307 1.67188 6.88926 1.67188 7.80973V16.1431C1.67188 17.0635 2.41807 17.8097 3.33854 17.8097H16.6719C17.5923 17.8097 18.3385 17.0635 18.3385 16.1431V7.80973C18.3385 6.88926 17.5923 6.14307 16.6719 6.14307Z" stroke="#222222" stroke-linecap="round" stroke-linejoin="round"></path><path d="M13.3385 17.8091V4.47575C13.3385 4.03372 13.1629 3.6098 12.8504 3.29724C12.5378 2.98468 12.1139 2.80908 11.6719 2.80908H8.33854C7.89651 2.80908 7.47259 2.98468 7.16003 3.29724C6.84747 3.6098 6.67188 4.03372 6.67188 4.47575V17.8091" stroke="#222222" stroke-linecap="round" stroke-linejoin="round"></path></svg>Trips</li>
+          </ul>
+        </div>
+        <div class="tr-mobile-nav-lists">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="javascript:void(0);">About us</a></li>
+            <li><a href="javascript:void(0);">Contact us</a></li>
+            <li><a href="javascript:void(0);">Traveller’s Choice</a></li>
+            <li><a href="javascript:void(0);">Travel stories</a></li>
+            <li><a href="javascript:void(0);">Help</a></li>
+          </ul>
+        </div>
+        <div class="tr-actions">
+          <button class="tr-btn tr-write-review">Sign up / Log in</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="tr-explore-details">
+      <div class="container">
+        <div class="row tr-explore-information">
+          <div class="col-lg-6 col-md-12 tr-right-col">
+            <!--GALLERY - START-->
+            <div class="tr-explore-galleries">
+              <div class="tr-desktop d-none d-sm-block d-md-block">
+                <div class="tr-thumb-images">
+                  <ul>
+                    <li>
+                      <img src="images/tower-bridge-1.png" alt="Tower Bridge">
+                    </li>
+                    <li>
+                      <img src="images/tower-bridge-2.png" alt="Tower Bridge">
+                    </li>
+                    <li>
+                      <img src="images/tower-bridge-3.png" alt="Tower Bridge">
+                    </li>
+                    <li>
+                      <img src="images/tower-bridge-4.png" alt="Tower Bridge">
+                    </li>
+                    <li>
+                      <img src="images/tower-bridge-5.png" alt="Tower Bridge">
+                    </li>
+                    <li>
+                      <img src="images/tower-bridge-6.png" alt="Tower Bridge">
+                    </li>
+                  </ul>
+                  <a href="javascript:void(0);" class="tr-show-all-photos">+5</a>
+                </div>
+              </div>
+              <div class="tr-mobile-galleries d-block d-sm-none d-md-none">
+                <div id="demo" class="carousel slide" data-bs-ride="carousel" data-interval="false">
+                  <!-- Indicators/dots -->
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
+                  </div>
+                  <!-- The slideshow/carousel -->
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="images/tower-bridge-2.png" alt="" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="images/tower-bridge-3.png" alt="" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="images/tower-bridge-4.png" alt="" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="images/tower-bridge-5.png" alt="" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="images/tower-bridge-6.png" alt="" class="d-block w-100">
+                    </div>
+                  </div>
+                  <!-- The thumbs/carousel -->
+                  <div class="carousel-thumbs">
+                    <div class="carousel-thumb">
+                      <img loading="lazy" src="images/tower-bridge-2.png" alt="">
+                    </div>
+                    <div class="carousel-thumb">
+                      <img loading="lazy" src="images/tower-bridge-3.png" alt="">
+                    </div>
+                    <div class="carousel-thumb">
+                      <img loading="lazy" src="images/tower-bridge-4.png" alt="">
+                    </div>
+                    <div class="tr-thumbs-count tr-show-all-photos">Show all 5+</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Below element When We don't have data - Start -->
+              <div data-type="no-data">
+                <img src="images/no-data-place-image.png" alt="">      
+              </div>
+              <!-- Below element When We don't have data - End -->
+            </div>
+            <!--GALLERY - END-->
+
+            <!--ADMISSION TICKETS FOR DESKTOP - START-->
+            <div class="tr-admission-tickets tr-desktop">
+              <h5>Admission tickets</h5>
+              <div class="tr-details">
+                <div class="tr-ticket-info">
+                  <div class="tr-days">1 Park per Day (Multi-day)</div>
+                  <div class="tr-price">$832</div>
+                </div>
+                <div>
+                  <button type="button" class="tr-btn">Select ticket</button>
+                </div>
+              </div>
+              <div class="tr-more-packages">
+                <button type="button" class="tr-anchor-btn tr-more-packages-btn">More packages</button>
+              </div>
+              <div class="tr-admission-tickets tr-more-packages-modal tr-desktop">
+                <div class="tr-details">
+                  <div class="tr-ticket-info">
+                    <div class="tr-days">1 Park per Day (Multi-day)</div>
+                    <div class="tr-price">$932</div>
+                  </div>
+                  <div>
+                    <button type="button" class="tr-btn">Select ticket</button>
+                  </div>
+                </div>
+                <div class="tr-details">
+                  <div class="tr-ticket-info">
+                    <div class="tr-days">1 Park per Day (Multi-day)</div>
+                    <div class="tr-price">$1032</div>
+                  </div>
+                  <div>
+                    <button type="button" class="tr-btn">Select ticket</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--ADMISSION TICKETS FOR DESKTOP - END-->
+          </div>
+          <div class="col-lg-6 col-md-12 tr-left-col">
+            <div class="tr-hotel-informations">
+              <div class="tr-hotel-info">
+                <div class="tr-place-name">
+                  <h1 class="tr-hotel-name">Tower Bridge</h1>
+                  <span class="d-none d-sm-block d-md-block">Must see</span>
+                </div>
+                <div class="tr-hotel-address">Tower Bridge Road, London SE1 2UP England</div>
+                <div class="tr-raiting">
+                  <div class="tr-review-with-perc">
+                    <div class="tr-heart tr-excellent"></div>
+                    <div class="tr-ranting-percent">89%</div>
+                    <div class="tr-review-name tr-excellent">Excellent</div>
+                  </div>
+                  <a href="javascript:void(0);" class="tr-share" data-bs-toggle="modal" data-bs-target="#shareModal">Share</a>
+                  <a href="javascript:void(0);" class="tr-save">Save</a>
+                </div>
+              </div>
+            </div>
+           
+            <!--CERTIFICATED SECTION - START-->
+            <div class="tr-hotel-certificated">
+              <div class="tr-families-favourite">
+                <div>
+                  <img src="images/leaf.png" alt="leaf">
+                  <span>Travellers Favorite</span>
+                </div>
+                <p>The placel is praised for its great location near the city center and attractions in London City. Guests appreciate the convenient and easy access to nearby n exclusive all-suite hotel at London City providing 4-star facilities...</p>
+              </div>
+            </div>
+            <!--CERTIFICATED SECTION - END-->
+
+            <!--ADMISSION TICKETS FOR MOBILE - START-->
+            <div class="tr-admission-tickets tr-mobile">
+              <h5>Admission tickets</h5>
+              <div class="tr-details">
+                <div class="tr-ticket-info">
+                  <div class="tr-days">1 Park per Day (Multi-day)</div>
+                  <div class="tr-price">$832</div>
+                </div>
+                <div>
+                  <button type="button" class="tr-btn">Select ticket</button>
+                </div>
+              </div>
+              <div class="tr-more-packages">
+                <button type="button" class="tr-anchor-btn tr-more-packages-btn">More packages</button>
+              </div>
+              <div class="tr-admission-tickets tr-more-packages-modal tr-desktop">
+                <div class="tr-details">
+                  <div class="tr-ticket-info">
+                    <div class="tr-days">1 Park per Day (Multi-day)</div>
+                    <div class="tr-price">$932</div>
+                  </div>
+                  <div>
+                    <button type="button" class="tr-btn">Select ticket</button>
+                  </div>
+                </div>
+                <div class="tr-details">
+                  <div class="tr-ticket-info">
+                    <div class="tr-days">1 Park per Day (Multi-day)</div>
+                    <div class="tr-price">$1032</div>
+                  </div>
+                  <div>
+                    <button type="button" class="tr-btn">Select ticket</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--ADMISSION TICKETS FOR MOBILE - END-->
+           
+            <!--ABOUT/OVERVIEW SECTION - START-->
+            <div class="tr-about-section">
+              <div class="tr-overview-section">
+                <div class="tr-overview-details">
+                  <ul>
+                    <li>
+                      <div class="tr-rating">4.2</div>
+                      <div class="tr-rating-type">Very Good</div>
+                      <div class="tr-review">371 review</div>
+                    </li>
+                    <li>
+                      <div class="tr-rating">2-3</div>
+                      <div class="tr-rating-type">hours</div>
+                      <div class="tr-review">DURATION</div>
+                    </li>
+                    <li>
+                      <div class="tr-rating">
+                        <div>3:00 PM - 10:30 PM</div>
+                        <div class="tr-show-other-days">
+                          <button type="button" class="tr-anchor-btn tr-show-other-days-btn" data-bs-toggle="modal" data-bs-target="#timingModal">Show other days</button>
+                        </div>
+                      </div>
+                      <div class="tr-rating-type">TODAY TIMINGS</div>
+                      <div class="tr-review"><span class="tr-open-circle"></span>OPEN NOW</div>
+                      <div class="tr-review" style="display: none;"><span class="tr-closed-circle"></span>CLOSE NOW</div>
+                      <button type="button" class="tr-anchor-btn tr-timing-edit-btn" data-bs-toggle="modal" data-bs-target="#timingChangeModal">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 13.3333H14" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 2.3334C11.2652 2.06819 11.6249 1.91919 12 1.91919C12.1857 1.91919 12.3696 1.95577 12.5412 2.02684C12.7128 2.09791 12.8687 2.20208 13 2.3334C13.1313 2.46472 13.2355 2.62063 13.3066 2.79221C13.3776 2.96379 13.4142 3.14769 13.4142 3.3334C13.4142 3.51912 13.3776 3.70302 13.3066 3.8746C13.2355 4.04618 13.1313 4.20208 13 4.3334L4.66667 12.6667L2 13.3334L2.66667 10.6667L11 2.3334Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tr-improve-lisitng">
+                <button type="button" class="tr-anchor-btn" data-bs-toggle="modal" data-bs-target="#improveListingModal">Improve this listing</button>
+              </div>
+              <h3>
+                <span class="tr-desktop">About</span>
+                <span class="tr-mobile">About the place</span>
+              </h3>
+              <div class="tr-about">
+                <div class="tr-overview-content">
+                  <p class="tr-content">Tower Bridge, an iconic symbol of London, spans the River Thames near the Tower of London. Completed in 1894, this bascule and suspension bridge was designed by Sir Horace Jones and engineered by Sir John Wolfe Barry. Tower Bridge, an iconic symbol of London, spans the River Thames near the Tower of London. Completed in 1894, this bascule and suspension bridge was designed by Sir Horace Jones and engineered by Sir John Wolfe Barry.</p>
+                  <button class="tr-anchor-btn read-more-btn">Read More</button>
+                </div>
+              </div>
+              <!-- Below element When We don't have data - Start -->
+              <div class="mt-41" data-type="no-data">
+                <img src="images/no-data-about.png" alt="">
+                <div class="tr-improve-lisitng mt-41">
+                  <button type="button" class="tr-anchor-btn" data-bs-toggle="modal" data-bs-target="#improveListingModal">Write something about the place</button>
+                </div>     
+              </div>
+              <!-- Below element When We don't have data - End -->
+            </div>
+            <!--ABOUT/OVERVIEW SECTION - END-->
+
+            <!--HIGHLIGHTED REVIEWS SECTION - START-->
+            <div class="tr-review-section tr-highlighted-reviews tr-tab-section">
+              <h3>Highlighted Reviews</h3>
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="tr-customer-highlighted-reviews">
+                    <div class="tr-customer-review">
+                      <div class="tr-recommended-title tr-heart-green">Recommended</div>
+                      <p>The tour was very well organised. One minus is that you get completely bombarded with information. The tour was very well organised. One minus is that you get completely bombarded with information.</p>
+                    </div>
+                    <div class="tr-customer-review">
+                      <div class="tr-recommended-title tr-heart-red">Not Recommended</div>
+                      <p>The tour was very well organised. One minus is that you get completely bombarded with information. The tour was very well organised. One minus is that you get completely bombarded with information.</p>
+                    </div>
+                  </div>
+                  <div class="tr-show-all-review">
+                    <button type="button" class="tr-show-all-review-btn">See all Reviews</button>
+                  </div>
+                  <!-- Below element When We don't have data - Start -->
+                  <div class="tr-no-data-review-found" data-type="no-data">
+                    <div class="tr-no-highlighted-review-listing">
+                      <div class="tr-no-review-list">
+                        <div class="tr-heart">
+                          <svg width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="-0.00390625" y="0.25" width="39.9873" height="39.9873" rx="19.9937" fill="#CCCCCC"/><g clip-path="url(#clip0_3966_12043)"><path d="M20.5104 28.8286C20.3283 28.8286 20.1743 28.7656 20.0483 28.6396L13.4958 22.318C13.4258 22.262 13.3295 22.171 13.207 22.045C13.0845 21.919 12.8902 21.6897 12.6242 21.3572C12.3582 21.0247 12.1201 20.6834 11.9101 20.3334C11.7001 19.9833 11.5128 19.5598 11.3483 19.0628C11.1838 18.5657 11.1016 18.0827 11.1016 17.6136C11.1016 16.0735 11.5461 14.8694 12.4352 14.0013C13.3242 13.1333 14.5529 12.6992 16.121 12.6992C16.555 12.6992 16.9978 12.7745 17.4493 12.925C17.9009 13.0755 18.3209 13.2785 18.7095 13.534C19.098 13.7896 19.4323 14.0293 19.7123 14.2533C19.9923 14.4774 20.2583 14.7154 20.5104 14.9674C20.7624 14.7154 21.0284 14.4774 21.3084 14.2533C21.5884 14.0293 21.9227 13.7896 22.3113 13.534C22.6998 13.2785 23.1198 13.0755 23.5714 12.925C24.0229 12.7745 24.4657 12.6992 24.8997 12.6992C26.4678 12.6992 27.6965 13.1333 28.5855 14.0013C29.4746 14.8694 29.9191 16.0735 29.9191 17.6136C29.9191 19.1608 29.1176 20.7359 27.5144 22.339L20.9724 28.6396C20.8464 28.7656 20.6924 28.8286 20.5104 28.8286Z" fill="white"/></g><defs><clipPath id="clip0_3966_12043"><rect width="18.8176" height="18.8176" fill="white" transform="translate(11.1016 11.3555)"/></clipPath></defs></svg>
+                        </div>
+                        <div class="tr-details">
+                          <div class="tr-no-data-text w-70 h-14 mb-24"></div>
+                          <div class="tr-no-data-text w-70 h-14 mb-24"></div>
+                          <div class="tr-no-data-text w-70 h-14 tr-no-data-green"></div>
+                        </div>
+                      </div>
+                      <div class="tr-no-review-list">
+                        <div class="tr-heart">
+                          <svg width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="-0.00390625" y="0.25" width="39.9873" height="39.9873" rx="19.9937" fill="#CCCCCC"/><g clip-path="url(#clip0_3966_12043)"><path d="M20.5104 28.8286C20.3283 28.8286 20.1743 28.7656 20.0483 28.6396L13.4958 22.318C13.4258 22.262 13.3295 22.171 13.207 22.045C13.0845 21.919 12.8902 21.6897 12.6242 21.3572C12.3582 21.0247 12.1201 20.6834 11.9101 20.3334C11.7001 19.9833 11.5128 19.5598 11.3483 19.0628C11.1838 18.5657 11.1016 18.0827 11.1016 17.6136C11.1016 16.0735 11.5461 14.8694 12.4352 14.0013C13.3242 13.1333 14.5529 12.6992 16.121 12.6992C16.555 12.6992 16.9978 12.7745 17.4493 12.925C17.9009 13.0755 18.3209 13.2785 18.7095 13.534C19.098 13.7896 19.4323 14.0293 19.7123 14.2533C19.9923 14.4774 20.2583 14.7154 20.5104 14.9674C20.7624 14.7154 21.0284 14.4774 21.3084 14.2533C21.5884 14.0293 21.9227 13.7896 22.3113 13.534C22.6998 13.2785 23.1198 13.0755 23.5714 12.925C24.0229 12.7745 24.4657 12.6992 24.8997 12.6992C26.4678 12.6992 27.6965 13.1333 28.5855 14.0013C29.4746 14.8694 29.9191 16.0735 29.9191 17.6136C29.9191 19.1608 29.1176 20.7359 27.5144 22.339L20.9724 28.6396C20.8464 28.7656 20.6924 28.8286 20.5104 28.8286Z" fill="white"/></g><defs><clipPath id="clip0_3966_12043"><rect width="18.8176" height="18.8176" fill="white" transform="translate(11.1016 11.3555)"/></clipPath></defs></svg>
+                        </div>
+                        <div class="tr-details">
+                          <div class="tr-no-data-text w-70 h-14 mb-24"></div>
+                          <div class="tr-no-data-text w-70 h-14 mb-24 tr-no-data-red"></div>
+                          <div class="tr-no-data-text w-70 h-14 "></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Below element When We don't have data - End -->
+                </div>
+              </div>
+            </div>
+            <!--HIGHLIGHTED REVIEWS SECTION - END-->
+
+            <!--RECOMMENDED WRITE A REVIEWS SECTION - START-->
+            <div class="tr-recommended-write-review">
+              <h5>Write a review</h5>
+              <div class="tr-details">
+                <p>Do you recommend visiting Tower Bridge?</p>
+                <div class="tr-recommended-actions">
+                  <label>
+                    <input type="radio" class="write-review" name="recommend" value="Yes">
+                    <span>Yes</span>
+                  </label>
+                  <label>
+                    <input type="radio" class="write-review" name="recommend" value="No">
+                    <span>No</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!--RECOMMENDED WRITE A REVIEWS SECTION - END-->
+
+            <!--ABOUT THE FOUNDER - START-->
+            <div class="tr-about-founder">
+              <h3>About the founder:</h3>
+              <div class="tr-founder-details">
+                <div class="tr-image">
+                  <img src="images/founder-tower-bridge.png" alt="founder-tower-bridge">
+                </div>
+                <div class="tr-details">
+                  <div class="tr-overview-content">
+                    <p class="tr-content">Tower Bridge, an iconic symbol of London, spans the River Thames near the Tower of London. Completed in 1894. Tower Bridge, an iconic symbol of London, spans the River Thames near the Tower of London. Completed in 1894, this bascule and suspension bridge was designed by Sir Horace Jones and engineered by Sir John Wolfe Barry. Tower Bridge, an iconic symbol of London, spans the River Thames near the Tower of London. Completed in 1894, this bascule and suspension bridge was designed by Sir Horace Jones and engineered by Sir John Wolfe Barry.</p>
+                    <button class="tr-anchor-btn read-more-btn">Read More</button>
+                  </div>
+                </div>
+              </div>
+              <!-- Below element When We don't have data - Start -->
+              <div class="tr-no-data-review-found" data-type="no-data">
+                <div class="tr-founder-details">
+                  <div class="tr-image">
+                    <img src="images/no-data-explore.png" alt="">
+                  </div>
+                  <div class="tr-details">
+                    <div class="tr-no-data-text w-100 mb-12"></div>
+                    <div class="tr-no-data-text w-60 mb-12"></div>
+                    <div class="tr-no-data-text w-80 mb-12"></div>
+                    <div class="tr-no-data-text w-80 mb-12"></div>
+                    <div class="tr-no-data-text w-60 mt-41"></div>
+                  </div>
+                </div>
+              </div>
+              <!-- Below element When We don't have data - End -->
+            </div>
+            <!--ABOUT THE FOUNDER - END-->
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <!--TOP WAYS TO EXPERIENCE TOWER BRIDGE SECTION - START-->
+            <div class="tr-top-ways-section">
+              <h3>Top ways to experience Tower bridge</h3>
+              <div class="tr-top-ways-lists">
+                <div class="tr-top-ways-list">
+                  <div class="tr-img">
+                    <a href="javascript:void(0);"><img loading="lazy" src="images/top-place-1.png" alt="top-places"></a>
+                  </div>
+                  <div class="tr-details">
+                    <div class="tr-place-type">Classes</div>
+                    <div class="tr-place-name"><a href="javascript:void(0);">Private Course - Beginners Photography and Editing</a></div>
+                    <div class="tr-like-review">
+                      <span class="tr-likes"><svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.99847 2.82194C5.79052 1.46927 3.7762 1.10541 2.26273 2.34405C0.749264 3.58269 0.536189 5.65364 1.72472 7.11858L6.99847 12.0026L12.2722 7.11858C13.4607 5.65364 13.2737 3.56966 11.7342 2.34405C10.1947 1.11844 8.20641 1.46927 6.99847 2.82194Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>94%</span>
+                      <span class="tr-review">(22 reviews)</span>
+                    </div>
+                    <div class="tr-price-section"><span>$82</span> /adult</div>
+                  </div>
+                </div>
+                <div class="tr-top-ways-list">
+                  <div class="tr-img">
+                    <a href="javascript:void(0);"><img loading="lazy" src="images/top-place-2.png" alt="top-places"></a>
+                  </div>
+                  <div class="tr-details">
+                    <div class="tr-place-type">Bus Tours</div>
+                    <div class="tr-place-name"><a href="javascript:void(0);">Movie Hot Spot Wal-king Tour of London</a></div>
+                    <div class="tr-like-review">
+                      <span class="tr-likes"><svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.99847 2.82194C5.79052 1.46927 3.7762 1.10541 2.26273 2.34405C0.749264 3.58269 0.536189 5.65364 1.72472 7.11858L6.99847 12.0026L12.2722 7.11858C13.4607 5.65364 13.2737 3.56966 11.7342 2.34405C10.1947 1.11844 8.20641 1.46927 6.99847 2.82194Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>94%</span>
+                      <span class="tr-review">(22 reviews)</span>
+                    </div>
+                    <div class="tr-price-section"><span>$82</span> /adult</div>
+                  </div>
+                </div>
+                <div class="tr-top-ways-list ">
+                  <div class="tr-img">
+                    <a href="javascript:void(0);"><img loading="lazy" src="images/top-place-3.png" alt="top-places"></a>
+                  </div>
+                  <div class="tr-details">
+                    <div class="tr-place-type">Multi-day Tours</div>
+                    <div class="tr-place-name"><a href="javascript:void(0);">5-Day Devon and Co-rnwall Small-Group Small-Group</a></div>
+                    <div class="tr-like-review">
+                      <span class="tr-likes"><svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.99847 2.82194C5.79052 1.46927 3.7762 1.10541 2.26273 2.34405C0.749264 3.58269 0.536189 5.65364 1.72472 7.11858L6.99847 12.0026L12.2722 7.11858C13.4607 5.65364 13.2737 3.56966 11.7342 2.34405C10.1947 1.11844 8.20641 1.46927 6.99847 2.82194Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>94%</span>
+                      <span class="tr-review">(22 reviews)</span>
+                    </div>
+                    <div class="tr-price-section"><span>$82</span> /adult</div>
+                  </div>
+                </div>
+                <div class="tr-top-ways-list">
+                  <div class="tr-img">
+                    <a href="javascript:void(0);"><img loading="lazy" src="images/top-place-4.png" alt="top-places"></a>
+                  </div>
+                  <div class="tr-details">
+                    <div class="tr-place-type">Taxi Tour</div>
+                    <div class="tr-place-name"><a href="javascript:void(0);">London By Night Black Taxi Tour</a></div>
+                    <div class="tr-like-review">
+                      <span class="tr-likes"><svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.99847 2.82194C5.79052 1.46927 3.7762 1.10541 2.26273 2.34405C0.749264 3.58269 0.536189 5.65364 1.72472 7.11858L6.99847 12.0026L12.2722 7.11858C13.4607 5.65364 13.2737 3.56966 11.7342 2.34405C10.1947 1.11844 8.20641 1.46927 6.99847 2.82194Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>94%</span>
+                      <span class="tr-review">(22 reviews)</span>
+                    </div>
+                    <div class="tr-price-section"><span>$82</span> /adult</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Below element When We don't have data - Start -->
+              <div class="tr-top-ways-lists" data-type="no-data">
+                <div class="tr-top-ways-list">
+                  <div class="tr-img">
+                    <img loading="lazy" src="images/top-way-no-data.png" alt="top-places">
+                  </div>
+                  <div class="tr-details">
+                    <div class="tr-no-data-text w-100 mb-12"></div>
+                    <div class="tr-no-data-text w-60 mb-12"></div>
+                    <div class="tr-no-data-text w-80 mb-12"></div>
+                    <div class="tr-no-data-text w-80 mb-12"></div>
+                    <div class="tr-no-data-text w-50 mt-41 mb-12"></div>
+                    <div class="tr-no-data-text w-25 mb-0"></div>
+                  </div>
+                </div>
+                <div class="tr-top-ways-list">
+                  <div class="tr-img">
+                    <img loading="lazy" src="images/top-way-no-data.png" alt="top-places">
+                  </div>
+                  <div class="tr-details">
+                    <div class="tr-no-data-text w-100 mb-12"></div>
+                    <div class="tr-no-data-text w-60 mb-12"></div>
+                    <div class="tr-no-data-text w-80 mb-12"></div>
+                    <div class="tr-no-data-text w-80 mb-12"></div>
+                    <div class="tr-no-data-text w-50 mt-41 mb-12"></div>
+                    <div class="tr-no-data-text w-25 mb-0"></div>
+                  </div>
+                </div>
+                <div class="tr-top-ways-list ">
+                  <div class="tr-img">
+                    <img loading="lazy" src="images/top-way-no-data.png" alt="top-places">
+                  </div>
+                  <div class="tr-details">
+                    <div class="tr-no-data-text w-100 mb-12"></div>
+                    <div class="tr-no-data-text w-60 mb-12"></div>
+                    <div class="tr-no-data-text w-80 mb-12"></div>
+                    <div class="tr-no-data-text w-80 mb-12"></div>
+                    <div class="tr-no-data-text w-50 mt-41 mb-12"></div>
+                    <div class="tr-no-data-text w-25 mb-0"></div>
+                  </div>
+                </div>
+                <div class="tr-top-ways-list">
+                  <div class="tr-img">
+                    <img loading="lazy" src="images/top-way-no-data.png" alt="top-places">
+                  </div>
+                  <div class="tr-details">
+                    <div class="tr-no-data-text w-100 mb-12"></div>
+                    <div class="tr-no-data-text w-60 mb-12"></div>
+                    <div class="tr-no-data-text w-80 mb-12"></div>
+                    <div class="tr-no-data-text w-80 mb-12"></div>
+                    <div class="tr-no-data-text w-50 mt-41 mb-12"></div>
+                    <div class="tr-no-data-text w-25 mb-0"></div>
+                  </div>
+                </div>
+              </div>
+              <!-- Below element When We don't have data - End -->
+            </div>
+            <!--TOP WAYS TO EXPERIENCE TOWER BRIDGE SECTION - END-->
+
+            <!--LOCATION SECTION - START-->
+            <div class="tr-Location-section tr-tab-section">
+              <h3>Location</h3>
+              <div class="tr-Location-details">
+                <ul>
+                  <li class="tr-location-address">Tower Bridge Road, London SE1 2UP England</li>
+                  <li class="tr-phone">+44 333 320 6000</li>
+                  <li class="tr-email">towerbridge@gmail.com</li>
+                  <li class="tr-website-link"><a href="javascript:void(0);" target="_blank">Visit website</a></li>
+                </ul>
+              </div>
+              <div class="tr-location-map">
+                <img loading="lazy" src="images/map.png" alt="Map">
+              </div>
+              <div class="tr-neighborhood">
+                <h3>Neighborhood</h3>
+                <p>The neighborhood is a blend of ancient history and modern dynamism. Walk among towering skyscrapers and historic pubs, enjoying the juxtaposition of old and new. Explore the bustling Leadenhall Market, brimming with charm and vibrant stalls. Financial district by day, the City transforms into a tranquil area by night, offering unique experiences like night tours of iconic landmarks. Its rich history and contemporary vibrancy make the City of London a captivating destination.</p>
+              </div>
+              <!-- Below element When We don't have data - Start -->
+              <div data-type="no-data">
+                <img src="images/no-data-no-map.png" alt="">
+                <div class="tr-improve-lisitng mt-24">
+                  <button type="button" class="tr-anchor-btn" data-bs-toggle="modal" data-bs-target="#improveListingModal">Add location</button>
+                </div>
+              </div>
+              <!-- Below element When We don't have data - End -->
+            </div>
+            <!--LOCATION SECTION - END-->
+
+            <!--EXPLORE OTHER OPTIONS IN AND AROUND SECTION - START-->
+            <div class="tr-explore-section">
+              <h3 class="d-none d-md-block">Explore other options in and around</h3>
+              <div class="tr-tourist-places-row">
+                <div class="tr-tourist-places">
+                  <div class="tr-title open">
+                    <h4><svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.3335 5.05859C17.3335 6.20565 16.2305 7.30859 15.0835 7.30859C16.2305 7.30859 17.3335 8.41154 17.3335 9.55859C17.3335 8.41154 18.4364 7.30859 19.5835 7.30859C18.4364 7.30859 17.3335 6.20565 17.3335 5.05859Z" stroke="#131313" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.3335 15.0586C17.3335 16.2056 16.2305 17.3086 15.0835 17.3086C16.2305 17.3086 17.3335 18.4115 17.3335 19.5586C17.3335 18.4115 18.4364 17.3086 19.5835 17.3086C18.4364 17.3086 17.3335 16.2056 17.3335 15.0586Z" stroke="#131313" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.3335 8.05859C9.3335 10.2252 7.25015 12.3086 5.0835 12.3086C7.25015 12.3086 9.3335 14.3919 9.3335 16.5586C9.3335 14.3919 11.4168 12.3086 13.5835 12.3086C11.4168 12.3086 9.3335 10.2252 9.3335 8.05859Z" stroke="#131313" stroke-linecap="round" stroke-linejoin="round"/></svg>Top attractions</h4>
+                    <span class="d-none d-md-block">Sorted by nearest</span>
+                  </div>
+                  <div class="tr-tourist-place-lists">
+                    <div class="tr-tourist-place">
+                      <div class="tr-img">
+                        <a href="javascript:void(0);"><img loading="lazy" src="images/tourist-places-1.png" alt="tourist-places"></a>
+                      </div>
+                      <div class="tr-details">
+                        <div class="tr-place-name"><a href="javascript:void(0);">Burlington Arcade</a></div>
+                        <div class="tr-place-type">Shopping area</div>
+                        <div class="tr-like-review">
+                          <span class="tr-likes">35%</span>
+                          <span class="tr-review">. 22 reviews</span>
+                        </div>
+                        <div class="tr-distance">0.88 km</div>
+                      </div>
+                    </div>
+                    <div class="tr-tourist-place">
+                      <div class="tr-img">
+                        <a href="javascript:void(0);"><img loading="lazy" src="images/tourist-places-2.png" alt="tourist-places"></a>
+                      </div>
+                      <div class="tr-details">
+                        <div class="tr-place-name"><a href="javascript:void(0);">Tower of London</a></div>
+                        <div class="tr-place-type">Hurbor</div>
+                        <div class="tr-like-review">
+                          <span class="tr-likes">35%</span>
+                          <span class="tr-review">. 22 reviews</span>
+                        </div>
+                        <div class="tr-distance">1.17 km</div>
+                      </div>
+                    </div>
+                    <div class="tr-tourist-place">
+                      <div class="tr-img">
+                        <a href="javascript:void(0);"><img loading="lazy" src="images/tourist-places-3.png" alt="tourist-places"></a>
+                      </div>
+                      <div class="tr-details">
+                        <div class="tr-place-name"><a href="javascript:void(0);">Mayfair</a></div>
+                        <div class="tr-place-type">Market</div>
+                        <div class="tr-like-review">
+                          <span class="tr-likes">35%</span>
+                          <span class="tr-review">. 22 reviews</span>
+                        </div>
+                        <div class="tr-distance">1.26 km</div>
+                      </div>
+                    </div>
+                    <div class="tr-tourist-place">
+                      <div class="tr-img">
+                        <a href="javascript:void(0);"><img loading="lazy" src="images/tourist-places-3.png" alt="tourist-places"></a>
+                      </div>
+                      <div class="tr-details">
+                        <div class="tr-place-name"><a href="javascript:void(0);">Mayfair</a></div>
+                        <div class="tr-place-type">Market</div>
+                        <div class="tr-like-review">
+                          <span class="tr-likes">35%</span>
+                          <span class="tr-review">. 22 reviews</span>
+                        </div>
+                        <div class="tr-distance">1.26 km</div>
+                      </div>
+                    </div>
+                    <!-- Below element When We don't have data - Start -->
+                    <div data-type="no-data">
+                      <div class="tr-tourist-place">
+                        <div class="tr-img">
+                          <img loading="lazy" src="images/no-data-explore.png" alt="tourist-places">
+                        </div>
+                        <div class="tr-details">
+                          <div class="tr-no-data-text w-100 mb-12"></div>
+                          <div class="tr-no-data-text w-60 mb-12"></div>
+                          <div class="tr-no-data-text w-80 mb-12"></div>
+                          <div class="tr-no-data-text w-20 mb-12"></div>
+                        </div>
+                      </div>
+                      <div class="tr-tourist-place">
+                        <div class="tr-img">
+                          <img loading="lazy" src="images/no-data-explore.png" alt="tourist-places">
+                        </div>
+                        <div class="tr-details">
+                          <div class="tr-no-data-text w-100 mb-12"></div>
+                          <div class="tr-no-data-text w-60 mb-12"></div>
+                          <div class="tr-no-data-text w-80 mb-12"></div>
+                          <div class="tr-no-data-text w-20 mb-12"></div>
+                        </div>
+                      </div>
+                      <div class="tr-tourist-place">
+                        <div class="tr-img">
+                          <img loading="lazy" src="images/no-data-explore.png" alt="tourist-places">
+                        </div>
+                        <div class="tr-details">
+                          <div class="tr-no-data-text w-100 mb-12"></div>
+                          <div class="tr-no-data-text w-60 mb-12"></div>
+                          <div class="tr-no-data-text w-80 mb-12"></div>
+                          <div class="tr-no-data-text w-20 mb-12"></div>
+                        </div>
+                      </div>
+                      <div class="tr-tourist-place">
+                        <div class="tr-img">
+                          <img loading="lazy" src="images/no-data-explore.png" alt="tourist-places">
+                        </div>
+                        <div class="tr-details">
+                          <div class="tr-no-data-text w-100 mb-12"></div>
+                          <div class="tr-no-data-text w-60 mb-12"></div>
+                          <div class="tr-no-data-text w-80 mb-12"></div>
+                          <div class="tr-no-data-text w-20 mb-12"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Below element When We don't have data - End -->
+                  </div>
+                </div>
+                <div class="tr-tourist-places">
+                  <div class="tr-title">
+                    <h4><svg width="24" height="20" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.63492 1.90625L15.6158 15.8871C15.8811 16.1524 16.0301 16.5122 16.0301 16.8874C16.0301 17.2626 15.8811 17.6224 15.6158 17.8877C15.3504 18.1529 14.9906 18.3018 14.6155 18.3018C14.2404 18.3018 13.8806 18.1529 13.6152 17.8877L10.2 14.4136C9.97647 14.1867 9.85109 13.881 9.85086 13.5625V13.3526C9.85089 13.1918 9.81897 13.0326 9.75695 12.8842C9.69494 12.7358 9.60406 12.6012 9.4896 12.4882L9.04865 12.081C8.89896 11.9429 8.71694 11.8447 8.51933 11.7953C8.32172 11.746 8.11487 11.7471 7.91783 11.7987C7.6071 11.8798 7.28058 11.8782 6.97065 11.7942C6.66071 11.7101 6.37816 11.5464 6.15101 11.3194L2.90918 8.07722C0.986021 6.15405 0.278307 3.24996 1.63492 1.90625Z" stroke="#131313" stroke-linejoin="round"></path><path d="M14.6312 1.30859L11.6998 4.24001C11.4742 4.46554 11.2953 4.73329 11.1732 5.02798C11.0511 5.32267 10.9883 5.63852 10.9883 5.9575V6.52139C10.9883 6.60118 10.9726 6.68018 10.9421 6.75389C10.9115 6.82759 10.8668 6.89456 10.8103 6.95096L10.3811 7.38014M11.5954 8.59445L12.0246 8.16526C12.081 8.10883 12.148 8.06407 12.2217 8.03353C12.2954 8.00299 12.3744 7.98728 12.4542 7.98729H13.0181C13.3371 7.98729 13.6529 7.92446 13.9476 7.80238C14.2423 7.6803 14.51 7.50136 14.7356 7.27578L17.667 4.34437M16.1491 2.82648L13.1133 5.86225M7.04179 14.0588L3.2577 17.8642C2.97305 18.1487 2.58704 18.3086 2.18455 18.3086C1.78207 18.3086 1.39605 18.1487 1.11141 17.8642C0.826849 17.5795 0.666992 17.1935 0.666992 16.791C0.666992 16.3885 0.826849 16.0025 1.11141 15.7179L4.30959 12.541" stroke="#131313" stroke-linecap="round" stroke-linejoin="round"></path></svg>Restaurants</h4>
+                    <span class="d-none d-md-block">Within 1 KM</span>
+                  </div>
+                  <div class="tr-tourist-place-lists">
+                    <div class="tr-tourist-place">
+                      <div class="tr-img">
+                        <a href="javascript:void(0);"><img loading="lazy" src="images/tourist-places-4.png" alt="tourist-places"></a>
+                      </div>
+                      <div class="tr-details">
+                        <div class="tr-place-name"><a href="javascript:void(0);">The Clove Club</a></div>
+                        <div class="tr-place-type">Shopping area</div>
+                        <div class="tr-like-review">
+                          <span class="tr-likes">35%</span>
+                          <span class="tr-review">. 22 reviews</span>
+                        </div>
+                        <div class="tr-distance">0.88 km</div>
+                      </div>
+                    </div>
+                    <div class="tr-tourist-place">
+                      <div class="tr-img">
+                        <a href="javascript:void(0);"><img loading="lazy" src="images/tourist-places-5.png" alt="tourist-places"></a>
+                      </div>
+                      <div class="tr-details">
+                        <div class="tr-place-name"><a href="javascript:void(0);">Scalett Green</a></div>
+                        <div class="tr-place-type">Hurbor</div>
+                        <div class="tr-like-review">
+                          <span class="tr-likes">35%</span>
+                          <span class="tr-review">. 22 reviews</span>
+                        </div>
+                        <div class="tr-distance">1.87 km</div>
+                      </div>
+                    </div>
+                    <div class="tr-tourist-place">
+                      <div class="tr-img">
+                        <a href="javascript:void(0);"><img loading="lazy" src="images/tourist-places-6.png" alt="tourist-places"></a>
+                      </div>
+                      <div class="tr-details">
+                        <div class="tr-place-name"><a href="javascript:void(0);">Evelyn's Table</a></div>
+                        <div class="tr-place-type">Market</div>
+                        <div class="tr-like-review">
+                          <span class="tr-likes">35%</span>
+                          <span class="tr-review">. 22 reviews</span>
+                        </div>
+                        <div class="tr-distance">1.26 km</div>
+                      </div>
+                    </div>
+                    <div class="tr-tourist-place">
+                      <div class="tr-img">
+                        <a href="javascript:void(0);"><img loading="lazy" src="images/tourist-places-6.png" alt="tourist-places"></a>
+                      </div>
+                      <div class="tr-details">
+                        <div class="tr-place-name"><a href="javascript:void(0);">Evelyn's Table</a></div>
+                        <div class="tr-place-type">Market</div>
+                        <div class="tr-like-review">
+                          <span class="tr-likes">35%</span>
+                          <span class="tr-review">. 22 reviews</span>
+                        </div>
+                        <div class="tr-distance">1.26 km</div>
+                      </div>
+                    </div>
+                    <!-- Below element When We don't have data - Start -->
+                    <div data-type="no-data">
+                      <div class="tr-tourist-place">
+                        <div class="tr-img">
+                          <img loading="lazy" src="images/no-data-explore.png" alt="tourist-places">
+                        </div>
+                        <div class="tr-details">
+                          <div class="tr-no-data-text w-100 mb-12"></div>
+                          <div class="tr-no-data-text w-60 mb-12"></div>
+                          <div class="tr-no-data-text w-80 mb-12"></div>
+                          <div class="tr-no-data-text w-20 mb-12"></div>
+                        </div>
+                      </div>
+                      <div class="tr-tourist-place">
+                        <div class="tr-img">
+                          <img loading="lazy" src="images/no-data-explore.png" alt="tourist-places">
+                        </div>
+                        <div class="tr-details">
+                          <div class="tr-no-data-text w-100 mb-12"></div>
+                          <div class="tr-no-data-text w-60 mb-12"></div>
+                          <div class="tr-no-data-text w-80 mb-12"></div>
+                          <div class="tr-no-data-text w-20 mb-12"></div>
+                        </div>
+                      </div>
+                      <div class="tr-tourist-place">
+                        <div class="tr-img">
+                          <img loading="lazy" src="images/no-data-explore.png" alt="tourist-places">
+                        </div>
+                        <div class="tr-details">
+                          <div class="tr-no-data-text w-100 mb-12"></div>
+                          <div class="tr-no-data-text w-60 mb-12"></div>
+                          <div class="tr-no-data-text w-80 mb-12"></div>
+                          <div class="tr-no-data-text w-20 mb-12"></div>
+                        </div>
+                      </div>
+                      <div class="tr-tourist-place">
+                        <div class="tr-img">
+                          <img loading="lazy" src="images/no-data-explore.png" alt="tourist-places">
+                        </div>
+                        <div class="tr-details">
+                          <div class="tr-no-data-text w-100 mb-12"></div>
+                          <div class="tr-no-data-text w-60 mb-12"></div>
+                          <div class="tr-no-data-text w-80 mb-12"></div>
+                          <div class="tr-no-data-text w-20 mb-12"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Below element When We don't have data - End -->
+                  </div>
+                </div>
+                <div class="tr-tourist-places">
+                  <div class="tr-title">
+                    <h4><svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.3335 5.05859C17.3335 6.20565 16.2305 7.30859 15.0835 7.30859C16.2305 7.30859 17.3335 8.41154 17.3335 9.55859C17.3335 8.41154 18.4364 7.30859 19.5835 7.30859C18.4364 7.30859 17.3335 6.20565 17.3335 5.05859Z" stroke="#131313" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.3335 15.0586C17.3335 16.2056 16.2305 17.3086 15.0835 17.3086C16.2305 17.3086 17.3335 18.4115 17.3335 19.5586C17.3335 18.4115 18.4364 17.3086 19.5835 17.3086C18.4364 17.3086 17.3335 16.2056 17.3335 15.0586Z" stroke="#131313" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.3335 8.05859C9.3335 10.2252 7.25015 12.3086 5.0835 12.3086C7.25015 12.3086 9.3335 14.3919 9.3335 16.5586C9.3335 14.3919 11.4168 12.3086 13.5835 12.3086C11.4168 12.3086 9.3335 10.2252 9.3335 8.05859Z" stroke="#131313" stroke-linecap="round" stroke-linejoin="round"/></svg>Getting there</h4>
+                    <span class="d-none d-md-block">Walkable places</span>
+                  </div>
+                  <div class="tr-tourist-place-lists">
+                    <div class="tr-getting-lists">
+                      <div class="tr-getting-list">
+                        <div class="tr-place-info">
+                          <div class="tr-place-name">Great for walks</div>
+                          <span>Grade: 100 out of 100</span>
+                        </div>
+                        <div class="tr-distance">100</div>
+                      </div>
+                      <div class="tr-getting-list">
+                        <div class="tr-place-info">
+                          <div class="tr-place-name"><svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.6677 8.21686L11.4782 8.25293L11.4075 8.43241L8.58835 15.5894L7.6097 15.7757L8.3748 9.30726L8.4309 8.83302L7.96178 8.92232L3.5739 9.75759L3.37156 9.79611L3.30699 9.99171L2.47522 12.5116L1.87823 12.6253L1.98228 9.2217L1.98466 9.14395L1.95388 9.07252L0.606627 5.94522L1.20367 5.83157L2.90392 7.86957L3.03583 8.02769L3.23812 7.98919L7.626 7.15392L8.09517 7.0646L7.86869 6.64412L4.77982 0.909331L5.75841 0.723048L11.0099 6.34373L11.1416 6.48469L11.3311 6.44861L15.7902 5.59979C16.0247 5.55515 16.2673 5.60549 16.4647 5.73973L16.6615 5.45033L16.4647 5.73973C16.6621 5.87398 16.798 6.08113 16.8426 6.31561C16.8873 6.55009 16.8369 6.79271 16.7027 6.99007L16.9921 7.18692L16.7027 6.99007C16.5685 7.18744 16.3613 7.3234 16.1268 7.36803L11.6677 8.21686Z" stroke="black" stroke-width="0.7"/></svg>London city airport</div>
+                          <span class="tr-distance-time"><svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.7085 12.1211L1.3335 13.4961M10.9585 12.1211L12.3335 13.4961M4.771 9.3711H4.77718M8.88981 9.3711H8.896M2.021 5.24609C4.771 7.99609 9.23975 7.99609 11.646 5.24609" stroke="#222222" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.20862 4.48572C2.77305 1.61334 3.55406 1.12109 6.45874 1.12109H7.20812C10.1128 1.12109 10.8931 1.61334 11.4582 4.48572L11.8384 6.42172C12.3575 9.06172 12.6167 10.3817 11.8604 11.2514C11.1042 12.1211 9.68106 12.1211 6.83343 12.1211C3.98649 12.1211 2.56268 12.1211 1.80643 11.2514C1.05018 10.3817 1.30937 9.06172 1.82843 6.42172L2.20862 4.48572Z" stroke="#222222" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/></svg>20 min</span>
+                          <a href="javascript:void(0);" class="tr-travel-type">See all flghts</a>
+                        </div>
+                        <div class="tr-distance">0.88 km</div>
+                      </div>
+                      <div class="tr-getting-list">
+                        <div class="tr-place-info">
+                          <div class="tr-place-name"><svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.6677 8.21686L11.4782 8.25293L11.4075 8.43241L8.58835 15.5894L7.6097 15.7757L8.3748 9.30726L8.4309 8.83302L7.96178 8.92232L3.5739 9.75759L3.37156 9.79611L3.30699 9.99171L2.47522 12.5116L1.87823 12.6253L1.98228 9.2217L1.98466 9.14395L1.95388 9.07252L0.606627 5.94522L1.20367 5.83157L2.90392 7.86957L3.03583 8.02769L3.23812 7.98919L7.626 7.15392L8.09517 7.0646L7.86869 6.64412L4.77982 0.909331L5.75841 0.723048L11.0099 6.34373L11.1416 6.48469L11.3311 6.44861L15.7902 5.59979C16.0247 5.55515 16.2673 5.60549 16.4647 5.73973L16.6615 5.45033L16.4647 5.73973C16.6621 5.87398 16.798 6.08113 16.8426 6.31561C16.8873 6.55009 16.8369 6.79271 16.7027 6.99007L16.9921 7.18692L16.7027 6.99007C16.5685 7.18744 16.3613 7.3234 16.1268 7.36803L11.6677 8.21686Z" stroke="black" stroke-width="0.7"/></svg>Heatthrow airport</div>
+                          <span class="tr-distance-time"><svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.7085 12.1211L1.3335 13.4961M10.9585 12.1211L12.3335 13.4961M4.771 9.3711H4.77718M8.88981 9.3711H8.896M2.021 5.24609C4.771 7.99609 9.23975 7.99609 11.646 5.24609" stroke="#222222" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.20862 4.48572C2.77305 1.61334 3.55406 1.12109 6.45874 1.12109H7.20812C10.1128 1.12109 10.8931 1.61334 11.4582 4.48572L11.8384 6.42172C12.3575 9.06172 12.6167 10.3817 11.8604 11.2514C11.1042 12.1211 9.68106 12.1211 6.83343 12.1211C3.98649 12.1211 2.56268 12.1211 1.80643 11.2514C1.05018 10.3817 1.30937 9.06172 1.82843 6.42172L2.20862 4.48572Z" stroke="#222222" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/></svg>20 min</span>
+                          <a href="javascript:void(0);" class="tr-travel-type">See all flghts</a>
+                        </div>
+                        <div class="tr-distance">0.88 km</div>
+                      </div>
+                      <div class="tr-getting-list">
+                        <div class="tr-place-info">
+                          <div class="tr-place-name"><svg width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0835 9.43359H14.8335M3.58349 9.43359H5.83349M17.4116 5.68359L15.9485 1.78191C15.7289 1.19645 15.1693 0.808594 14.544 0.808594H6.12299C5.49773 0.808594 4.93804 1.19645 4.7185 1.78191L3.25537 5.68359M17.4116 5.68359L17.6299 6.26568C17.7524 6.59225 18.0646 6.80859 18.4133 6.80859C18.9068 6.80859 19.293 7.23341 19.2463 7.72462L18.8335 12.0586M17.4116 5.68359H18.9585M3.25537 5.68359L3.03708 6.26568C2.91462 6.59225 2.60243 6.80859 2.25366 6.80859C1.76023 6.80859 1.37395 7.23341 1.42073 7.72462L1.83349 12.0586M3.25537 5.68359H1.70849M1.83349 12.0586L1.95418 13.3258C2.0275 14.0957 2.67408 14.6836 3.44742 14.6836H3.5835M1.83349 12.0586V12.0586C1.55735 12.0586 1.3335 12.2824 1.3335 12.5586V15.0586C1.3335 15.4728 1.66928 15.8086 2.0835 15.8086H2.8335C3.24771 15.8086 3.5835 15.4728 3.5835 15.0586V14.6836M3.5835 14.6836H17.0835M17.0835 14.6836H17.2196C17.9929 14.6836 18.6395 14.0957 18.7128 13.3258L18.8335 12.0586M17.0835 14.6836V15.0586C17.0835 15.4728 17.4193 15.8086 17.8335 15.8086H18.5835C18.9977 15.8086 19.3335 15.4728 19.3335 15.0586V12.5586C19.3335 12.2825 19.1096 12.0586 18.8335 12.0586V12.0586M6.24161 3.33425L5.41255 5.82142C5.25067 6.30707 5.61214 6.80859 6.12406 6.80859H14.5429C15.0548 6.80859 15.4163 6.30707 15.2544 5.82142L14.4254 3.33425C14.2212 2.72174 13.648 2.68359 13.0024 2.68359H7.66463C7.01899 2.68359 6.44578 2.72174 6.24161 3.33425Z" stroke="black" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"/></svg>King's Cross St. Pancras</div>
+                          <span class="tr-distance-time"><svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.7085 12.1211L1.3335 13.4961M10.9585 12.1211L12.3335 13.4961M4.771 9.3711H4.77718M8.88981 9.3711H8.896M2.021 5.24609C4.771 7.99609 9.23975 7.99609 11.646 5.24609" stroke="#222222" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.20862 4.48572C2.77305 1.61334 3.55406 1.12109 6.45874 1.12109H7.20812C10.1128 1.12109 10.8931 1.61334 11.4582 4.48572L11.8384 6.42172C12.3575 9.06172 12.6167 10.3817 11.8604 11.2514C11.1042 12.1211 9.68106 12.1211 6.83343 12.1211C3.98649 12.1211 2.56268 12.1211 1.80643 11.2514C1.05018 10.3817 1.30937 9.06172 1.82843 6.42172L2.20862 4.48572Z" stroke="#222222" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/></svg>20 min</span>
+                          <span class="tr-travel-type">Underground</span>
+                        </div>
+                        <div class="tr-distance">0.88 km</div>
+                      </div>
+                      <div class="tr-getting-list">
+                        <div class="tr-place-info">
+                          <div class="tr-place-name"><svg width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0835 9.43359H14.8335M3.58349 9.43359H5.83349M17.4116 5.68359L15.9485 1.78191C15.7289 1.19645 15.1693 0.808594 14.544 0.808594H6.12299C5.49773 0.808594 4.93804 1.19645 4.7185 1.78191L3.25537 5.68359M17.4116 5.68359L17.6299 6.26568C17.7524 6.59225 18.0646 6.80859 18.4133 6.80859C18.9068 6.80859 19.293 7.23341 19.2463 7.72462L18.8335 12.0586M17.4116 5.68359H18.9585M3.25537 5.68359L3.03708 6.26568C2.91462 6.59225 2.60243 6.80859 2.25366 6.80859C1.76023 6.80859 1.37395 7.23341 1.42073 7.72462L1.83349 12.0586M3.25537 5.68359H1.70849M1.83349 12.0586L1.95418 13.3258C2.0275 14.0957 2.67408 14.6836 3.44742 14.6836H3.5835M1.83349 12.0586V12.0586C1.55735 12.0586 1.3335 12.2824 1.3335 12.5586V15.0586C1.3335 15.4728 1.66928 15.8086 2.0835 15.8086H2.8335C3.24771 15.8086 3.5835 15.4728 3.5835 15.0586V14.6836M3.5835 14.6836H17.0835M17.0835 14.6836H17.2196C17.9929 14.6836 18.6395 14.0957 18.7128 13.3258L18.8335 12.0586M17.0835 14.6836V15.0586C17.0835 15.4728 17.4193 15.8086 17.8335 15.8086H18.5835C18.9977 15.8086 19.3335 15.4728 19.3335 15.0586V12.5586C19.3335 12.2825 19.1096 12.0586 18.8335 12.0586V12.0586M6.24161 3.33425L5.41255 5.82142C5.25067 6.30707 5.61214 6.80859 6.12406 6.80859H14.5429C15.0548 6.80859 15.4163 6.30707 15.2544 5.82142L14.4254 3.33425C14.2212 2.72174 13.648 2.68359 13.0024 2.68359H7.66463C7.01899 2.68359 6.44578 2.72174 6.24161 3.33425Z" stroke="black" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Rental cars</div>
+                          <a href="javascript:void(0);" class="tr-travel-type">See rental cars</a>
+                        </div>
+                      </div>
+                      <!-- Below element When We don't have data - Start -->
+                      <div data-type="no-data">
+                        <div class="tr-tourist-place">
+                          <div class="tr-img">
+                            <img loading="lazy" src="images/no-data-explore.png" alt="tourist-places">
+                          </div>
+                          <div class="tr-details">
+                            <div class="tr-no-data-text w-100 mb-12"></div>
+                            <div class="tr-no-data-text w-60 mb-12"></div>
+                            <div class="tr-no-data-text w-80 mb-12"></div>
+                            <div class="tr-no-data-text w-20 mb-12"></div>
+                          </div>
+                        </div>
+                        <div class="tr-tourist-place">
+                          <div class="tr-img">
+                            <img loading="lazy" src="images/no-data-explore.png" alt="tourist-places">
+                          </div>
+                          <div class="tr-details">
+                            <div class="tr-no-data-text w-100 mb-12"></div>
+                            <div class="tr-no-data-text w-60 mb-12"></div>
+                            <div class="tr-no-data-text w-80 mb-12"></div>
+                            <div class="tr-no-data-text w-20 mb-12"></div>
+                          </div>
+                        </div>
+                        <div class="tr-tourist-place">
+                          <div class="tr-img">
+                            <img loading="lazy" src="images/no-data-explore.png" alt="tourist-places">
+                          </div>
+                          <div class="tr-details">
+                            <div class="tr-no-data-text w-100 mb-12"></div>
+                            <div class="tr-no-data-text w-60 mb-12"></div>
+                            <div class="tr-no-data-text w-80 mb-12"></div>
+                            <div class="tr-no-data-text w-20 mb-12"></div>
+                          </div>
+                        </div>
+                        <div class="tr-tourist-place">
+                          <div class="tr-img">
+                            <img loading="lazy" src="images/no-data-explore.png" alt="tourist-places">
+                          </div>
+                          <div class="tr-details">
+                            <div class="tr-no-data-text w-100 mb-12"></div>
+                            <div class="tr-no-data-text w-60 mb-12"></div>
+                            <div class="tr-no-data-text w-80 mb-12"></div>
+                            <div class="tr-no-data-text w-20 mb-12"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Below element When We don't have data - End -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--EXPLORE OTHER OPTIONS IN AND AROUND SECTION - END-->
+
+            <!--NEARBY HOTEL - START-->
+            <div class="tr-nearby-hotel">
+              <h3 class="d-none d-md-block">What's nearby</h3>
+              <h3 class="d-block d-sm-block d-md-none">You might also like</h3>
+              <div class="row tr-nearby-hotel-lists">
+                <div class="tr-nearby-hotel-list">
+                  <div class="tr-hotel-img">
+                    <a href="javascript:void(0):">
+                      <img loading="lazy" src="images/nearby-hotel-1.png" alt="NearBy Hotel">
+                    </a>
+                  </div>
+                  <div class="tr-hotel-deatils">
+                    <div class="tr-hotel-name"><a href="javascript:void(0):">Dubai, UAE</a></div>
+                    <div class="tr-rating d-block d-sm-block d-md-none">    
+                      <span><i class="fa fa-star" aria-hidden="true"></i></span> 5.0
+                    </div>
+                    <div class="tr-like-review">
+                      <span class="tr-likes"><svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.6655 6.37175C9.45752 5.01908 7.44319 4.65521 5.92972 5.89385C4.41626 7.13249 4.20318 9.20344 5.39172 10.6684L10.6655 15.5524L15.9392 10.6684C17.1277 9.20344 16.9407 7.11946 15.4012 5.89385C13.8617 4.66824 11.8734 5.01908 10.6655 6.37175Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>94%</span>
+                      <span class="tr-total-rating">4.2</span>
+                      <span class="tr-vgood">Very Good</span>
+                    </div>
+                    <div class="tr-price-section"><span>$832</span> /night</div>
+                  </div>
+                </div>
+                <div class="tr-nearby-hotel-list">
+                  <div class="tr-hotel-img">
+                    <a href="javascript:void(0):">
+                      <img loading="lazy" src="images/nearby-hotel-2.png" alt="NearBy Hotel">
+                    </a>
+                  </div>
+                  <div class="tr-hotel-deatils">
+                    <div class="tr-hotel-name"><a href="javascript:void(0):">Sydney, Australia</a></div>
+                    <div class="tr-rating d-block d-sm-block d-md-none">    
+                      <span><i class="fa fa-star" aria-hidden="true"></i></span> 5.0
+                    </div>
+                    <div class="tr-like-review">
+                      <span class="tr-likes"><svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.6655 6.37175C9.45752 5.01908 7.44319 4.65521 5.92972 5.89385C4.41626 7.13249 4.20318 9.20344 5.39172 10.6684L10.6655 15.5524L15.9392 10.6684C17.1277 9.20344 16.9407 7.11946 15.4012 5.89385C13.8617 4.66824 11.8734 5.01908 10.6655 6.37175Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>94%</span>
+                      <span class="tr-total-rating">4.2</span>
+                      <span class="tr-vgood">Very Good</span>
+                    </div>
+                    <div class="tr-price-section"><span>$832</span> /night</div>
+                  </div>
+                </div>
+                <div class="tr-nearby-hotel-list">
+                  <div class="tr-hotel-img">
+                    <a href="javascript:void(0):">
+                      <img loading="lazy" src="images/nearby-hotel-3.png" alt="NearBy Hotel">
+                    </a>
+                  </div>
+                  <div class="tr-hotel-deatils">
+                    <div class="tr-hotel-name"><a href="javascript:void(0):">Capetown</a></div>
+                    <div class="tr-rating d-block d-sm-block d-md-none">    
+                      <span><i class="fa fa-star" aria-hidden="true"></i></span> 5.0
+                    </div>
+                    <div class="tr-like-review">
+                      <span class="tr-likes"><svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.6655 6.37175C9.45752 5.01908 7.44319 4.65521 5.92972 5.89385C4.41626 7.13249 4.20318 9.20344 5.39172 10.6684L10.6655 15.5524L15.9392 10.6684C17.1277 9.20344 16.9407 7.11946 15.4012 5.89385C13.8617 4.66824 11.8734 5.01908 10.6655 6.37175Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>94%</span>
+                      <span class="tr-total-rating">4.2</span>
+                      <span class="tr-vgood">Very Good</span>
+                    </div>
+                    <div class="tr-price-section"><span>$832</span> /night</div>
+                  </div>
+                </div>
+                <div class="tr-nearby-hotel-list">
+                  <div class="tr-hotel-img">
+                    <a href="javascript:void(0):">
+                      <img loading="lazy" src="images/nearby-hotel-4.png" alt="NearBy Hotel">
+                    </a>
+                  </div>
+                  <div class="tr-hotel-deatils">
+                    <div class="tr-hotel-name"><a href="javascript:void(0):">Dubai tree</a></div>
+                    <div class="tr-rating d-block d-sm-block d-md-none">    
+                      <span><i class="fa fa-star" aria-hidden="true"></i></span> 5.0
+                    </div>
+                    <div class="tr-like-review">
+                      <span class="tr-likes"><svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.6655 6.37175C9.45752 5.01908 7.44319 4.65521 5.92972 5.89385C4.41626 7.13249 4.20318 9.20344 5.39172 10.6684L10.6655 15.5524L15.9392 10.6684C17.1277 9.20344 16.9407 7.11946 15.4012 5.89385C13.8617 4.66824 11.8734 5.01908 10.6655 6.37175Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>94%</span>
+                      <span class="tr-total-rating">4.2</span>
+                      <span class="tr-vgood">Very Good</span>
+                    </div>
+                    <div class="tr-price-section"><span>$832</span> /night</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Below element When We don't have data - Start -->
+              <div class="row tr-nearby-hotel-lists" data-type="no-data">
+                <div class="tr-nearby-hotel-list">
+                  <div class="tr-hotel-img">
+                    <img loading="lazy" src="images/no-data-nearby-hotel.png" alt="NearBy Hotel">
+                  </div>
+                  <div class="tr-hotel-deatils">
+                    <div class="tr-no-data-text w-100 mb-12"></div>
+                    <div class="tr-no-data-text w-70 mb-12"></div>
+                    <div class="tr-no-data-text w-25 mb-12"></div>
+                  </div>
+                </div>
+                <div class="tr-nearby-hotel-list">
+                  <div class="tr-hotel-img">
+                    <img loading="lazy" src="images/no-data-nearby-hotel.png" alt="NearBy Hotel">
+                  </div>
+                  <div class="tr-hotel-deatils">
+                    <div class="tr-no-data-text w-100 mb-12"></div>
+                    <div class="tr-no-data-text w-70 mb-12"></div>
+                    <div class="tr-no-data-text w-25 mb-12"></div>
+                  </div>
+                </div>
+                <div class="tr-nearby-hotel-list">
+                  <div class="tr-hotel-img">
+                    <img loading="lazy" src="images/no-data-nearby-hotel.png" alt="NearBy Hotel">
+                  </div>
+                  <div class="tr-hotel-deatils">
+                    <div class="tr-no-data-text w-100 mb-12"></div>
+                    <div class="tr-no-data-text w-70 mb-12"></div>
+                    <div class="tr-no-data-text w-25 mb-12"></div>
+                  </div>
+                </div>
+                <div class="tr-nearby-hotel-list">
+                  <div class="tr-hotel-img">
+                    <img loading="lazy" src="images/no-data-nearby-hotel.png" alt="NearBy Hotel">
+                  </div>
+                  <div class="tr-hotel-deatils">
+                    <div class="tr-no-data-text w-100 mb-12"></div>
+                    <div class="tr-no-data-text w-70 mb-12"></div>
+                    <div class="tr-no-data-text w-25 mb-12"></div>
+                  </div>
+                </div>
+              </div>
+              <!-- Below element When We don't have data - End -->
+              <a href="javascript:void(0);" class="tr-show-all-hotels">Show all hotels</a>
+            </div>
+            <!--NEARBY HOTEL - END-->
+
+            <!--REVIEWS SECTION - START-->
+            <div class="tr-review-section" id="reviews">
+              <div class="row">
+                <h3>Reviews</h3>
+                <div class="col-lg-7">
+                  <div class="tr-review-content">
+                    <div class="tr-power-by">
+                      <ul>
+                        <li><img loading="lazy" src="images/ellipse-1.png" alt="ellipse"></li>
+                        <li><img loading="lazy" src="images/ellipse-2.png" alt="ellipse"></li>
+                        <li><img loading="lazy" src="images/ellipse-3.png" alt="ellipse"></li>
+                        <li>
+                          <img loading="lazy" src="images/ellipse-4.png" alt="ellipse">
+                          <div class="tr-2-star-icon"></div>
+                        </li>
+                      </ul>
+                      <span>Powered by AI</span>
+                    </div>
+                    <h4>Reviews summary</h4>
+                    <div class="tr-short-decs">This summary was created by AI</div>
+                    <ul class="tr-revies-recomm">
+                      <li>
+                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 13.8086C11.2583 13.8086 10.5333 13.5887 9.91661 13.1766C9.29993 12.7646 8.81928 12.1789 8.53545 11.4937C8.25162 10.8084 8.17736 10.0544 8.32206 9.32701C8.46675 8.59958 8.8239 7.93139 9.34835 7.40695C9.8728 6.8825 10.541 6.52535 11.2684 6.38065C11.9958 6.23596 12.7498 6.31022 13.4351 6.59405C14.1203 6.87788 14.706 7.35852 15.118 7.97521C15.5301 8.59189 15.75 9.31692 15.75 10.0586C15.7488 11.0528 15.3533 12.0059 14.6503 12.7089C13.9473 13.4119 12.9942 13.8074 12 13.8086ZM12 7.8086C11.555 7.8086 11.12 7.94056 10.75 8.18779C10.38 8.43502 10.0916 8.78642 9.92127 9.19756C9.75098 9.60869 9.70642 10.0611 9.79324 10.4975C9.88005 10.934 10.0943 11.3349 10.409 11.6496C10.7237 11.9643 11.1246 12.1785 11.561 12.2654C11.9975 12.3522 12.4499 12.3076 12.861 12.1373C13.2722 11.967 13.6236 11.6786 13.8708 11.3086C14.118 10.9386 14.25 10.5036 14.25 10.0586C14.2494 9.46204 14.0122 8.89009 13.5903 8.46826C13.1685 8.04644 12.5966 7.80919 12 7.8086Z" fill="#222222"/><path d="M12 22.8086L5.67301 15.3468C5.58509 15.2348 5.49809 15.1221 5.41201 15.0086C4.33179 13.5846 3.74799 11.8459 3.75001 10.0586C3.75001 7.87056 4.6192 5.77214 6.16637 4.22496C7.71355 2.67779 9.81197 1.80859 12 1.80859C14.188 1.80859 16.2865 2.67779 17.8336 4.22496C19.3808 5.77214 20.25 7.87056 20.25 10.0586C20.2517 11.8451 19.6682 13.5829 18.5888 15.0063L18.588 15.0086C18.588 15.0086 18.363 15.3041 18.3293 15.3438L12 22.8086ZM6.60976 14.1048C6.60976 14.1048 6.78451 14.3358 6.82426 14.3853L12 20.4896L17.1825 14.3771C17.2155 14.3358 17.391 14.1033 17.3918 14.1026C18.2747 12.9395 18.7518 11.5189 18.75 10.0586C18.75 8.26838 18.0388 6.55149 16.773 5.28562C15.5071 4.01975 13.7902 3.30859 12 3.30859C10.2098 3.30859 8.49291 4.01975 7.22703 5.28562C5.96116 6.55149 5.25001 8.26838 5.25001 10.0586C5.24815 11.5198 5.72584 12.9413 6.60976 14.1048Z" fill="#222222"/></svg>
+                        <div>Location</div>
+                        <div>Convenient</div>
+                      </li>
+                      <li>
+                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.5 7.05859H4.5C3.25736 7.05859 2.25 8.06595 2.25 9.30859V18.3086C2.25 19.5512 3.25736 20.5586 4.5 20.5586H19.5C20.7426 20.5586 21.75 19.5512 21.75 18.3086V9.30859C21.75 8.06595 20.7426 7.05859 19.5 7.05859Z" stroke="#222222" stroke-width="1.5" stroke-linejoin="round"/><path d="M19.2825 7.05784V5.65159C19.2824 5.30669 19.2062 4.96606 19.0592 4.65401C18.9123 4.34196 18.6984 4.06618 18.4326 3.84635C18.1668 3.62652 17.8558 3.46805 17.5217 3.38226C17.1877 3.29647 16.8388 3.28546 16.5 3.35003L4.155 5.45706C3.6189 5.55922 3.13526 5.84527 2.78749 6.26586C2.43972 6.68645 2.24963 7.21522 2.25 7.76096V10.0578" stroke="#222222" stroke-width="1.5" stroke-linejoin="round"/><path d="M17.25 15.3086C16.9533 15.3086 16.6633 15.2206 16.4166 15.0558C16.17 14.891 15.9777 14.6567 15.8642 14.3826C15.7506 14.1085 15.7209 13.8069 15.7788 13.516C15.8367 13.225 15.9796 12.9577 16.1893 12.7479C16.3991 12.5382 16.6664 12.3953 16.9574 12.3374C17.2483 12.2795 17.5499 12.3092 17.824 12.4228C18.0981 12.5363 18.3324 12.7286 18.4972 12.9752C18.662 13.2219 18.75 13.5119 18.75 13.8086C18.75 14.2064 18.592 14.5879 18.3107 14.8693C18.0294 15.1506 17.6478 15.3086 17.25 15.3086Z" fill="black"/></svg>
+                        <div>Value</div>
+                        <div>Expensive</div>
+                      </li>
+                    </ul>
+                    <p>The Tower Bridgel boasts a coveted location near  Battersea Power Station, celebrated by guests for its easy access to  transport and local dining. While some travelers have experienced rooms  as dated and noisy, many praise the spacious, clean accommodations with  impressive views.  </p>
+                    <a href="javascript:void(0);" class="tr-jump-to-all-review">Jump to all reviews</a>
+                    <div class="tr-helpful">
+                      Do you find this helpful? 
+                      <button class="tr-like-button">Like</button>
+                      <button class="tr-dislike-button">Dislike</button>
+                    </div>
+                  </div>
+                  <div class="tr-reviews-graph">
+                    <div class="tr-reviews-graph-details">
+                      <h4 class="d-none d-md-block">Travellers Reviews</h4>
+                      <div class="tr-likes-count">98%</div>
+                      <div class="tr-no-review" data-type="no-data">No Review</div>
+                      <div class="tr-reviews-count">(100 Reviews)</div>
+                    </div>
+                    <div class="tr-rating-types">
+                      <div class="tr-rating-type">
+                        <div class="tr-title">Recommended</div>
+                        <div class="progress">
+                          <div class="progress-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width:88%"></div>
+                        </div>
+                        <div class="tr-reviews-nums">88</div>
+                      </div>
+                      <div class="tr-rating-type">
+                        <div class="tr-title">Not Recommended</div>
+                        <div class="progress">
+                          <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width:30%"></div>
+                        </div>
+                        <div class="tr-reviews-nums">74</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tr-reviews-mentioned">
+                    <h4>Reviews that mentioned</h4>
+                    <ul>
+                      <li><a href="javascript:void(0);" class="active">Recommended</a></li>
+                      <li><a href="javascript:void(0);">Not Recommended</a></li>
+                    </ul>
+                    <div class="tr-shotby">
+                      <div class="custom-select">
+                        <label>Sort by:</label>
+                        <select>
+                          <option>Low rating</option>
+                          <option>High rating</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tr-customer-reviews">
+                    <div class="tr-customer-review">
+                      <div class="tr-customer-details">
+                        <div class="tr-customer-detail">
+                          <img loading="lazy" src="images/customer.png" alt="customer">
+                          <div class="tr-customer-name">
+                            <div>Jenny Wilson</div>
+                            <div class="tr-recommended-title tr-heart-green">Recommended<span class="tr-time">(1 week ago)</span></div>
+                          </div>
+                          <div class="tr-hotel-place">London</div>
+                        </div>
+                        <div class="tr-report">
+                          <div class="tr-report-icon"></div>
+                          <div class="tr-report-popup">
+                            <h5>Report this</h5>
+                            <div class="tr-follow">Follow</div>
+                          </div>
+                        </div>
+                      </div>
+                      <p>The tour was very well organised. One minus is that you get completely bombarded with information. The tour was very well organised. One minus is that you get completely bombarded with information.</p>
+                      <div class="tr-helpful">
+                        Was this helpful? 
+                        <button class="tr-like-button">Like</button>
+                        <button class="tr-dislike-button">Dislike</button>
+                      </div>
+                    </div>
+                    <div class="tr-customer-review">
+                      <div class="tr-customer-details">
+                        <div class="tr-customer-detail">
+                          <img loading="lazy" src="images/customer.png" alt="customer">
+                          <div class="tr-customer-name">
+                            <div>Jenny Wilson</div>
+                            <div class="tr-recommended-title tr-heart-red">Recommended</div>
+                          </div>
+                          <div class="tr-hotel-place">London</div>
+                        </div>
+                        <div class="tr-report">
+                          <div class="tr-report-icon"></div>
+                          <div class="tr-report-popup">
+                            <h5>Report this</h5>
+                            <div class="tr-follow">Follow</div>
+                          </div>
+                        </div>
+                      </div>
+                      <p>The tour was very well organised. One minus is that you get completely bombarded with information. The tour was very well organised. One minus is that you get completely bombarded with information.</p>
+                      <a href="javascript:void(0);" class="tr-read-more">Read more</a>
+                      <div class="tr-helpful">
+                        Was this helpful? 
+                        <button class="tr-like-button">Like</button>
+                        <button class="tr-dislike-button">Dislike</button>
+                      </div>
+                    </div>
+                    <div class="tr-customer-review">
+                      <div class="tr-customer-details">
+                        <div class="tr-customer-detail">
+                          <img loading="lazy" src="images/customer.png" alt="customer">
+                          <div class="tr-customer-name">
+                            <div>Jenny Wilson</div>
+                            <div class="tr-recommended-title tr-heart-green">Recommended</div>
+                          </div>
+                          <div class="tr-hotel-place">London</div>
+                        </div>
+                        <div class="tr-report">
+                          <div class="tr-report-icon"></div>
+                          <div class="tr-report-popup">
+                            <h5>Report this</h5>
+                            <div class="tr-follow">Follow</div>
+                          </div>
+                        </div>
+                      </div>
+                      <p>The tour was very well organised. One minus is that you get completely bombarded with information. The tour was very well organised. One minus is that you get completely bombarded with information.</p>
+                      <a href="javascript:void(0);" class="tr-read-more">Read more</a>
+                      <div class="tr-hotel-response">
+                        <h5><svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 9.89195C17.5029 10.9918 17.2459 12.0769 16.75 13.0586C16.162 14.2351 15.2581 15.2246 14.1395 15.9164C13.021 16.6081 11.7319 16.9748 10.4167 16.9753C9.31678 16.9782 8.23176 16.7212 7.25 16.2253L2.5 17.8086L4.08333 13.0586C3.58744 12.0769 3.33047 10.9918 3.33333 9.89195C3.33384 8.57675 3.70051 7.28766 4.39227 6.16908C5.08402 5.05049 6.07355 4.14659 7.25 3.55862C8.23176 3.06273 9.31678 2.80575 10.4167 2.80862H10.8333C12.5703 2.90444 14.2109 3.63759 15.4409 4.86767C16.671 6.09775 17.4042 7.73833 17.5 9.47528V9.89195Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Hotel response :</h5>
+                        <div class="tr-customer-msg">Dear guest,</div>
+                        <div class="tr-customer-msg">Thank you for taking the time to share your...</div>
+                        <a href="javascript:void(0)">Continue reading</a>
+                      </div>
+                      <div class="tr-helpful">
+                        Was this helpful? 
+                        <button class="tr-like-button">Like</button>
+                        <button class="tr-dislike-button">Dislike</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tr-pagination">
+                    <nav aria-label="Page navigation example">
+                      <ul class="pagination">
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Last Previous">
+                            <span aria-hidden="true"><img loading="lazy" src="images/left-double-arrow.png" alt="Left Arrow"></span>
+                          </a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true"><img loading="lazy" src="images/arrow-left.png" alt="Left Arrow"></span>
+                          </a>
+                        </li>
+                        <li class="page-item"><a class="page-link active" href="javascript:void(0);">1</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:void(0);">4</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:void(0);">...</a></li>
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true"><img loading="lazy" src="images/arrow-right.png" alt="Left Arrow"></span>
+                          </a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Last Next">
+                            <span aria-hidden="true"><img loading="lazy" src="images/right-double-arrow.png" alt="Left Arrow"></span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="tr-show-all d-block d-md-none">
+                    <a href="javascript:void(0);">Show all reviews</a>
+                  </div>
+                  <!-- Below element When We don't have data - Start -->
+                  <div class="tr-no-data-review-found" data-type="no-data">
+                    <div class="tr-no-review-listing">
+                      <div class="tr-no-review-list">
+                        <div class="tr-no-data-text w-70 tr-no-data-dark-gray mb-12"></div>
+                        <div class="tr-no-data-text w-70 mb-12"></div>
+                        <div class="tr-no-data-text w-50 tr-no-data-red mb-12"></div>
+                        <div class="tr-no-data-text w-30 tr-no-data-green mb-12"></div>
+                        <div class="tr-no-data-text w-20 mt-41 mb-12"></div>
+                        <div class="tr-no-data-text w-10 mb-0"></div>
+                      </div>
+                      <div class="tr-no-review-list">
+                        <div class="tr-no-data-text w-70 tr-no-data-dark-gray mb-12"></div>
+                        <div class="tr-no-data-text w-70 mb-12"></div>
+                        <div class="tr-no-data-text w-50 tr-no-data-red mb-12"></div>
+                        <div class="tr-no-data-text w-30 tr-no-data-green mb-12"></div>
+                        <div class="tr-no-data-text w-20 mt-41 mb-12"></div>
+                        <div class="tr-no-data-text w-10 mb-0"></div>
+                      </div>
+                      <div class="tr-no-review-list">
+                        <div class="tr-no-data-text w-70 tr-no-data-dark-gray mb-12"></div>
+                        <div class="tr-no-data-text w-70 mb-12"></div>
+                        <div class="tr-no-data-text w-50 tr-no-data-red mb-12"></div>
+                        <div class="tr-no-data-text w-30 tr-no-data-green mb-12"></div>
+                        <div class="tr-no-data-text w-20 mt-41 mb-12"></div>
+                        <div class="tr-no-data-text w-10 mb-0"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Below element for We don't have data - End -->
+                </div>
+                <div class="col-lg-5">
+                  <div class="tr-enjoyed-the-stay">
+                    <h5>Enjoyed the stay?</h5>
+                    <button class="tr-btn tr-write-review">Write a review</button>
+                    <p>Let others know your experience here.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--REVIEWS SECTION - END-->
+
+            <!--BREADCRUMB - START-->
+            <div class="tr-breadcrumb-section">
+              <ul class="tr-breadcrumb">
+                <li><a href="javascript:void(0);">Home</a></li>
+                <li><a href="javascript:void(0);">Explore listing</a></li>
+                <li>Tower Bridge</li>
+              </ul>
+            </div>
+            <!--BREADCRUMB - END-->
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!--FOOTER-->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="tr-footer-top">
+              <div class="tr-footer-logo">
+                <a href="javascript:void(0);"><img loading="lazy" src="images/travell-white-logo.png" alt="travell-white-logo"></a>
+                <div class="tr-copy-right tr-mobile">&copy; 2024 Travell.co, Inc.</div>
+              </div>
+              <div class="tr-footer-links-section">
+                <div class="tr-footer-links-left-col">
+                  <div class="tr-footer-links">
+                    <h5>Support</h5>
+                    <ul>
+                      <li><a href="javascript:void(0);">Help Centre</a></li>
+                      <li><a href="javascript:void(0);">Guides</a></li>
+                      <li><a href="javascript:void(0);">Anti-discrimination</a></li>
+                      <li><a href="javascript:void(0);">Disability support</a></li>
+                      <li><a href="javascript:void(0);">Cancellation options</a></li>
+                      <li><a href="javascript:void(0);">Report neighbourhood concern</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="tr-footer-links-right-col">
+                  <div class="tr-footer-links">
+                    <h5>Rooms</h5>
+                    <ul>
+                      <li><a href="javascript:void(0);">Standard</a></li>
+                      <li><a href="javascript:void(0);">Deluxe</a></li>
+                      <li><a href="javascript:void(0);">Family</a></li>
+                    </ul>
+                  </div>
+                  <div class="tr-footer-links">
+                    <h5>Nearby</h5>
+                    <ul>
+                      <li><a href="javascript:void(0);">Hotels</a></li>
+                      <li><a href="javascript:void(0);">Restaurants</a></li>
+                      <li><a href="javascript:void(0);">Top attractions</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tr-footer-bottom">
+              <div class="tr-another-links">
+                <ul>
+                  <li>&copy; 2024 Travell.co, Inc.</li>
+                  <li><a href="javascript:void(0);">Privacy</a></li>
+                  <li><a href="javascript:void(0);">Terms</a></li>
+                  <li><a href="javascript:void(0);">Sitemap</a></li>
+                  <li><a href="javascript:void(0);">Company details</a></li>
+                </ul>
+              </div>
+              <div class="tr-social-links">
+                <ul>
+                  <li>English (IN)</li>
+                  <li>&#8377; INR</li>
+                  <li><a href="javascript:void(0);" class="tr-facebook" title="Facebook" target="_blank"></a></li>
+                  <li><a href="javascript:void(0);" class="tr-twitter" title="Twitter" target="_blank"></a></li>
+                  <li><a href="javascript:void(0);" class="tr-instagram" title="Instagram" target="_blank"></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="overlay" id="overLay"></div>
+
+    <!-- Share Modal -->
+    <div class="modal" id="shareModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          <h3>Share this experience</h3>
+          <div class="tr-share-infos">
+            <div class="tr-hotel-img">
+              <img loading="lazy" src="images/tower-bridge-1.png" alt="Tower Bridge">
+            </div>
+            <div class="tr-share-details">
+              <div class="tr-hotel-name">Tower Bridge</div>
+              <div>Tower Bridge Road, London SE1 2UP England</div>
+            </div>
+          </div>
+          <div class="tr-share-options">
+            <div class="tr-share-option">
+              <a href="javascript:void(0);" class="tr-copy">Copy link</a>
+            </div>
+            <div class="tr-share-option">
+              <a href="javascript:void(0);" class="tr-email">Email</a>
+            </div>
+            <div class="tr-share-option">
+              <a href="javascript:void(0);" class="tr-messages">Messages</a>
+            </div>
+            <div class="tr-share-option">
+              <a href="javascript:void(0);" class="tr-whatsapp">Whatsapp</a>
+            </div>
+            <div class="tr-share-option">
+              <a href="javascript:void(0);" class="tr-messenger">Messenger</a>
+            </div>
+            <div class="tr-share-option">
+              <a href="javascript:void(0);" class="tr-facebook">Facebook</a>
+            </div>
+            <div class="tr-share-option">
+              <a href="javascript:void(0);" class="tr-twitter">Twitter</a>
+            </div>
+            <div class="tr-share-option">
+              <a href="javascript:void(0);" class="tr-embed">Embed</a>
+            </div>
+          </div>
+          <div class="tr-alert tr-copy-alert">Link copied</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery Modal-->
+    <div class="tr-gallery-popup">
+      <div class="tr-gallery-header">
+        <div class="tr-gallery-action">
+          <div class="tr-close-button">
+            <button type="button" class="btn-close"></button>
+          </div>
+          <div class="tr-share-save">
+            <a href="javascript:void(0);" class="tr-share" data-bs-toggle="modal" data-bs-target="#shareModal">Share</a>
+            <a href="javascript:void(0);" class="tr-save">Save</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tr-gallery-categories">
+        <div class="tr-galleries-section">
+          <div class="tr-gallery-category">
+            <ul>
+              <li data-bs-toggle="modal" data-bs-target="#gallerySliderModal"><img loading="lazy" src="images/tower-bridge-1.png" alt="Outdoor Pictures 1"></li>
+              <li data-bs-toggle="modal" data-bs-target="#gallerySliderModal"><img loading="lazy" src="images/tower-bridge-2.png" alt="Outdoor Pictures 2"></li>
+              <li data-bs-toggle="modal" data-bs-target="#gallerySliderModal"><img loading="lazy" src="images/tower-bridge-4.png" alt="Outdoor Pictures 4"></li>
+              <li data-bs-toggle="modal" data-bs-target="#gallerySliderModal"><img loading="lazy" src="images/tower-bridge-5.png" alt="Outdoor Pictures 5"></li>
+              <li data-bs-toggle="modal" data-bs-target="#gallerySliderModal"><img loading="lazy" src="images/tower-bridge-3.png" alt="Outdoor Pictures 3"></li>
+              <li data-bs-toggle="modal" data-bs-target="#gallerySliderModal"><img loading="lazy" src="images/tower-bridge-6.png" alt="Outdoor Pictures 6"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery Slider Modal -->
+    <div class="modal" id="gallerySliderModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div id="gallerySlider" class="carousel slide" data-bs-ride="carousel">
+              <!-- Indicators/dots -->
+              <div class="carousel-indicators">
+                <!--Button comming from JS-->
+              </div>
+              <!-- The slideshow/carousel -->
+              <div class="carousel-inner">
+                <!--Images comming from JS-->
+              </div>
+              <!-- Left and right controls/icons -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#gallerySlider" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+              <button class="carousel-control-next" type="button" data-bs-target="#gallerySlider" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Write a Review Modal-->
+    <div class="tr-write-review-modal">
+      <div class="tr-popup-content">
+        <h3>Write a review</h3>
+        <div class="tr-write-review-content">
+          <div class="tr-hotel-reviews-details">
+            <div class="tr-main-image">
+              <img loading="lazy" src="images/tower-bridge-1.png" alt="Room Image">
+            </div>
+            <div class="tr-hotel-info">
+              <h4 class="tr-hotel-name">Tower Bridge</h4>
+              <div class="tr-hotel-address">Tower Bridge Road, London SE1 2UP England</div> 
+            </div>
+          </div>
+          <form>
+            <div class="tr-overall-rating">
+              <div class="tr-rating">
+                <label>Do you recommend visiting Tower Bridge?</label>
+                <div class="tr-recommended-actions">
+                  <label>
+                    <input type="radio" class="write-review" name="recommend" value="Yes">
+                    <span>Yes</span>
+                  </label>
+                  <label>
+                    <input type="radio" class="write-review" name="recommend" value="No">
+                    <span>No</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="tr-go-with">
+              <label>Who did you go with?</label>
+              <ul>
+                <li>Business</li>
+                <li class="selected">Couple</li>
+                <li>Family</li>
+                <li>Friends</li>
+                <li>Solo</li>
+              </ul>
+            </div>
+            <div class="tr-review-msg">
+              <label>Write a review</label>
+              <textarea class="form-control" id="" placeholder="Type your review here" name=""></textarea>
+            </div>
+            <div class="tr-review-image">
+              <label>Add some photos (optional)</label>
+              <div class="tr-file-upload">
+                <!--<button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>-->
+                <div class="tr-image-upload-wrap">
+                  <input class="tr-file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                  <div class="tr-drag-image">
+                    <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_441_7517)"><path d="M15.8385 12.6667C15.8385 13.0203 15.6981 13.3594 15.448 13.6095C15.198 13.8595 14.8588 14 14.5052 14H2.50521C2.15159 14 1.81245 13.8595 1.5624 13.6095C1.31235 13.3594 1.17188 13.0203 1.17188 12.6667V5.33333C1.17188 4.97971 1.31235 4.64057 1.5624 4.39052C1.81245 4.14048 2.15159 4 2.50521 4H5.17188L6.50521 2H10.5052L11.8385 4H14.5052C14.8588 4 15.198 4.14048 15.448 4.39052C15.6981 4.64057 15.8385 4.97971 15.8385 5.33333V12.6667Z" stroke="#6A6A6A" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.49479 11.3333C9.96755 11.3333 11.1615 10.1394 11.1615 8.66667C11.1615 7.19391 9.96755 6 8.49479 6C7.02203 6 5.82812 7.19391 5.82812 8.66667C5.82812 10.1394 7.02203 11.3333 8.49479 11.3333Z" stroke="#6A6A6A" stroke-linecap="round" stroke-linejoin="round"/></g><defs><clipPath id="clip0_441_7517"><rect width="16" height="16" fill="white" transform="translate(0.5)"/></clipPath></defs></svg>
+                    <div>Click to add photos</div>
+                    <span>or drag and drop</span>
+                  </div>
+                </div>
+                <div class="tr-file-upload-content">
+                  <img class="tr-file-upload-image" src="#" alt="your image" />
+                  <div class="image-title-wrap">
+                    <button type="button" onclick="removeUpload()" class="tr-remove-image">
+                      <i class="fa fa-times" aria-hidden="true"></i>
+                      <!--<span class="image-title">Uploaded Image</span>-->
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="tr-popup-btn">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timing Modal -->
+    <div class="modal" id="timingModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Timings</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="tr-days-time-section">
+            <div class="tr-day-time">
+              <div class="tr-days">Today</div>
+              <div class="tr-timing"><span class="tr-open-circle"></span>OPEN NOW</div>
+            </div>
+            <div class="tr-day-time">
+              <div class="tr-days">Monday</div>
+              <div class="tr-timing">9:00 AM - 05:30 PM</div>
+            </div>
+            <div class="tr-day-time">
+              <div class="tr-days">Tuesday</div>
+              <div class="tr-timing">
+                <div>05:00 AM - 09:30 PM</div>
+                <div>09:00 AM - 01:30 PM</div>
+              </div>
+            </div>
+            <div class="tr-day-time">
+              <div class="tr-days">Wednesday</div>
+              <div class="tr-timing">9:00 AM - 05:30 PM</div>
+            </div>
+            <div class="tr-day-time">
+              <div class="tr-days">Thursday</div>
+              <div class="tr-timing">9:00 AM - 05:30 PM</div>
+            </div>
+            <div class="tr-day-time">
+              <div class="tr-days">Friday</div>
+              <div class="tr-timing">9:00 AM - 05:30 PM</div>
+            </div>
+            <div class="tr-day-time">
+              <div class="tr-days">Saturday</div>
+              <div class="tr-timing">9:00 AM - 05:30 PM</div>
+            </div>
+            <div class="tr-day-time">
+              <div class="tr-days">Sunday</div>
+              <div class="tr-timing tr-closed">Closed</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timing Change Modal -->
+    <div class="modal" id="timingChangeModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Select Days and Time</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="tr-days-time-section">
+            <div class="tr-day-time">
+              <div class="tr-days">Sunday</div>
+              <div class="tr-timing tr-closed">
+                09:00 AM - 01:30 PM
+                <button type="button" class="tr-anchor-btn" data-bs-toggle="modal" data-bs-target="#timingEditModal">
+                  <svg width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 13.3333H14" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11 2.3334C11.2652 2.06819 11.6249 1.91919 12 1.91919C12.1857 1.91919 12.3696 1.95577 12.5412 2.02684C12.7128 2.09791 12.8687 2.20208 13 2.3334C13.1313 2.46472 13.2355 2.62063 13.3066 2.79221C13.3776 2.96379 13.4142 3.14769 13.4142 3.3334C13.4142 3.51912 13.3776 3.70302 13.3066 3.8746C13.2355 4.04618 13.1313 4.20208 13 4.3334L4.66667 12.6667L2 13.3334L2.66667 10.6667L11 2.3334Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </button>
+              </div>
+            </div>
+            <div class="tr-day-time">
+              <div class="tr-days">Monday</div>
+              <div class="tr-timing">
+                9:00 AM - 05:30 PM
+                <button type="button" class="tr-anchor-btn" data-bs-toggle="modal" data-bs-target="#timingEditModal">
+                  <svg width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 13.3333H14" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11 2.3334C11.2652 2.06819 11.6249 1.91919 12 1.91919C12.1857 1.91919 12.3696 1.95577 12.5412 2.02684C12.7128 2.09791 12.8687 2.20208 13 2.3334C13.1313 2.46472 13.2355 2.62063 13.3066 2.79221C13.3776 2.96379 13.4142 3.14769 13.4142 3.3334C13.4142 3.51912 13.3776 3.70302 13.3066 3.8746C13.2355 4.04618 13.1313 4.20208 13 4.3334L4.66667 12.6667L2 13.3334L2.66667 10.6667L11 2.3334Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </button>
+              </div>
+            </div>
+            <div class="tr-day-time">
+              <div class="tr-days">Tuesday</div>
+              <div class="tr-timing">
+                Closed
+                <button type="button" class="tr-anchor-btn" data-bs-toggle="modal" data-bs-target="#timingEditModal">
+                  <svg width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 13.3333H14" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11 2.3334C11.2652 2.06819 11.6249 1.91919 12 1.91919C12.1857 1.91919 12.3696 1.95577 12.5412 2.02684C12.7128 2.09791 12.8687 2.20208 13 2.3334C13.1313 2.46472 13.2355 2.62063 13.3066 2.79221C13.3776 2.96379 13.4142 3.14769 13.4142 3.3334C13.4142 3.51912 13.3776 3.70302 13.3066 3.8746C13.2355 4.04618 13.1313 4.20208 13 4.3334L4.66667 12.6667L2 13.3334L2.66667 10.6667L11 2.3334Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </button>
+              </div>
+            </div>
+            <div class="tr-day-time">
+              <div class="tr-days">Wednesday</div>
+              <div class="tr-timing">
+                Closed
+                <button type="button" class="tr-anchor-btn" data-bs-toggle="modal" data-bs-target="#timingEditModal">
+                  <svg width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 13.3333H14" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11 2.3334C11.2652 2.06819 11.6249 1.91919 12 1.91919C12.1857 1.91919 12.3696 1.95577 12.5412 2.02684C12.7128 2.09791 12.8687 2.20208 13 2.3334C13.1313 2.46472 13.2355 2.62063 13.3066 2.79221C13.3776 2.96379 13.4142 3.14769 13.4142 3.3334C13.4142 3.51912 13.3776 3.70302 13.3066 3.8746C13.2355 4.04618 13.1313 4.20208 13 4.3334L4.66667 12.6667L2 13.3334L2.66667 10.6667L11 2.3334Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </button>
+              </div>
+            </div>
+            <div class="tr-day-time">
+              <div class="tr-days">Thursday</div>
+              <div class="tr-timing">
+                Closed
+                <button type="button" class="tr-anchor-btn" data-bs-toggle="modal" data-bs-target="#timingEditModal">
+                  <svg width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 13.3333H14" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11 2.3334C11.2652 2.06819 11.6249 1.91919 12 1.91919C12.1857 1.91919 12.3696 1.95577 12.5412 2.02684C12.7128 2.09791 12.8687 2.20208 13 2.3334C13.1313 2.46472 13.2355 2.62063 13.3066 2.79221C13.3776 2.96379 13.4142 3.14769 13.4142 3.3334C13.4142 3.51912 13.3776 3.70302 13.3066 3.8746C13.2355 4.04618 13.1313 4.20208 13 4.3334L4.66667 12.6667L2 13.3334L2.66667 10.6667L11 2.3334Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </button>
+              </div>
+            </div>
+            <div class="tr-day-time">
+              <div class="tr-days">Friday</div>
+              <div class="tr-timing">
+                Closed
+                <button type="button" class="tr-anchor-btn" data-bs-toggle="modal" data-bs-target="#timingEditModal">
+                  <svg width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 13.3333H14" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11 2.3334C11.2652 2.06819 11.6249 1.91919 12 1.91919C12.1857 1.91919 12.3696 1.95577 12.5412 2.02684C12.7128 2.09791 12.8687 2.20208 13 2.3334C13.1313 2.46472 13.2355 2.62063 13.3066 2.79221C13.3776 2.96379 13.4142 3.14769 13.4142 3.3334C13.4142 3.51912 13.3776 3.70302 13.3066 3.8746C13.2355 4.04618 13.1313 4.20208 13 4.3334L4.66667 12.6667L2 13.3334L2.66667 10.6667L11 2.3334Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </button>
+              </div>
+            </div>
+            <div class="tr-day-time">
+              <div class="tr-days">Saturday</div>
+              <div class="tr-timing">
+                Closed
+                <button type="button" class="tr-anchor-btn" data-bs-toggle="modal" data-bs-target="#timingEditModal">
+                  <svg width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 13.3333H14" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11 2.3334C11.2652 2.06819 11.6249 1.91919 12 1.91919C12.1857 1.91919 12.3696 1.95577 12.5412 2.02684C12.7128 2.09791 12.8687 2.20208 13 2.3334C13.1313 2.46472 13.2355 2.62063 13.3066 2.79221C13.3776 2.96379 13.4142 3.14769 13.4142 3.3334C13.4142 3.51912 13.3776 3.70302 13.3066 3.8746C13.2355 4.04618 13.1313 4.20208 13 4.3334L4.66667 12.6667L2 13.3334L2.66667 10.6667L11 2.3334Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timing Edit Modal -->
+    <div class="modal" id="timingEditModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Select Time</h5>
+            <button type="button" class="tr-back-btn" data-bs-toggle="modal" data-bs-target="#timingChangeModal">Back Button</button>
+          </div>
+          <div class="tr-days-time-section">
+            <div class="tr-weekday">
+              <label class="tr-day">
+                <input type="checkbox" id="sunday" name="" value="">
+                <span>S</span>
+              </label>
+              <label class="tr-day">
+                <input type="checkbox" id="monday" name="" value="">
+                <span>M</span>
+              </label>
+              <label class="tr-day">
+                <input type="checkbox" id="tuesday" name="" value="">
+                <span>T</span>
+              </label>
+              <label class="tr-day">
+                <input type="checkbox" id="wednesday" name="" value="">
+                <span>W</span>
+              </label>
+              <label class="tr-day">
+                <input type="checkbox" id="thursday" name="" value="">
+                <span>T</span>
+              </label>
+              <label class="tr-day">
+                <input type="checkbox" id="friday" name="" value="">
+                <span>F</span>
+              </label>
+              <label class="tr-day">
+                <input type="checkbox" id="saturday" name="" value="">
+                <span>S</span>
+              </label>
+            </div>
+          </div>
+          <div class="tr-field">
+            <label class="tr-check-box">
+              <input type="checkbox" id="" name="" value="">
+              <span class="checkmark"></span>24 hours Open
+            </label>
+            <label class="tr-check-box">
+              <input type="checkbox" id="" name="" value="">
+              <span class="checkmark"></span>Closed
+            </label>
+          </div>
+          <div class="tr-timing-field">
+            <div>
+              <label>
+                <span>Open Time</span>
+                <input type="text" placeholder="10:00 AM"name="">
+              </label>
+            </div>
+            <div>
+              <label>
+                <span>Close Time</span>
+                <input type="text" placeholder="--:-- --"name="">
+              </label>
+            </div>
+            <div class="tr-remove-day">
+              <button type="button" class="tr-anchor-btn" title="Remove"><svg width="20" height="23" viewBox="0 0 31 33" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M26.8023 10.8385L25.7209 31.1637C25.686 31.9022 25.0581 32.5 24.3256 32.5H6.67442C5.94186 32.5 5.31395 31.9022 5.27907 31.1637L4.19767 10.8385C4.16279 10.0648 4.75581 9.3967 5.52326 9.36154C6.2907 9.32637 6.95349 9.92418 6.98837 10.6978L8 29.6868H23.0349L24.0465 10.6978C24.0814 9.92418 24.7442 9.32637 25.5116 9.36154C26.2442 9.3967 26.8372 10.0648 26.8023 10.8385ZM30.5 6.12637C30.5 6.9 29.8721 7.53297 29.1047 7.53297H1.89535C1.12791 7.53297 0.5 6.9 0.5 6.12637C0.5 5.35275 1.12791 4.71978 1.89535 4.71978H9.56977V1.55495C9.56977 0.886813 10.0233 0.5 10.686 0.5H20.314C20.9767 0.5 21.4302 0.886813 21.4302 1.55495V4.71978H29.1047C29.8721 4.71978 30.5 5.35275 30.5 6.12637ZM12.0116 4.71978H18.9884V2.96154H12.0116V4.71978ZM12.6047 27.5769C13.3023 27.5769 13.8256 26.9088 13.8256 26.2407L13.4767 11.0495C13.4767 10.3813 12.9186 9.81868 12.2209 9.81868C11.5581 9.81868 11 10.3813 11.0349 11.0846L11.3837 26.311C11.3837 26.9791 11.9419 27.5769 12.6047 27.5769ZM18.3605 27.5769C19.0233 27.5769 19.5814 27.0143 19.5814 26.3462L19.9302 11.1549C19.9302 10.4868 19.407 9.88901 18.7442 9.88901C18.0465 9.88901 17.5233 10.4165 17.4884 11.0846L17.1395 26.2758C17.1047 26.9791 17.6628 27.5769 18.3605 27.5769C18.3256 27.5769 18.3256 27.5769 18.3605 27.5769Z" fill="#222222"/></svg></button>
+            </div>
+          </div>
+          <div class="tr-timing-field">
+            <div>
+              <label>
+                <span>Open Time</span>
+                <input type="text" placeholder="10:00 AM"name="">
+              </label>
+            </div>
+            <div>
+              <label>
+                <span>Close Time</span>
+                <input type="text" placeholder="--:-- --"name="">
+              </label>
+            </div>
+            <div class="tr-remove-day">
+              <button type="button" class="tr-anchor-btn" title="Remove"><svg width="20" height="23" viewBox="0 0 31 33" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M26.8023 10.8385L25.7209 31.1637C25.686 31.9022 25.0581 32.5 24.3256 32.5H6.67442C5.94186 32.5 5.31395 31.9022 5.27907 31.1637L4.19767 10.8385C4.16279 10.0648 4.75581 9.3967 5.52326 9.36154C6.2907 9.32637 6.95349 9.92418 6.98837 10.6978L8 29.6868H23.0349L24.0465 10.6978C24.0814 9.92418 24.7442 9.32637 25.5116 9.36154C26.2442 9.3967 26.8372 10.0648 26.8023 10.8385ZM30.5 6.12637C30.5 6.9 29.8721 7.53297 29.1047 7.53297H1.89535C1.12791 7.53297 0.5 6.9 0.5 6.12637C0.5 5.35275 1.12791 4.71978 1.89535 4.71978H9.56977V1.55495C9.56977 0.886813 10.0233 0.5 10.686 0.5H20.314C20.9767 0.5 21.4302 0.886813 21.4302 1.55495V4.71978H29.1047C29.8721 4.71978 30.5 5.35275 30.5 6.12637ZM12.0116 4.71978H18.9884V2.96154H12.0116V4.71978ZM12.6047 27.5769C13.3023 27.5769 13.8256 26.9088 13.8256 26.2407L13.4767 11.0495C13.4767 10.3813 12.9186 9.81868 12.2209 9.81868C11.5581 9.81868 11 10.3813 11.0349 11.0846L11.3837 26.311C11.3837 26.9791 11.9419 27.5769 12.6047 27.5769ZM18.3605 27.5769C19.0233 27.5769 19.5814 27.0143 19.5814 26.3462L19.9302 11.1549C19.9302 10.4868 19.407 9.88901 18.7442 9.88901C18.0465 9.88901 17.5233 10.4165 17.4884 11.0846L17.1395 26.2758C17.1047 26.9791 17.6628 27.5769 18.3605 27.5769C18.3256 27.5769 18.3256 27.5769 18.3605 27.5769Z" fill="#222222"/></svg></button>
+            </div>
+          </div>
+          <button type="button" class="tr-anchor-btn tr-add-more-hours"><span>Add more hours</span></button>
+          <div class="tr-actions">
+            <button type="button" class="tr-anchor-btn" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="tr-btn">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Imprive The Lisiting Modal -->
+    <div class="modal" id="improveListingModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Improve this listing</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="tr-place-details">
+            <div class="tr-image">
+              <img loading="lazy" src="images/tower-bridge-1.png" alt="Tower Bridge">
+            </div>
+            <div class="tr-details">
+              <div class="tr-name-and-address">
+                <h4 class="tr-name">Tower Bridge</h4>
+                <div class="tr-address">London, England</div>
+              </div>
+              <div class="tr-like-review">
+                <div class="tr-heart">
+                  <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </div>
+                <div class="tr-ranting-percent">89%</div>
+                <div class="tr-excellent">Excellent</div>
+              </div>
+            </div>
+          </div>
+          <div class="tr-field-row">
+            <div class="tr-field">
+              <label class="tr-field-label" for="aboutPlace">About this place</label>
+              <textarea placeholder="Type here" class="form-control" id="aboutPlace" name="" value=""></textarea>
+            </div>
+          </div>
+          <div class="tr-field-row">
+            <div class="tr-field">
+              <label class="tr-field-label" for="suggestHours">Suggest the duration (Hours)</label>
+              <input type="text" class="form-control" placeholder="2-3" id="suggestHours" name="" value="">
+            </div>
+          </div>
+          <div class="tr-field-row">
+            <div class="tr-field">
+              <label class="tr-field-label" for="timing">Timing</label>
+              <input type="text" class="form-control tr-timing-field" placeholder="Add open hours" id="timing" name="" value=""  data-bs-toggle="modal" data-bs-target="#timingChangeModal">
+            </div>
+          </div>
+          <div class="tr-field-row">
+            <div class="tr-field">
+              <label class="tr-field-label" for="whatsNearBy">Whats nearby</label>
+              <input type="text" class="form-control" id="whatsNearBy" name="" value="">
+            </div>
+          </div>
+          <div class="tr-field-row">
+            <div class="tr-field">
+              <label class="tr-field-label" for=">WhatIsItKnownFor">What Is It Known For</label>
+              <input type="text" class="form-control" id=">WhatIsItKnownFor" name="" value="">
+            </div>
+          </div>
+          <div class="tr-field-row">
+            <label class="tr-check-box">
+              <input type="checkbox" id="" name="" value="">
+              <span class="checkmark"></span>Long Island Restaurant
+            </label>
+          </div>
+          <div class="tr-field-row">
+            <label class="tr-check-box">
+              <input type="checkbox" id="" name="" value="">
+              <span class="checkmark"></span>Long Island Restaurant
+            </label>
+          </div>
+          <div class="tr-field-row">
+            <label class="tr-check-box">
+              <input type="checkbox" id="" name="" value="">
+              <span class="checkmark"></span>Long Island Restaurant
+            </label>
+          </div>
+          <div class="tr-review-image">
+            <label>Add some photos (optional)</label>
+            <div class="tr-file-upload">
+              <!--<button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>-->
+              <div class="tr-image-upload-wrap">
+                <input class="tr-file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                <div class="tr-drag-image">
+                  <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_441_7517)"><path d="M15.8385 12.6667C15.8385 13.0203 15.6981 13.3594 15.448 13.6095C15.198 13.8595 14.8588 14 14.5052 14H2.50521C2.15159 14 1.81245 13.8595 1.5624 13.6095C1.31235 13.3594 1.17188 13.0203 1.17188 12.6667V5.33333C1.17188 4.97971 1.31235 4.64057 1.5624 4.39052C1.81245 4.14048 2.15159 4 2.50521 4H5.17188L6.50521 2H10.5052L11.8385 4H14.5052C14.8588 4 15.198 4.14048 15.448 4.39052C15.6981 4.64057 15.8385 4.97971 15.8385 5.33333V12.6667Z" stroke="#6A6A6A" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.49479 11.3333C9.96755 11.3333 11.1615 10.1394 11.1615 8.66667C11.1615 7.19391 9.96755 6 8.49479 6C7.02203 6 5.82812 7.19391 5.82812 8.66667C5.82812 10.1394 7.02203 11.3333 8.49479 11.3333Z" stroke="#6A6A6A" stroke-linecap="round" stroke-linejoin="round"/></g><defs><clipPath id="clip0_441_7517"><rect width="16" height="16" fill="white" transform="translate(0.5)"/></clipPath></defs></svg>
+                  <div>Click to add photos</div>
+                  <span>or drag and drop</span>
+                </div>
+              </div>
+              <div class="tr-file-upload-content">
+                <img class="tr-file-upload-image" src="#" alt="your image" />
+                <div class="image-title-wrap">
+                  <button type="button" onclick="removeUpload()" class="tr-remove-image">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                    <!--<span class="image-title">Uploaded Image</span>-->
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tr-actions">
+            <button type="submit" class="tr-btn">Submit</button>
+            <button type="button" class="tr-anchor-btn">Report Business as Closed</button>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </body>
+</html>
+
+<script type="text/javascript" src="js/common.js"></script>
