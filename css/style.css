@@ -7347,3 +7347,47 @@ footer .tr-social-links ul li:nth-of-type(3) {
   border-color: transparent;
 }
 /******* Explore Details Page - End *******/
+
+
+/******* Single Page - Start *******/
+.tr-single-page {
+  margin-top: 35px;
+}
+.tr-single-page h1,
+.tr-single-page h2,
+.tr-single-page h3 {
+  font-weight: 600;
+  line-height: 28px;
+  color: #222222;
+}
+.tr-single-page h1 {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+.tr-single-page h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.tr-single-page h3 {
+  font-size: 18px;
+}
+.tr-single-page ul {
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+.tr-single-page ul li {
+  list-style: disc;
+}
+.tr-single-page p,
+.tr-single-page ul li,
+.tr-single-page address {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #222222;
+}
+.tr-single-page p,
+.tr-single-page address {
+  margin-bottom: 20px;
+}
+/******* Single Page - End *******/
