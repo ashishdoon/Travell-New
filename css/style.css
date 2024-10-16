@@ -305,7 +305,7 @@ header {
   position: sticky;
   top: 0;
   background: #ffffff;
-  z-index: 999;
+  z-index: 1001;
 }
 header .tr-header {
   display: flex;
@@ -893,7 +893,7 @@ header .tr-mobile {
   left: 0;
   width: 100%;
   opacity: 0.8;
-  z-index: 2;
+  z-index: 999;
 }
 #overLay.active {
   display: block;
@@ -998,7 +998,7 @@ header .tr-mobile {
 .tr-hotel-informations .tr-hotel-info .tr-raiting {
   display: flex;
   align-items: center;
-  margin-top: 6px;
+  margin-top: 8px;
 }
 .tr-hotel-informations .tr-hotel-info .tr-raiting a {
   font-size: 16px;
@@ -1148,7 +1148,7 @@ header .tr-mobile {
   color: #121212;
 }
 .tr-hotel-certificated .tr-families-favourite p {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 12px;
   line-height: 16px;
   letter-spacing: 0.01em;
@@ -4880,6 +4880,10 @@ footer .tr-social-links ul li:nth-of-type(3) {
 .tr-room-section-2 .tr-hotel-deatil h2 {
   line-height: 26px;
   margin-bottom: 0;
+  white-space: nowrap;
+  max-width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .tr-room-section-2 .tr-hotel-deatil h2 a {
   color: #000000;

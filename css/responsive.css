@@ -2525,6 +2525,9 @@
     height: auto;
     padding: 18px 24px;
   }
+  .tr-explore-search .tr-search-field {
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+  }
   .tr-explore-listing .tr-museum .tr-image,
   .tr-explore-listing .tr-historical-monument .tr-image,
   .tr-explore-listing .tr-experience .tr-experience-slider,
