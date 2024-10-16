@@ -900,7 +900,7 @@
     right: 0;
     width: 100%;
     background: #fff;
-    z-index: 999;
+    z-index: 1001;
     margin-top: 0;
     padding: 0 24px;
     transition: all .3s ease;
@@ -1345,7 +1345,7 @@
     right: 0;
     width: 100%;
     background: #fff;
-    z-index: 999;
+    z-index: 1001;
     margin-top: 0;
     padding: 0 24px;
     transition: all .3s ease;
@@ -1454,7 +1454,7 @@
     right: 0;
     width: 100%;
     background: #fff;
-    z-index: 999;
+    z-index: 1001;
     margin-top: 0;
     padding: 0 24px;
     transition: all .3s ease;
@@ -2303,7 +2303,7 @@
     padding: 0 24px 24px;
     overflow-y: auto;
     transition: all .3s ease;
-    z-index: 999;
+    z-index: 1001;
   }
   .tr-filters-section.open {
     top: 0;
@@ -2559,7 +2559,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 999;
+    z-index: 1001;
   }
   .tr-explore-listing  .tr-hotel-on-map {
     width: 100%;
