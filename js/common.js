@@ -43,8 +43,12 @@ function updateTotalRoomGuest() {
   if (totalRoomVal || totalAdultsGuestVal || totalChildrenGuestVal || totalChildrenInfantsVal) {
     var combinedVal = totalRoomVal + ' ' + totalAdultsGuestVal +' ' + totalChildrenGuestVal +' ' + totalChildrenInfantsVal;
     $('#totalRoomAndGuest').val(combinedVal);
+    $('#totalRoomAndGuest3').val(combinedVal);
+    $('#homeTotalRoomAndGuest').val(combinedVal);
   } else {
     $('#totalRoomAndGuest').val('');
+    $('#totalRoomAndGuest3').val('');
+    $('#homeTotalRoomAndGuest').val('');
   }
 }
 $(document).ready(function() {
@@ -226,7 +230,10 @@ $(document).ready(function() {
     $(".tr-search-info-section .tr-location").text(searchLocation);
     $(".tr-search-info-section .tr-dates").text('');
     $(".tr-search-info-section .tr-guest").text('');
-    closeSearchForm();
+    //closeSearchForm();
+    if (!$(this).closest('.tr-search-home-page').length) {
+      closeSearchForm();
+    }
   });
 
   $('form#hotelForm').submit(function(e) {
@@ -242,7 +249,10 @@ $(document).ready(function() {
     if (value1 || value2 || value3 || value4) {
       $('.tr-search-info-section').addClass("tr-search-deatils-filled");
     }
-    closeSearchForm();
+    //closeSearchForm();
+    if (!$(this).closest('.tr-search-home-page').length) {
+      closeSearchForm();
+    }
   });
 });
 
@@ -1328,3 +1338,28 @@ $(document).ready(function () {
   });
 });
 
+// For Home Page
+$('.tr-search-home-page .tr-nav-tabs div').on('click', function(){
+  $(".tr-search-home-page .tr-nav-tabs div").removeClass('active');
+  $(".tr-explore-and-hotel-form form.open").removeClass('open');
+  $(this).addClass('active');
+  var tab_id = $(this).attr('data-tab');
+  $("#"+tab_id).addClass('open');
+  searchFormControl();
+  body.classList.remove("modal-open");
+  overLay.style.display = "none";
+});
+
+searchLocationInput.onclick = function(event) {
+  if (event.target.closest(".tr-search-home-page")) {
+    recentSearchLocationBox();
+  }
+}
+
+$('#homeTotalRoomAndGuest').click(function() {
+  if ($('.tr-search-home-page #guestQtyModal .tr-add-edit-guest-count').length === 0) {
+    var roomGuestCount = $(".tr-search-home-page .tr-add-edit-guest-count").detach();
+    $('.tr-search-home-page #guestQtyModal').append(roomGuestCount);
+  }
+  $(".tr-search-home-page #guestQtyModal").css({"display": "block"});
+});

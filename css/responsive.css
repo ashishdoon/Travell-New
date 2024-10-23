@@ -1836,7 +1836,7 @@
     z-index: 1;
     padding: 0 24px;
     transition: all .3s ease;
-    z-index: 999;
+    z-index: 1001;
   }
   .tr-search-hotel .tr-form-where.show {
     top: 0;
@@ -2856,6 +2856,65 @@
     left: 10px;
   }
   /******* Explore Details Page - End *******/
+
+  /******* Single Page - Start *******/
+  .tr-single-page {
+    margin-top: 24px;
+  }
+  .tr-single-page h2, 
+  .tr-single-page h3 {
+    line-height: 22px;
+  }
+  .tr-single-page h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .tr-single-page h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .tr-single-page h3 {
+    font-size: 16px;
+  }
+  .tr-single-page p, 
+  .tr-single-page ul li, 
+  .tr-single-page address {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  /******* Single Page - End *******/
+
+  /******* Home Page - End *******/
+  .tr-search-home-page .tr-nav-tabs.show {
+    margin: 0;
+  }
+  .tr-search-home-page .tr-find-hotels {
+    height: auto;
+    padding: 0;
+    position: static;
+  }
+  .tr-search-home-page .tr-find-hotels .tr-btn {
+    margin-top: 0;
+  }
+  .tr-search-home-page .tr-find-hotels form.tr-explore-form .tr-form-where {
+    padding-right: 24px;
+  }
+  .tr-search-home-page .tr-find-hotels .tr-guests-modal {
+    display: block;
+  }
+  .tr-popular-destination {
+    padding: 24px 0 0;
+  }
+  .tr-popular-destination-lists .tr-popular-destination-list {
+    width: 257px;
+    padding: 0 12px;
+  }
+  .tr-popular-destination-list .tr-destination-name {
+    font-size: 18px;
+    left: 12px;
+    right: 12px;
+  }
+  /******* Home Page - End *******/
 }
 
 @media screen and (max-width: 576px) {
