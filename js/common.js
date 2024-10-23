@@ -1115,7 +1115,7 @@ $('#mapModal .carousel').each(function() {
   if (currentId) {
     var newId = currentId + '-1';
     $(this).attr('id', newId);
-    $('button[data-bs-target="#' + currentId + '"]').each(function() {
+    $('#mapModal button[data-bs-target="#' + currentId + '"]').each(function() {
       $(this).attr('data-bs-target', '#' + newId);
     });
   }
@@ -1277,3 +1277,54 @@ $(document).ready(function() {
     $('html,body').animate({ scrollTop: $(".tr-reviews-mentioned").offset().top - 60},'fast');
   });
 });
+
+
+// Read More, 3 list show - Common Code
+$(document).ready(function () {
+  $('.list-content').each(function () {
+    var $container = $(this);
+    var $content = $container.find('li');
+    var $toggleButton = $container.find('.toggle-list');
+    var limit = 2;
+    $content.slice(0, limit).addClass('visible');
+    $toggleButton.on('click', function () {
+      if ($toggleButton.text() === 'Read More') {
+        $content.addClass('visible');
+        $toggleButton.text('Read Less');
+      } else {
+        $content.slice(limit).removeClass('visible');
+        $toggleButton.text('Read More');
+      }
+    });
+    if ($content.length <= limit) {
+      $toggleButton.hide();
+    }
+  });
+});
+
+// Read More, Paragraph - Common Code
+$(document).ready(function () {
+  $(".paragraph-content").each(function () {
+    var $contentPara = $(this).find(".para-content");
+    var $toggleParaButton = $(this).find(".toggle-para");
+    var originalContent = $contentPara.html();
+    var wordsArray = originalContent.split(" ");
+    var limit = 70;
+    if (wordsArray.length > limit) {
+      var visibleText = wordsArray.slice(0, limit).join(" ") + "...";
+      $contentPara.html(visibleText);
+      $toggleParaButton.on("click", function () {
+        if ($toggleParaButton.text() === "Read More") {
+          $contentPara.html(originalContent);
+          $toggleParaButton.text("Read Less");
+        } else {
+          $contentPara.html(visibleText);
+          $toggleParaButton.text("Read More");
+        }
+      });
+    } else {
+      $toggleParaButton.hide();
+    }
+  });
+});
+

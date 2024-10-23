@@ -298,6 +298,13 @@ button.tr-anchor-btn:hover {
   display: none;
 }
 
+.list-content li {
+  display: none;
+}
+.list-content li.visible {
+  display: list-item;
+}
+
 /******* HEADER Start *******/
 header {
   border-bottom: 1px solid #D6D6D6;
@@ -4330,6 +4337,9 @@ footer .tr-social-links ul li:nth-of-type(3) {
   border-radius: 12px;
   overflow: hidden;
 }
+.tr-more-places-list .tr-hotel-img img {
+  transition: all .5s ease;
+}
 .tr-more-places-list .tr-hotel-img:hover img {
   transform: scale(1.1);
   transition: all .5s ease;
@@ -4345,6 +4355,10 @@ footer .tr-social-links ul li:nth-of-type(3) {
   font-weight: 600;
   line-height: 19px;
   transition: all .3s ease;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .tr-more-places-list .tr-hotel-facilities {
   margin-top: 8px;
@@ -4888,6 +4902,10 @@ footer .tr-social-links ul li:nth-of-type(3) {
 }
 .tr-room-section-2 .tr-hotel-deatil h2 a {
   color: #000000;
+  border-bottom: 1px solid transparent;
+}
+.tr-room-section-2 .tr-hotel-deatil h2 a:hover {
+  border-color: #000000;
 }
 .tr-room-section-2 .tr-heading-with-rating {
   display: flex;
@@ -4963,25 +4981,25 @@ footer .tr-social-links ul li:nth-of-type(3) {
   display: block;
   margin-top: 4px;
 }
-.tr-room-section-2 .tr-hotel-deatil .tr-more-facilities ul {
+/*.tr-room-section-2 .tr-hotel-deatil .tr-more-facilities ul {
   display: flex;
   flex-wrap: wrap;
-}
+}*/
 .tr-room-section-2 .tr-hotel-deatil .tr-more-facilities ul li {
   font-size: 14px;
   line-height: 17px;
   color: #232A2F;
-  padding-right: 11px;
+/*  padding-right: 11px;*/
   position: relative;
 }
-.tr-room-section-2 .tr-hotel-deatil .tr-more-facilities ul li:not(:last-child):after {
+/*.tr-room-section-2 .tr-hotel-deatil .tr-more-facilities ul li:not(:last-child):after {
   content: "";
   position: absolute;
   top: 8px;
   right: 5px;
   border: 1px solid #222222;
   opacity: 0.8;
-}
+}*/
 
 .tr-room-section-2 .tr-hotel-price-section {
   width: 250px;
@@ -5469,16 +5487,21 @@ footer .tr-social-links ul li:nth-of-type(3) {
 }
 
 .tr-listing-without-dates-1 .tr-room-section-2 .tr-hotel-deatil .tr-more-facilities ul {
-  margin-bottom: 16px;
+  /*margin-bottom: 16px;*/
+  padding-left: 20px;
 }
 .tr-listing-without-dates-1 .tr-room-section-2 .tr-hotel-deatil .tr-more-facilities ul:last-child {
   margin-bottom: 0;
 }
 .tr-listing-without-dates-1 .tr-room-section-2 .tr-hotel-deatil .tr-more-facilities ul li {
   font-size: 16px;
+  font-weight: 400;
   line-height: 19px;
   color: #222222;
+  list-style: disc;
+  margin-bottom: 5px;
 }
+
 .tr-listing-without-dates-1 .tr-room-section-2 .tr-hotel-deatil .tr-hotel-facilities {
   padding: 0;
 }
