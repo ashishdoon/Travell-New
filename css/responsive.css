@@ -2381,7 +2381,7 @@
   }
   .tr-listing-without-dates-1 .tr-room-section-2 .tr-hotel-deatils {
     border-bottom: 1px solid #D6D6D6;
-    padding: 24px 0 20px; 
+    padding: 24px 0 20px;
   }
   .tr-listing-without-dates-1 .tr-room-section-2 .tr-hotel-deatils:last-child {
     border: none;
@@ -2401,10 +2401,14 @@
     width: 100%;
     margin: 2px 0 8px;
   }
-  .tr-listing-without-dates-1 .tr-room-section-2 .tr-mobile {
+  .tr-listing-without-dates-1 .tr-room-section-2 .accordion {
     order: 3;
     width: 100%;
   }
+  /*.tr-listing-without-dates-1 .tr-room-section-2 .tr-mobile {
+    order: 3;
+    width: 100%;
+  }*/
   .tr-listing-without-dates-1 .tr-room-section-2 .tr-hotel-deatil .tr-hotel-facilities {
     margin-top: 8px;
   }
@@ -2525,10 +2529,79 @@
     height: auto;
     padding: 18px 24px;
   }
+  .tr-explore-listing .tr-title-section {
+    justify-content: center;
+  }
+  .tr-explore-listing h2.tr-title {
+    font-size: 22px;
+  }
+  .tr-explore-listing .tr-total-search {
+    font-size: 14px;
+    margin-top: 0;
+    text-align: center;
+  }
+  .tr-explore-listing .tr-title-section button.tr-share {
+    display: none;
+  }
+  .tr-explore-search {
+    border-top: none;
+    margin: 20px 0 30px;
+    padding-top: 0;
+  }
+  .tr-explore-search .tr-explore-search-modal .tr-explore-search-feild {
+    margin: 24px;
+    width: auto;
+  }
   .tr-explore-search .tr-search-field {
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
   }
-  .tr-explore-listing .tr-museum .tr-image,
+  .tr-explore-search .tr-explore-search-modal {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    height: 90vh;
+    border-radius: 26px 26px 0 0;
+    z-index: 99999;
+  }
+  .tr-explore-search .tr-explore-search-modal .tr-search-field,
+  .tr-explore-search .tr-explore-search-modal .tr-search-field:focus {
+    border: 1px solid #EFEFEF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+  }
+  .tr-explore-search .tr-recent-searchs-modal {
+    border-top: 1px solid #D9E2E8;
+    box-shadow: none;
+  }
+  .tr-explore-listing .tr-explore-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+  }
+  .tr-explore-listing .tr-explore-search-modal button.btn-close {
+    display: block;
+    background-image: url(../images/chevron-down-left-icon.svg);
+    background-repeat: no-repeat;
+    background-size: 8px;
+    background-position: center;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 6.4px rgba(156, 156, 156, 0.22);
+    border-radius: 100px;
+    width: 24px;
+    height: 24px;
+    opacity: 1;
+    margin: 19px 0 0 24px;
+    text-indent: -9999px;
+  }
+  .tr-explore-listing .tr-common-marketing,
+  .tr-explore-listing .tr-market .tr-market-slider {
+    width: calc(100% + 24px);
+    margin: 10px -24px 8px 0px;
+  }
+  /*.tr-explore-listing .tr-museum .tr-image,
   .tr-explore-listing .tr-historical-monument .tr-image,
   .tr-explore-listing .tr-experience .tr-experience-slider,
   .tr-explore-listing .tr-knights-bridge,
@@ -2542,14 +2615,18 @@
   .tr-explore-listing .tr-knights-bridge img,
   .tr-market .tr-store img {
     border-radius: 0;
-  }
+  }*/
+  /*.tr-explore-listing .tr-market .tr-market-slider {
+    width: calc(100% + 24px);
+    margin: 10px 0 8px 0px;
+  }*/
   .tr-explore-listing .tr-experience .slick-list,
   .tr-explore-listing .tr-market .tr-market-slider .slick-list {
     margin-left: -4px;
   }
   .tr-knights-bridge .tr-details {
-    width: calc(100% - 48px);
-    left: 24px;
+    width: calc(100% - 24px);
+    left: 13px;
   }
   .tr-explore-listing .tr-map-section {
     width: 100%;

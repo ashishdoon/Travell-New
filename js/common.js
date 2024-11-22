@@ -35,22 +35,37 @@ function initIncrementDecrement(context, outputSelector) {
 function updateOutputElement($input, outputSelector, labelContent) {
   $(outputSelector).text(labelContent + ': ' + $input.val());
 }
+// function updateTotalRoomGuest() {
+//   var totalRoomVal = $('#totalRoom').text();
+//   var totalAdultsGuestVal = $('#totalAdultsGuest').text();
+//   var totalChildrenGuestVal = $('#totalChildrenGuest').text();
+//   var totalChildrenInfantsVal = $('#totalChildrenInfants').text();
+//   if (totalRoomVal || totalAdultsGuestVal || totalChildrenGuestVal || totalChildrenInfantsVal) {
+//     var combinedVal = totalRoomVal + ' ' + totalAdultsGuestVal +' ' + totalChildrenGuestVal +' ' + totalChildrenInfantsVal;
+//     $('#totalRoomAndGuest').val(combinedVal);
+//     $('#totalRoomAndGuest3').val(combinedVal);
+//     $('#homeTotalRoomAndGuest').val(combinedVal);
+//   } else {
+//     $('#totalRoomAndGuest').val('');
+//     $('#totalRoomAndGuest3').val('');
+//     $('#homeTotalRoomAndGuest').val('');
+//   }
+// }
 function updateTotalRoomGuest() {
-  var totalRoomVal = $('#totalRoom').text();
-  var totalAdultsGuestVal = $('#totalAdultsGuest').text();
-  var totalChildrenGuestVal = $('#totalChildrenGuest').text();
-  var totalChildrenInfantsVal = $('#totalChildrenInfants').text();
-  if (totalRoomVal || totalAdultsGuestVal || totalChildrenGuestVal || totalChildrenInfantsVal) {
-    var combinedVal = totalRoomVal + ' ' + totalAdultsGuestVal +' ' + totalChildrenGuestVal +' ' + totalChildrenInfantsVal;
-    $('#totalRoomAndGuest').val(combinedVal);
-    $('#totalRoomAndGuest3').val(combinedVal);
-    $('#homeTotalRoomAndGuest').val(combinedVal);
-  } else {
-    $('#totalRoomAndGuest').val('');
-    $('#totalRoomAndGuest3').val('');
-    $('#homeTotalRoomAndGuest').val('');
-  }
+  var totalRoomVal = parseInt($('#totalRoom').val()) || 0;
+  var totalAdultsGuestVal = parseInt($('#totalAdultsGuest').val()) || 0;
+  var totalChildrenGuestVal = parseInt($('#totalChildrenGuest').val()) || 0;
+  var totalChildrenInfantsVal = parseInt($('#totalChildrenInfants').val()) || 0;
+  var totalGuestCount = totalAdultsGuestVal + totalChildrenGuestVal + totalChildrenInfantsVal;
+  var roomLabel = totalRoomVal === 1 ? 'Room' : 'Rooms';
+  var guestLabel = totalGuestCount === 1 ? 'Guest' : 'Guests';
+  var combinedVal = totalRoomVal + ' ' + roomLabel + ', ' + totalGuestCount + ' ' + guestLabel;
+  $('#totalRoomAndGuest').val(combinedVal);
+  $('#totalRoomAndGuest3').val(combinedVal);
+  $('#homeTotalRoomAndGuest').val(combinedVal);
 }
+
+
 $(document).ready(function() {
   initIncrementDecrement('.tr-total-num-of-rooms', '#totalRoom');
   initIncrementDecrement('.tr-total-guest', '#totalAdultsGuest');
@@ -953,7 +968,9 @@ $(document).on('click', function(event) {
   if($("#calendarsModal3").css('display') === 'flex') {
     if (!$(event.target).closest("#calendarsModal3, #checkInInput3, #checkOutInput3, .tr-view-availability-btn").length) {
       calendarsModal3.style.display = "none";
-      recentSearchsLocation3Modal.style.display = "none";
+      if (recentSearchsLocation3Modal) {
+        recentSearchsLocation3Modal.style.display = "none";
+      }
       checkInInput3.classList.remove("is-focus");
       checkOutInput3.classList.remove("is-focus");
     }
@@ -1242,15 +1259,18 @@ $('.tr-explore-search-feild').click(function() {
   $(".tr-explore-left-section").addClass('tr-search-open');
   $(".tr-explore-search-modal").addClass('open');
   $(".tr-explore-overlay").css({"display": "block",});
-  $('.tr-explore-search-modal .tr-search-field').on('focus', function() {
-    $('.tr-recent-searchs-modal').css({"display": "block",});
-  });
+  $("body").addClass("modal-open");
+  $('.tr-recent-searchs-modal').css({"display": "block",});
+  // $('.tr-explore-search-modal .tr-search-field').on('focus', function() {
+  //   $('.tr-recent-searchs-modal').css({"display": "block",});
+  // });
 });
 
-$('.tr-explore-overlay').click(function() {
+$('.tr-explore-overlay, .tr-explore-search-modal .btn-close').click(function() {
   $(".tr-explore-left-section").removeClass('tr-search-open');
   $(".tr-explore-search-modal").removeClass('open');
-  $(this).css({"display": "none",});
+  $('.tr-explore-overlay').css({"display": "none",});
+  $("body").removeClass("modal-open");
   $('.tr-recent-searchs-modal').css({"display": "none",});
 });
 
@@ -1262,7 +1282,6 @@ $('.tr-explore-listing .btn-close').click(function() {
   $(".tr-explore-listing .tr-map-section").css({"display": "none",});
   $("body").removeClass('modal-open');
 });
-
 
 // Explore Details
 $('.tr-more-packages-btn').click(function() {
@@ -1362,4 +1381,26 @@ $('#homeTotalRoomAndGuest').click(function() {
     $('.tr-search-home-page #guestQtyModal').append(roomGuestCount);
   }
   $(".tr-search-home-page #guestQtyModal").css({"display": "block"});
+});
+
+
+$(document).on('click', function(event) {
+  if($(".tr-search-home-page #recentSearchsDestination").css('display') === 'block') {
+    if (!$(event.target).closest(".tr-search-home-page #searchDestinations, .tr-search-home-page #recentSearchsDestination").length) {
+      calendarsModal.style.display = "none";
+      recentSearchsDestinationModal.style.display = "none";
+      searchDestinationsInput.classList.remove("is-focus");
+    }
+  }
+  if($(".tr-search-home-page #calendarsModal").css('display') === 'flex') {
+    if (!$(event.target).closest(".tr-search-home-page #calendarsModal, .tr-search-home-page #checkInInput1, .tr-search-home-page #checkOutInput1").length) {
+      calendarsModal.style.display = "none";
+      checkInBtn.classList.remove("is-focus");
+      checkOutBtn.classList.remove("is-focus");
+      $(checkInBtn).parent().removeClass('tr-right-border');
+    }
+  }
+  $('.tr-search-home-page #calendarsModal').on('click', function(event) {
+    event.stopPropagation();
+  });
 });
