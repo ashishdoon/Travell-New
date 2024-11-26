@@ -1369,11 +1369,14 @@ $('.tr-search-home-page .tr-nav-tabs div').on('click', function(){
   overLay.style.display = "none";
 });
 
-searchLocationInput.onclick = function(event) {
-  if (event.target.closest(".tr-search-home-page")) {
-    recentSearchLocationBox();
-  }
+if(searchLocationInput) {
+  searchLocationInput.onclick = function(event) {
+    if (event.target.closest(".tr-search-home-page")) {
+      recentSearchLocationBox();
+    }
+  } 
 }
+
 
 $('#homeTotalRoomAndGuest').click(function() {
   if ($('.tr-search-home-page #guestQtyModal .tr-add-edit-guest-count').length === 0) {
@@ -1402,5 +1405,34 @@ $(document).on('click', function(event) {
   }
   $('.tr-search-home-page #calendarsModal').on('click', function(event) {
     event.stopPropagation();
+  });
+});
+
+
+// Budget Hotels near you 
+$(document).ready(function () {
+  $('.tr-budget-hotels-near-you .tr-hotel-facilities').each(function () {
+    var $container = $(this);
+    var $content = $container.find('li');
+    var $toggleButton = $container.find('.toggle-list');
+    var limit = 1;
+
+    $content.slice(0, limit).addClass('visible');
+    $toggleButton.on('click', function () {
+      if ($toggleButton.text() === 'Read More') {
+        $content.addClass('visible');
+        $toggleButton.text('Read Less');
+        $toggleButton.attr('title', 'Read Less');
+        $container.addClass('showing-all');
+      } else {
+        $content.slice(limit).removeClass('visible');
+        $toggleButton.text('Read More');
+        $toggleButton.attr('title', 'Read More');
+        $container.removeClass('showing-all');
+      }
+    });
+    if ($content.length <= limit) {
+      $toggleButton.hide();
+    }
   });
 });

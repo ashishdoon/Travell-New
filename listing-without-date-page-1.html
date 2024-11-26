@@ -13,11 +13,37 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui-datepicker.min.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/calendar.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
     <link rel="stylesheet" href="css/responsive.css">
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.tr-budget-slider').slick({
+          autoplay: false,
+          autoplaySpeed: 2000,  
+          dots: false,           
+          arrows: true,         
+          infinite: true, 
+          slidesToShow: 4,      
+          slidesToScroll: 1,
+          responsive: [
+            {
+              breakpoint: 768, 
+              settings: {
+                arrows: false, 
+                infinite: false,  
+                slidesToShow: 1.2,  
+                slidesToScroll: 1
+              }
+            }
+          ]     
+        });
+      });
+    </script>
   </head>
   <body>
     <!--HEADER-->
@@ -981,6 +1007,263 @@
               </div>
               <!--HOTELS - END-->
             </div>
+
+            <!--Budget Hotels - START-->
+            <div class="tr-more-places tr-budget-hotels-near-you">
+              <div class="tr-heading-with-see-all">
+                <h3>Budget Hotels near you</h3>
+                <a href="javascript:void(0);" class="tr-see-all">See All</a>
+              </div>
+              <div class="row tr-more-places-lists tr-budget-slider">
+                <div class="tr-more-places-list">
+                  <div class="tr-hotel-img">
+                    <a href="javascript:void(0):">
+                      <img loading="lazy" src="images/city-of-london-1.png" alt="NearBy Hotel">
+                    </a>
+                  </div>
+                  <div class="tr-hotel-deatils">
+                    <div class="tr-hotel-city">City of London</div>
+                    <div class="tr-hotel-name"><a href="javascript:void(0):">Park avenue</a></div>
+                    <div class="tr-price">Start from <strong>$832</strong> <span class="tr-night">/night</span></div>
+                    <div class="tr-hotel-facilities">
+                      <ul>
+                        <li>A 6-minute walk from New Farm Riverwalk in Brisbane, SK1 - 2 level 2 Bedroom Skyline SkyHome offers accommodations with access to a steam room</li>
+                        <li>Free Wifi is featured throughout the property and private parking is available on site</li>
+                        <li>The property is a 11-minute walk from Brisbane Central Station and within 0</li>
+                        <li>7 miles of the city center</li>
+                        <li>Providing a balcony and river views, the spacious apartment includes 2 bedrooms, 2 living rooms, flat-screen TV, an equipped kitchen, and 2 bathrooms with a walk-in shower and a bath</li>
+                        <li>Towels and bed linen are provided in the apartment</li>
+                        <li>The property has an outdoor dining area</li>
+                        <li>A mini-market is available at the apartment</li>
+                        <li>The apartment offers a variety of wellness options, including a sauna, a fitness room, and yoga classes</li>
+                        <li>The apartment has a picnic area where you can spend the day outdoors</li>
+                        <li>Popular points of interest near the apartment include Queen Street Mall, Roma Street Parklands, and RNA Showgrounds</li>
+                        <li>The nearest airport is Brisbane Airport, 7</li>
+                        <li>5 miles from SK1 - 2 level 2 Bedroom Skyline SkyHome</li>
+                      </ul>
+                      <button class="tr-anchor-btn toggle-list" title="Read More">Read More</button>
+                    </div>
+                    <div class="tr-likes">
+                      <span class="tr-heart">
+                        <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                      </span>89%
+                    </div>
+                  </div>
+                </div>
+                <div class="tr-more-places-list">
+                  <div class="tr-hotel-img">
+                    <a href="javascript:void(0):">
+                      <img loading="lazy" src="images/city-of-london-2.png" alt="NearBy Hotel">
+                    </a>
+                  </div>
+                  <div class="tr-hotel-deatils">
+                    <div class="tr-hotel-city">City of London</div>
+                    <div class="tr-hotel-name"><a href="javascript:void(0):">Marriott executive</a></div>
+                    <div class="tr-price">Start from <strong>$832</strong> <span class="tr-night">/night</span></div>
+                    <div class="tr-hotel-facilities">
+                      <ul>
+                        <li>A 6-minute walk from New Farm Riverwalk in Brisbane, SK1 - 2 level 2 Bedroom Skyline SkyHome offers accommodations with access to a steam room</li>
+                        <li>Free Wifi is featured throughout the property and private parking is available on site</li>
+                        <li>The property is a 11-minute walk from Brisbane Central Station and within 0</li>
+                        <li>7 miles of the city center</li>
+                        <li>Providing a balcony and river views, the spacious apartment includes 2 bedrooms, 2 living rooms, flat-screen TV, an equipped kitchen, and 2 bathrooms with a walk-in shower and a bath</li>
+                        <li>Towels and bed linen are provided in the apartment</li>
+                        <li>The property has an outdoor dining area</li>
+                        <li>A mini-market is available at the apartment</li>
+                        <li>The apartment offers a variety of wellness options, including a sauna, a fitness room, and yoga classes</li>
+                        <li>The apartment has a picnic area where you can spend the day outdoors</li>
+                        <li>Popular points of interest near the apartment include Queen Street Mall, Roma Street Parklands, and RNA Showgrounds</li>
+                        <li>The nearest airport is Brisbane Airport, 7</li>
+                        <li>5 miles from SK1 - 2 level 2 Bedroom Skyline SkyHome</li>
+                      </ul>
+                      <button class="tr-anchor-btn toggle-list" title="Read More">Read More</button>
+                    </div>
+                    <div class="tr-likes">
+                      <span class="tr-heart">
+                        <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                      </span>89%
+                    </div>
+                  </div>
+                </div>
+                <div class="tr-more-places-list">
+                  <div class="tr-hotel-img">
+                    <a href="javascript:void(0):">
+                      <img loading="lazy" src="images/city-of-london-3.png" alt="NearBy Hotel">
+                    </a>
+                  </div>
+                  <div class="tr-hotel-deatils">
+                    <div class="tr-hotel-city">City of London</div>
+                    <div class="tr-hotel-name"><a href="javascript:void(0):">Paddington park hotel</a></div>
+                    <div class="tr-price">Start from <strong>$832</strong> <span class="tr-night">/night</span></div>
+                    <div class="tr-hotel-facilities">
+                      <ul>
+                        <li>A 6-minute walk from New Farm Riverwalk in Brisbane, SK1 - 2 level 2 Bedroom Skyline SkyHome offers accommodations with access to a steam room</li>
+                        <li>Free Wifi is featured throughout the property and private parking is available on site</li>
+                        <li>The property is a 11-minute walk from Brisbane Central Station and within 0</li>
+                        <li>7 miles of the city center</li>
+                        <li>Providing a balcony and river views, the spacious apartment includes 2 bedrooms, 2 living rooms, flat-screen TV, an equipped kitchen, and 2 bathrooms with a walk-in shower and a bath</li>
+                        <li>Towels and bed linen are provided in the apartment</li>
+                        <li>The property has an outdoor dining area</li>
+                        <li>A mini-market is available at the apartment</li>
+                        <li>The apartment offers a variety of wellness options, including a sauna, a fitness room, and yoga classes</li>
+                        <li>The apartment has a picnic area where you can spend the day outdoors</li>
+                        <li>Popular points of interest near the apartment include Queen Street Mall, Roma Street Parklands, and RNA Showgrounds</li>
+                        <li>The nearest airport is Brisbane Airport, 7</li>
+                        <li>5 miles from SK1 - 2 level 2 Bedroom Skyline SkyHome</li>
+                      </ul>
+                      <button class="tr-anchor-btn toggle-list" title="Read More">Read More</button>
+                    </div>
+                    <div class="tr-likes">
+                      <span class="tr-heart">
+                        <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                      </span>89%
+                    </div>
+                  </div>
+                </div>
+                <div class="tr-more-places-list">
+                  <div class="tr-hotel-img">
+                    <a href="javascript:void(0):">
+                      <img loading="lazy" src="images/city-of-london-4.png" alt="NearBy Hotel">
+                    </a>
+                  </div>
+                  <div class="tr-hotel-deatils">
+                    <div class="tr-hotel-city">City of London</div>
+                    <div class="tr-hotel-name"><a href="javascript:void(0):">Holiday INN express</a></div>
+                    <div class="tr-price">Start from <strong>$832</strong> <span class="tr-night">/night</span></div>
+                    <div class="tr-hotel-facilities">
+                      <ul>
+                        <li>A 6-minute walk from New Farm Riverwalk in Brisbane, SK1 - 2 level 2 Bedroom Skyline SkyHome offers accommodations with access to a steam room</li>
+                        <li>Free Wifi is featured throughout the property and private parking is available on site</li>
+                        <li>The property is a 11-minute walk from Brisbane Central Station and within 0</li>
+                        <li>7 miles of the city center</li>
+                        <li>Providing a balcony and river views, the spacious apartment includes 2 bedrooms, 2 living rooms, flat-screen TV, an equipped kitchen, and 2 bathrooms with a walk-in shower and a bath</li>
+                        <li>Towels and bed linen are provided in the apartment</li>
+                        <li>The property has an outdoor dining area</li>
+                        <li>A mini-market is available at the apartment</li>
+                        <li>The apartment offers a variety of wellness options, including a sauna, a fitness room, and yoga classes</li>
+                        <li>The apartment has a picnic area where you can spend the day outdoors</li>
+                        <li>Popular points of interest near the apartment include Queen Street Mall, Roma Street Parklands, and RNA Showgrounds</li>
+                        <li>The nearest airport is Brisbane Airport, 7</li>
+                        <li>5 miles from SK1 - 2 level 2 Bedroom Skyline SkyHome</li>
+                      </ul>
+                      <button class="tr-anchor-btn toggle-list" title="Read More">Read More</button>
+                    </div>
+                    <div class="tr-likes">
+                      <span class="tr-heart">
+                        <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                      </span>89%
+                    </div>
+                  </div>
+                </div>
+                <div class="tr-more-places-list">
+                  <div class="tr-hotel-img">
+                    <a href="javascript:void(0):">
+                      <img loading="lazy" src="images/city-of-london-5.png" alt="NearBy Hotel">
+                    </a>
+                  </div>
+                  <div class="tr-hotel-deatils">
+                    <div class="tr-hotel-city">City of London</div>
+                    <div class="tr-hotel-name"><a href="javascript:void(0):">Park avenue</a></div>
+                    <div class="tr-price">Start from <strong>$832</strong> <span class="tr-night">/night</span></div>
+                    <div class="tr-hotel-facilities">
+                      <ul>
+                        <li>A 6-minute walk from New Farm Riverwalk in Brisbane, SK1 - 2 level 2 Bedroom Skyline SkyHome offers accommodations with access to a steam room</li>
+                        <li>Free Wifi is featured throughout the property and private parking is available on site</li>
+                        <li>The property is a 11-minute walk from Brisbane Central Station and within 0</li>
+                        <li>7 miles of the city center</li>
+                        <li>Providing a balcony and river views, the spacious apartment includes 2 bedrooms, 2 living rooms, flat-screen TV, an equipped kitchen, and 2 bathrooms with a walk-in shower and a bath</li>
+                        <li>Towels and bed linen are provided in the apartment</li>
+                        <li>The property has an outdoor dining area</li>
+                        <li>A mini-market is available at the apartment</li>
+                        <li>The apartment offers a variety of wellness options, including a sauna, a fitness room, and yoga classes</li>
+                        <li>The apartment has a picnic area where you can spend the day outdoors</li>
+                        <li>Popular points of interest near the apartment include Queen Street Mall, Roma Street Parklands, and RNA Showgrounds</li>
+                        <li>The nearest airport is Brisbane Airport, 7</li>
+                        <li>5 miles from SK1 - 2 level 2 Bedroom Skyline SkyHome</li>
+                      </ul>
+                      <button class="tr-anchor-btn toggle-list" title="Read More">Read More</button>
+                    </div>
+                    <div class="tr-likes">
+                      <span class="tr-heart">
+                        <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                      </span>89%
+                    </div>
+                  </div>
+                </div>
+                <div class="tr-more-places-list">
+                  <div class="tr-hotel-img">
+                    <a href="javascript:void(0):">
+                      <img loading="lazy" src="images/city-of-london-6.png" alt="NearBy Hotel">
+                    </a>
+                  </div>
+                  <div class="tr-hotel-deatils">
+                    <div class="tr-hotel-city">City of London</div>
+                    <div class="tr-hotel-name"><a href="javascript:void(0):">Marriott executive</a></div>
+                    <div class="tr-price">Start from <strong>$832</strong> <span class="tr-night">/night</span></div>
+                    <div class="tr-hotel-facilities">
+                      <ul>
+                        <li>A 6-minute walk from New Farm Riverwalk in Brisbane, SK1 - 2 level 2 Bedroom Skyline SkyHome offers accommodations with access to a steam room</li>
+                        <li>Free Wifi is featured throughout the property and private parking is available on site</li>
+                        <li>The property is a 11-minute walk from Brisbane Central Station and within 0</li>
+                        <li>7 miles of the city center</li>
+                        <li>Providing a balcony and river views, the spacious apartment includes 2 bedrooms, 2 living rooms, flat-screen TV, an equipped kitchen, and 2 bathrooms with a walk-in shower and a bath</li>
+                        <li>Towels and bed linen are provided in the apartment</li>
+                        <li>The property has an outdoor dining area</li>
+                        <li>A mini-market is available at the apartment</li>
+                        <li>The apartment offers a variety of wellness options, including a sauna, a fitness room, and yoga classes</li>
+                        <li>The apartment has a picnic area where you can spend the day outdoors</li>
+                        <li>Popular points of interest near the apartment include Queen Street Mall, Roma Street Parklands, and RNA Showgrounds</li>
+                        <li>The nearest airport is Brisbane Airport, 7</li>
+                        <li>5 miles from SK1 - 2 level 2 Bedroom Skyline SkyHome</li>
+                      </ul>
+                      <button class="tr-anchor-btn toggle-list" title="Read More">Read More</button>
+                    </div>
+                    <div class="tr-likes">
+                      <span class="tr-heart">
+                        <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                      </span>89%
+                    </div>
+                  </div>
+                </div>
+                <div class="tr-more-places-list">
+                  <div class="tr-hotel-img">
+                    <a href="javascript:void(0):">
+                      <img loading="lazy" src="images/city-of-london-7.png" alt="NearBy Hotel">
+                    </a>
+                  </div>
+                  <div class="tr-hotel-deatils">
+                    <div class="tr-hotel-city">City of London</div>
+                    <div class="tr-hotel-name"><a href="javascript:void(0):">Paddington park hotel</a></div>
+                    <div class="tr-price">Start from <strong>$832</strong> <span class="tr-night">/night</span></div>
+                    <div class="tr-hotel-facilities">
+                      <ul>
+                        <li>A 6-minute walk from New Farm Riverwalk in Brisbane, SK1 - 2 level 2 Bedroom Skyline SkyHome offers accommodations with access to a steam room</li>
+                        <li>Free Wifi is featured throughout the property and private parking is available on site</li>
+                        <li>The property is a 11-minute walk from Brisbane Central Station and within 0</li>
+                        <li>7 miles of the city center</li>
+                        <li>Providing a balcony and river views, the spacious apartment includes 2 bedrooms, 2 living rooms, flat-screen TV, an equipped kitchen, and 2 bathrooms with a walk-in shower and a bath</li>
+                        <li>Towels and bed linen are provided in the apartment</li>
+                        <li>The property has an outdoor dining area</li>
+                        <li>A mini-market is available at the apartment</li>
+                        <li>The apartment offers a variety of wellness options, including a sauna, a fitness room, and yoga classes</li>
+                        <li>The apartment has a picnic area where you can spend the day outdoors</li>
+                        <li>Popular points of interest near the apartment include Queen Street Mall, Roma Street Parklands, and RNA Showgrounds</li>
+                        <li>The nearest airport is Brisbane Airport, 7</li>
+                        <li>5 miles from SK1 - 2 level 2 Bedroom Skyline SkyHome</li>
+                      </ul>
+                      <button class="tr-anchor-btn toggle-list" title="Read More">Read More</button>
+                    </div>
+                    <div class="tr-likes">
+                      <span class="tr-heart">
+                        <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                      </span>89%
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Budget Hotels - END-->
+          </div>
           </div>
         </div>
       </div>

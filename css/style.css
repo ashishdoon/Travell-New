@@ -5594,6 +5594,96 @@ footer .tr-social-links ul li:nth-of-type(3) {
   font-size: 16px;
   color: #000000;
 }
+.tr-budget-hotels-near-you.tr-more-places {
+  border-bottom: none;
+  padding: 24px 0;
+}
+.tr-budget-hotels-near-you .tr-heading-with-see-all {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.tr-budget-hotels-near-you .tr-see-all {
+  font-weight: 600;
+  color: #000000;
+  text-decoration: underline;
+}
+.tr-budget-hotels-near-you .tr-see-all:hover {
+  text-decoration: none;
+}
+.tr-budget-hotels-near-you .tr-more-places-list .tr-hotel-facilities {
+  height: 72px;
+  overflow: hidden;
+}
+.tr-budget-hotels-near-you .tr-more-places-list .tr-hotel-facilities.showing-all {
+  height: auto;
+  overflow: visible;
+}
+.tr-budget-hotels-near-you .tr-more-places-list .tr-hotel-facilities ul {
+  display: block;
+  margin-top: 0px;
+  padding-left: 20px;
+  position: relative;
+}
+.tr-budget-hotels-near-you .tr-more-places-list .tr-hotel-facilities ul li {
+  display: none;
+  font-size: 16px;
+  line-height: 24px;
+  list-style: disc;
+  opacity: 1;
+  margin-right: 0;
+}
+.tr-budget-hotels-near-you .tr-more-places-list .tr-hotel-facilities ul li.visible {
+  display: list-item;
+}
+.tr-budget-hotels-near-you .tr-more-places-list .tr-hotel-facilities ul li:before {
+  display: none;
+}
+.tr-budget-hotels-near-you button.tr-anchor-btn.toggle-list {
+  background-color: #FFFFFF;
+  background-image: url(../images/icons/read-more-icon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  border-bottom: none;
+  padding: 2px 12px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  text-indent: -9999px;
+}
+.tr-budget-hotels-near-you .tr-price {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+.tr-budget-hotels-near-you .tr-price strong {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 0 5px;
+}
+.tr-budget-hotels-near-you .tr-price .tr-night {
+  font-size: 12px;
+  font-weight: 400;
+}
+.tr-budget-hotels-near-you .slick-slide {
+  margin: 0;
+}
+.tr-budget-hotels-near-you .slick-slider .slick-arrow {
+  opacity: 0;
+  top: 110px;
+}
+.tr-budget-hotels-near-you:hover .slick-slider .slick-arrow {
+  opacity: 1;
+}
+.tr-budget-hotels-near-you .slick-slider .slick-arrow.slick-prev {
+  left: 30px;
+}
+.tr-budget-hotels-near-you .slick-slider .slick-arrow.slick-next {
+  right: 30px;
+}
 
 
 /******* SignIn/SignUp Modal - Start *******/
