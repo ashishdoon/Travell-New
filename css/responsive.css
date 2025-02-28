@@ -2984,6 +2984,23 @@
     right: 12px;
   }
   /******* Home Page - End *******/
+
+
+  .tr-overview-items h4 {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  .tr-overview-items p {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .tr-overview-items .tr-more-info ul li {
+    background-position: top 3px left 0px;
+    background-size: 14px;
+    font-size: 14px;
+    margin-top: 6px;
+    padding-left: 20px;
+  }
 }
 
 @media screen and (max-width: 576px) {
