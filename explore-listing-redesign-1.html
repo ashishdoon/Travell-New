@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Travell - Expolre Listing Redesign</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-datepicker.min.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/calendar.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.tr-search-by-category').slick({
+          autoplay: true,
+          autoplaySpeed: 2000,  
+          dots: false,           
+          arrows: false,         
+          infinite: false,       
+          slidesToShow: 1,      
+          slidesToScroll: 1,     
+          vertical: true,
+        });
+        $('.tr-tickets-silder').slick({
+          autoplay: false,
+          autoplaySpeed: 2000,  
+          dots: false,           
+          arrows: true,         
+          infinite: false,       
+          slidesToShow: 2.1,      
+          slidesToScroll: 1,
+          responsive: [
+            {
+              breakpoint: 768, 
+              settings: {
+                arrows: false, 
+                slidesToShow: 1.5,  
+                slidesToScroll: 1
+              }
+            }
+          ]    
+        });
+        $('.tr-explore-filter-slider').slick({
+          autoplay: false,
+          autoplaySpeed: 2000,  
+          dots: false,           
+          arrows: true,         
+          infinite: false,       
+          slidesToShow: 3,      
+          slidesToScroll: 1,     
+          variableWidth: true,
+          responsive: [
+            {
+              breakpoint: 768, 
+              settings: {
+                arrows: false,
+              }
+            }
+          ]  
+        });
+        $('.tr-experience-slider').slick({
+          autoplay: false,
+          autoplaySpeed: 2000,  
+          dots: true,           
+          arrows: false,         
+          infinite: true,       
+          slidesToShow: 3,      
+          slidesToScroll: 1     
+        });
+        $('.tr-market-slider').slick({
+          autoplay: false,
+          autoplaySpeed: 2000,  
+          dots: false,           
+          arrows: true,         
+          infinite: false,       
+          slidesToShow: 3,      
+          slidesToScroll: 1,
+          responsive: [
+            {
+              breakpoint: 768, 
+              settings: {
+                arrows: false, 
+                slidesToShow: 2.5,  
+                slidesToScroll: 1
+              }
+            }
+          ]     
+        });
+        $('.tr-common-slider').slick({
+          autoplay: false,
+          autoplaySpeed: 2000,  
+          dots: false,           
+          arrows: true,         
+          infinite: false,       
+          slidesToShow: 3,      
+          slidesToScroll: 1,
+          responsive: [
+            {
+              breakpoint: 768, 
+              settings: {
+                arrows: false, 
+                slidesToShow: 2.5,  
+                slidesToScroll: 1
+              }
+            }
+          ]     
+        });
+      });
+    </script>
+    <script>
+      function openTab(tabId) {
+        // Hide all tab contents
+        const tabContents = document.getElementsByClassName('tab-content');
+        for (let i = 0; i < tabContents.length; i++) {
+          tabContents[i].classList.remove('active');
+        }
+        
+        // Remove active class from all buttons
+        const tabButtons = document.getElementsByClassName('tab-btn');
+        for (let i = 0; i < tabButtons.length; i++) {
+          tabButtons[i].classList.remove('active');
+        }
+        
+        // Show the selected tab content and mark its button as active
+        document.getElementById(tabId).classList.add('active');
+        event.currentTarget.classList.add('active');
+      }
+    </script>
+
+  </head>
+  <body>
+    <!--HEADER-->
+    <header id="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="tr-header">
+              <div class="tr-hamburgers-logo">
+                <div class="tr-hamburgers"></div>
+                <div class="tr-logo">
+                  <a href="/">
+                    <img loading="lazy" src="images/travell-small-logo.png" alt="travell-logo">
+                  </a>
+                </div>
+              </div>
+              <div class="tr-logo tr-desktop">
+                <a href="/">
+                  <img loading="lazy" src="images/travell-logo.png" alt="travell-logo">
+                </a>
+              </div>
+              <div class="tr-search-info-section" id="hotelSearchInfos">
+                <div class="tr-utility-nav" >
+                  <div class="nav-item tr-location">Add location</div>
+                  <div class="nav-item tr-dates">Add date</div>
+                  <div class="nav-item tr-guest">Add guests</div>
+                  <div class="nav-item tr-search-btn-icon">
+                    <button class="tr-btn tr-serach-modal"></button>
+                  </div>
+                  <button class="tr-edit-btn tr-mobile"></button>
+                </div>
+              </div>
+              <div class="tr-nav-tabs">
+                <div class="tr-explore-tab" data-tab="exploreForm"><span><img src="images/icons/compass-icon.svg" alt="Compass Icon">Explore</span></div>
+                <div class="tr-hotel-tab active" data-tab="hotelForm"><span><img src="images/icons/clarity_building-line-black-icon.svg" alt="Clarity Building Line Icon"/>Hotel</span></div>
+              </div>
+              <div class="tr-login-section">
+                <!--Below Button for signin - currently it hide-->
+                <button class="tr-login" data-bs-toggle="modal" data-bs-target="#loginModal">Sign in</button>
+                <button class="tr-logged" style="display: none;"><div class="tr-username">R</div></button>
+                <div class="tr-myaccount-modal">
+                  <div class="tr-mz-myaccount-info">
+                    <ul>
+                      <li class="tr-my-profile-link"><a href="javascript:void(0);">My profile</a></li>
+                      <li class="tr-my-trip-link"><a href="javascript:void(0);">My trips</a></li>
+                    </ul>
+                  </div>
+                  <div class="tr-mz-myaccount-info">
+                    <ul>
+                      <li class="tr-my-settings-link"><a href="javascript:void(0);">Settings</a></li>
+                      <li class="tr-logout-link"><a href="javascript:void(0);">Logout</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tr-find-hotels">
+        <div class="tr-explore-and-hotel-form">
+          <button type="button" class="btn-close" id="btnClose"></button>
+          <div class="tr-nav-tabs tr-mobile">
+            <div class="tr-explore-tab" data-tab="exploreForm"><span><img src="images/icons/compass-icon.svg" alt="Compass Icon">Explore</span></div>
+            <div class="tr-hotel-tab active" data-tab="hotelForm"><span><img src="images/icons/clarity_building-line-black-icon.svg" alt="Clarity Building Line Icon"/>Hotel</span></div>
+          </div>
+          <form class="tr-explore-form" id="exploreForm">
+            <div class="tr-form-section">
+              <div class="tr-form-fields">
+                <div class="col tr-mobile">
+                  <div class="tr-mobile-where">
+                    <label class="tr-lable">Where to?</label>
+                    <div class="tr-location-label">Search location</div>
+                  </div>
+                </div>
+                <div class="col tr-form-where">
+                  <div class="tr-mobile tr-close-btn">Where are you going?</div>
+                  <input type="text" class="form-control" id="searchLocation" placeholder="Search location" name="where" autocomplete="off">
+                  <div class="tr-recent-searchs-modal" id="recentSearchLocation">
+                    <div class="tr-enable-location">Around Current Location</div>
+                    <h5>Recent searches</h5>
+                    <ul>
+                      <li>
+                        <div class="tr-place-info">
+                          <div class="tr-location-icon"></div>
+                          <div class="tr-location-info">
+                            <div class="tr-hotel-name">London Hotels</div>
+                            <div class="tr-hotel-city">England, United Kingdom</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="tr-place-info">
+                          <div class="tr-location-icon"></div>
+                          <div class="tr-location-info">
+                            <div class="tr-hotel-name">Morocco</div>
+                            <div class="tr-hotel-city">North Africa</div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col tr-form-btn">
+                    <button type="button" class="tr-btn tr-mobile">Countinue</button>                        
+                  </div>
+                </div>
+              </div>
+              <div class="col tr-form-btn">
+                <button type="submit" class="tr-btn tr-popup-btn" id="hotelSearchSubmit">Search</button>
+              </div>
+            </div>
+          </form>
+          <form class="tr-hotel-form open" id="hotelForm">
+            <div class="tr-form-section">
+              <div class="tr-form-fields">
+                <div class="col tr-mobile">
+                  <div class="tr-mobile-where">
+                    <label class="tr-lable">Where to?</label>
+                    <div class="tr-location-label">Search destinations</div>
+                  </div>
+                </div>
+                <div class="col tr-mobile">
+                  <div class="tr-mobile-when">
+                    <label class="tr-lable">When</label>
+                    <div class="tr-add-dates">Add dates</div>
+                  </div>
+                </div>
+                <div class="col tr-form-where">
+                  <div class="tr-mobile tr-close-btn">Where are you going?</div>
+                  <label for="searchDestinations">Where</label>
+                  <input type="text" class="form-control" id="searchDestinations" placeholder="Search destinations" name="" autocomplete="off">
+                  <div class="tr-recent-searchs-modal" id="recentSearchsDestination">
+                    <div class="tr-enable-location">Around Current Location</div>
+                    <h5>Recent searches</h5>
+                    <ul>
+                      <li>
+                        <div class="tr-place-info">
+                          <div class="tr-location-icon"></div>
+                          <div class="tr-location-info">
+                            <div class="tr-hotel-name">London Hotels</div>
+                            <div class="tr-hotel-city">England, United Kingdom</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="tr-place-info">
+                          <div class="tr-location-icon"></div>
+                          <div class="tr-location-info">
+                            <div class="tr-hotel-name">Morocco</div>
+                            <div class="tr-hotel-city">North Africa</div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col tr-form-btn">
+                    <button type="button" class="tr-btn tr-mobile">Countinue</button>                        
+                  </div>
+                </div>
+                <div class="col tr-form-booking-date">
+                  <div class="tr-form-checkin">
+                    <label for="checkInInput1">Check in</label>
+                    <input type="text" value="" class="form-control checkIn" id="checkInInput1" placeholder="Add dates" name="" autocomplete="off" readonly>
+                  </div>
+                  <div class="tr-form-checkout">
+                    <label for="checkOutInput1">Check out</label>
+                    <input type="text" value=""class="form-control checkOut" id="checkOutInput1" placeholder="Add dates" name="checkOut" autocomplete="off" readonly>
+                  </div>
+                  <div class="tr-calenders-modal" id="calendarsModal">
+                    <div id="calendarPair1" class="calendarPair">
+                      <div class="navigation">
+                        <button type="button" class="prevMonth" id="prevMonth1">Previous</button>
+                        <button type="button" class="nextMonth" id="nextMonth1">Next</button>
+                      </div>
+                      <div class="custom-calendar checkInCalendar" id="checkInCalendar1">
+                        <div class="monthYear"></div>
+                        <div class="calendarBody"></div>
+                      </div>
+                      <div class="custom-calendar checkOutCalendar" id="checkOutCalendar1">
+                        <div class="monthYear"></div>
+                        <div class="calendarBody"></div>
+                      </div>
+                      <button type="button" class="tr-clear-details" hidden id="reset1">Clear dates</button>
+                    </div>
+                  </div>
+                  <div class="col tr-form-btn">
+                    <button type="button" class="tr-btn tr-mobile">Next</button>                        
+                  </div>
+                </div>
+
+                <div class="col tr-form-who">
+                  <label for="totalRoomAndGuest">Who</label>
+                  <input type="text" class="form-control" id="totalRoomAndGuest" placeholder="Add guests" name="" autocomplete="off" readonly>
+                  <div class="tr-guests-modal" id="guestQtyModal">
+                    <div class="tr-add-edit-guest tr-total-num-of-rooms">
+                      <div class="tr-guest-type">
+                        <label class="tr-guest">Room</label>
+                      </div>
+                      <div class="tr-qty-box">
+                        <button class="minus disabled" value="minus">-</button>
+                        <input type="text" id="totalRoom" value="0" id="" min="1" max="10" name="" readonly/>
+                        <button class="plus" value="plus">+</button>
+                      </div>
+                    </div>
+                    <div class="tr-add-edit-guest tr-total-guest">
+                      <div class="tr-guest-type">
+                        <label class="tr-guest">Adults</label>
+                        <div class="tr-age">Ages 13 or above</div>
+                      </div>
+                      <div class="tr-qty-box">
+                        <button class="minus disabled" value="minus">-</button>
+                        <input type="text" id="totalAdultsGuest" value="0" id="" min="1" max="10" name="" readonly/>
+                        <button class="plus" value="plus">+</button>
+                      </div>
+                    </div>
+                    <div class="tr-add-edit-guest tr-total-children">
+                      <div class="tr-guest-type">
+                        <label class="tr-guest">Children</label>
+                        <div class="tr-age">Ages 2 - 12</div>
+                      </div>
+                      <div class="tr-qty-box">
+                        <button class="minus disabled" value="minus">-</button>
+                        <input type="text" id="totalChildrenGuest" value="0" id="" min="1" max="10" name="" readonly/>
+                        <button class="plus" value="plus">+</button>
+                      </div>
+                    </div>
+                    <div class="tr-add-edit-guest tr-total-infants">
+                      <div class="tr-guest-type">
+                        <label class="tr-guest">Infants</label>
+                        <div class="tr-age">Under 2</div>
+                      </div>
+                      <div class="tr-qty-box">
+                        <button class="minus disabled" value="minus">-</button>
+                        <input type="text" id="totalChildrenInfants" value="0" id="" min="1" max="10" name="" readonly/>
+                        <button class="plus" value="plus">+</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col tr-form-btn">
+                <button type="submit" class="tr-btn tr-popup-btn" id="hotelSearchSubmit">Search</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation-->
+    <div class="tr-mobile-nav-section">
+      <div class="tr-mobile-nav-content">
+        <button type="button" class="btn-nav-close" id=""></button>
+        <div class="tr-nav-header">
+          <div class="tr-logo">
+            <img src="images/travell-small-logo.png" alt="travell small logo">
+          </div>
+          <div class="tr-location">London</div>
+        </div>
+        <div class="tr-mobile-nav-lists">
+          <ul>
+            <li><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 7.49984L10 1.6665L17.5 7.49984V16.6665C17.5 17.1085 17.3244 17.5325 17.0118 17.845C16.6993 18.1576 16.2754 18.3332 15.8333 18.3332H4.16667C3.72464 18.3332 3.30072 18.1576 2.98816 17.845C2.67559 17.5325 2.5 17.1085 2.5 16.6665V7.49984Z" stroke="#222222" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.5 18.3333V10H12.5V18.3333" stroke="#222222" stroke-linecap="round" stroke-linejoin="round"/></svg>Explore</li>
+            <li><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 7.49984L10 1.6665L17.5 7.49984V16.6665C17.5 17.1085 17.3244 17.5325 17.0118 17.845C16.6993 18.1576 16.2754 18.3332 15.8333 18.3332H4.16667C3.72464 18.3332 3.30072 18.1576 2.98816 17.845C2.67559 17.5325 2.5 17.1085 2.5 16.6665V7.49984Z" stroke="#222222" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.5 18.3333V10H12.5V18.3333" stroke="#222222" stroke-linecap="round" stroke-linejoin="round"/></svg>Hotels</li>
+            <li><svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.6677 8.21686L11.4782 8.25293L11.4075 8.43241L8.58835 15.5894L7.6097 15.7757L8.3748 9.30726L8.4309 8.83302L7.96178 8.92232L3.5739 9.75759L3.37156 9.79611L3.30699 9.99171L2.47522 12.5116L1.87823 12.6253L1.98228 9.2217L1.98466 9.14395L1.95388 9.07252L0.606627 5.94522L1.20367 5.83157L2.90392 7.86957L3.03583 8.02769L3.23812 7.98919L7.626 7.15392L8.09517 7.0646L7.86869 6.64412L4.77982 0.909331L5.75841 0.723048L11.0099 6.34373L11.1416 6.48469L11.3311 6.44861L15.7902 5.59979C16.0247 5.55515 16.2673 5.60549 16.4647 5.73973L16.6615 5.45033L16.4647 5.73973C16.6621 5.87398 16.798 6.08113 16.8426 6.31561C16.8873 6.55009 16.8369 6.79271 16.7027 6.99007L16.9921 7.18692L16.7027 6.99007C16.5685 7.18744 16.3613 7.3234 16.1268 7.36803L11.6677 8.21686Z" stroke="black" stroke-width="0.7"></path></svg>Flights</li>
+            <li><svg width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0835 9.43359H14.8335M3.58349 9.43359H5.83349M17.4116 5.68359L15.9485 1.78191C15.7289 1.19645 15.1693 0.808594 14.544 0.808594H6.12299C5.49773 0.808594 4.93804 1.19645 4.7185 1.78191L3.25537 5.68359M17.4116 5.68359L17.6299 6.26568C17.7524 6.59225 18.0646 6.80859 18.4133 6.80859C18.9068 6.80859 19.293 7.23341 19.2463 7.72462L18.8335 12.0586M17.4116 5.68359H18.9585M3.25537 5.68359L3.03708 6.26568C2.91462 6.59225 2.60243 6.80859 2.25366 6.80859C1.76023 6.80859 1.37395 7.23341 1.42073 7.72462L1.83349 12.0586M3.25537 5.68359H1.70849M1.83349 12.0586L1.95418 13.3258C2.0275 14.0957 2.67408 14.6836 3.44742 14.6836H3.5835M1.83349 12.0586V12.0586C1.55735 12.0586 1.3335 12.2824 1.3335 12.5586V15.0586C1.3335 15.4728 1.66928 15.8086 2.0835 15.8086H2.8335C3.24771 15.8086 3.5835 15.4728 3.5835 15.0586V14.6836M3.5835 14.6836H17.0835M17.0835 14.6836H17.2196C17.9929 14.6836 18.6395 14.0957 18.7128 13.3258L18.8335 12.0586M17.0835 14.6836V15.0586C17.0835 15.4728 17.4193 15.8086 17.8335 15.8086H18.5835C18.9977 15.8086 19.3335 15.4728 19.3335 15.0586V12.5586C19.3335 12.2825 19.1096 12.0586 18.8335 12.0586V12.0586M6.24161 3.33425L5.41255 5.82142C5.25067 6.30707 5.61214 6.80859 6.12406 6.80859H14.5429C15.0548 6.80859 15.4163 6.30707 15.2544 5.82142L14.4254 3.33425C14.2212 2.72174 13.648 2.68359 13.0024 2.68359H7.66463C7.01899 2.68359 6.44578 2.72174 6.24161 3.33425Z" stroke="black" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Cars</li>
+          </ul>
+        </div>
+        <div class="tr-mobile-nav-lists">
+          <ul>
+            <li><svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.6719 6.14307H3.33854C2.41807 6.14307 1.67188 6.88926 1.67188 7.80973V16.1431C1.67188 17.0635 2.41807 17.8097 3.33854 17.8097H16.6719C17.5923 17.8097 18.3385 17.0635 18.3385 16.1431V7.80973C18.3385 6.88926 17.5923 6.14307 16.6719 6.14307Z" stroke="#222222" stroke-linecap="round" stroke-linejoin="round"></path><path d="M13.3385 17.8091V4.47575C13.3385 4.03372 13.1629 3.6098 12.8504 3.29724C12.5378 2.98468 12.1139 2.80908 11.6719 2.80908H8.33854C7.89651 2.80908 7.47259 2.98468 7.16003 3.29724C6.84747 3.6098 6.67188 4.03372 6.67188 4.47575V17.8091" stroke="#222222" stroke-linecap="round" stroke-linejoin="round"></path></svg>Write a review</li>
+            <li><svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.6719 6.14307H3.33854C2.41807 6.14307 1.67188 6.88926 1.67188 7.80973V16.1431C1.67188 17.0635 2.41807 17.8097 3.33854 17.8097H16.6719C17.5923 17.8097 18.3385 17.0635 18.3385 16.1431V7.80973C18.3385 6.88926 17.5923 6.14307 16.6719 6.14307Z" stroke="#222222" stroke-linecap="round" stroke-linejoin="round"></path><path d="M13.3385 17.8091V4.47575C13.3385 4.03372 13.1629 3.6098 12.8504 3.29724C12.5378 2.98468 12.1139 2.80908 11.6719 2.80908H8.33854C7.89651 2.80908 7.47259 2.98468 7.16003 3.29724C6.84747 3.6098 6.67188 4.03372 6.67188 4.47575V17.8091" stroke="#222222" stroke-linecap="round" stroke-linejoin="round"></path></svg>Trips</li>
+          </ul>
+        </div>
+        <div class="tr-mobile-nav-lists">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="javascript:void(0);">About us</a></li>
+            <li><a href="javascript:void(0);">Contact us</a></li>
+            <li><a href="javascript:void(0);">Traveller’s Choice</a></li>
+            <li><a href="javascript:void(0);">Travel stories</a></li>
+            <li><a href="javascript:void(0);">Help</a></li>
+          </ul>
+        </div>
+        <div class="tr-actions">
+          <button class="tr-btn tr-write-review">Sign up / Log in</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="tr-explore-listing-section">
+      <div class="container">
+        <div class="tr-explore-listing">  
+          <div class="tr-explore-left-section">
+            <div class="tr-title-section">
+              <h2 class="tr-title">Things to do in London</h2>
+              <button type="button" class="tr-anchor-btn tr-share" data-bs-toggle="modal" data-bs-target="#shareModal">Share</button>
+            </div>
+            <div class="tr-total-search">3590 Attractions found in London</div>
+            <div class="tr-total-search tr-explore-listing-search" style="display: none;">
+              <button type="button" class="btn-close back-page-btn">Back Page Button</button>
+              <div>Showing results for <strong>Pizza</strong></div>
+            </div>
+            <!-- Below element When We don't have data - Start -->
+            <div class="tr-let-us-know-more" style="display: none;">
+              <p>Tell us so that we can learn and show better results to you in the future!</p>
+              <button type="button" class="tr-btn tr-let-us-know-more-btn">Let us know more</button>
+            </div>
+            <!-- Below element When We don't have data - Start -->
+            <div class="tr-explore-search">
+              <div class="tr-explore-search-feild">
+                <div class="tr-search-field">
+                  Search for 
+                  <div class="tr-search-by-category">
+                    <div>“Restaurants”</div>
+                    <div>“Museum”</div>
+                    <div>“Historical Monument”</div>
+                    <div>“Experience”</div>
+                    <div>“Market”</div>
+                  </div>
+                </div>
+                <button type="button" class="tr-btn">Search</button>
+              </div>
+              <div class="tr-explore-search-filter" style="display: none;">
+                <button type="button" class="tr-filter-btn">
+                  <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.0837 2.875H1.91699L9.58366 11.9408V18.2083L13.417 20.125V11.9408L21.0837 2.875Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+              <div class="tr-explore-search-modal">
+                <button type="button" class="btn-close">Back Button</button>
+                <div class="tr-explore-search-feild">
+                  <input type="text" name="" class="tr-search-field" placeholder="Search for “Restaurants”">
+                  <button type="submit" class="tr-btn tr-search-icon">Search</button>
+                </div>
+                <div class="tr-recent-searchs-modal tr-custom-scrollbar">
+                  <div class="tr-search-lists">
+                    <div class="tr-search-list">
+                      <div class="tr-image">
+                        <img src="images/popular-attraction-1.png" alt="" title="Museum">
+                      </div>
+                      <div class="tr-details">
+                        <div class="tr-category">Attraction</div>
+                        <div class="tr-title">Tower of London</div>
+                      </div>
+                    </div>
+                    <div class="tr-search-list">
+                      <div class="tr-image">
+                        <img src="images/near-place-2.png" alt="" title="Museum">                              
+                      </div>
+                      <div class="tr-details">
+                        <div class="tr-category">Attraction</div>
+                        <div class="tr-title">London in a Day Tour With Westminster</div>
+                      </div>
+                    </div>
+                    <div class="tr-search-list">
+                      <div class="tr-image">
+                        <img src="images/near-place-3.png" alt="" title="Museum">                              
+                      </div>
+                      <div class="tr-details">
+                        <div class="tr-category">Attraction</div>
+                        <div class="tr-title">La Dame de Pic London</div>
+                      </div>
+                    </div>
+                    <div class="tr-search-list">
+                      <div class="tr-image">
+                        <img src="images/near-place-2.png" alt="" title="Museum">                              
+                      </div>
+                      <div class="tr-details">
+                        <div class="tr-category">Attraction</div>
+                        <div class="tr-title">Tower of London</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tr-popular-attractions">
+                    <h4>Popular Attractions</h4>
+                    <div class="tr-popular-attractions-lists">
+                      <div class="tr-popular-attractions-list">
+                        <div class="tr-details">
+                          <div class="tr-image">
+                            <a href="javascript:void(0);">
+                              <img src="images/popular-attraction-1.png" alt="" title="Museum">                              
+                            </a>
+                          </div>
+                          <div class="tr-title">
+                            <a href="javascript:void(0);" title="Museum">Museum</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tr-popular-attractions-list">
+                        <div class="tr-details">
+                          <div class="tr-image">
+                            <a href="javascript:void(0);">
+                              <img src="images/popular-attraction-2.png" alt="" title="Tower of London">
+                            </a>
+                          </div>
+                          <div class="tr-title">
+                            <a href="javascript:void(0);" title="Tower of London">Tower of London</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tr-popular-attractions-list">
+                        <div class="tr-details">
+                          <div class="tr-image">
+                            <a href="javascript:void(0);">
+                              <img src="images/popular-attraction-3.png" alt="" title="La Dame de">
+                            </a>
+                          </div>
+                          <div class="tr-title">
+                            <a href="javascript:void(0);" title="La Dame de">La Dame de</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tr-popular-attractions-list">
+                        <div class="tr-details">
+                          <div class="tr-image">
+                            <a href="javascript:void(0);">
+                              <img src="images/popular-attraction-1.png" alt="" title="Museum">                              
+                            </a>
+                          </div>
+                          <div class="tr-title">
+                            <a href="javascript:void(0);" title="Museum">Museum</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tr-popular-attractions-list">
+                        <div class="tr-details">
+                          <div class="tr-image">
+                            <a href="javascript:void(0);">
+                              <img src="images/popular-attraction-2.png" alt="" title="Tower of London">
+                            </a>
+                          </div>
+                          <div class="tr-title">
+                            <a href="javascript:void(0);" title="Tower of London">Tower of London</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tr-popular-attractions-list">
+                        <div class="tr-details">
+                          <div class="tr-image">
+                            <a href="javascript:void(0);">
+                              <img src="images/popular-attraction-3.png" alt="" title="La Dame de">
+                            </a>
+                          </div>
+                          <div class="tr-title">
+                            <a href="javascript:void(0);" title="La Dame de">La Dame de</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-container">
+              <div class="tab-buttons">
+                <button class="tab-btn active" onclick="openTab('tab1')">Must See</button>
+                <button class="tab-btn" onclick="openTab('tab2')">Nearby</button>
+              </div>
+              <div id="tab1" class="tab-content active">
+                <div class="tr-explore-filter">
+                  <form class="tr-filter-lists tr-explore-filter-slider">
+                    <div class="tr-filter-list">
+                      <input type="checkbox" name="" id="filter1" class="filter" value="category1">
+                      <label for="filter1"><span>Hotel</span></label>
+                    </div>
+                    <div class="tr-filter-list">
+                      <input type="checkbox" name="" id="filter2" class="filter" value="category2">
+                      <label for="filter2"><span>Air Conditioning</span></label>
+                    </div>
+                    <div class="tr-filter-list">
+                      <input type="checkbox" name="" id="filter3" class="filter" value="category3">
+                      <label for="filter3"><span>Agoda.com</span></label>
+                    </div>
+                    <div class="tr-filter-list">
+                      <input type="checkbox" name="" id="filter4" class="filter" value="category4">
+                      <label for="filter4"><span>Free WIFI</span></label>
+                    </div>
+                    <div class="tr-filter-list">
+                      <input type="checkbox" name="" id="filter5" class="filter" value="category5">
+                      <label for="filter5"><span>Market</span></label>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div id="tab2" class="tab-content">
+                <h2>Content for Tab 2</h2>
+                <p>This is the content displayed when Tab 2 is selected.</p>
+              </div>
+            </div>
+
+            <div class="tr-museum">
+              <div class="tr-image">
+                <div id="Slider1" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
+                  <!-- Indicators/dots -->
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#Slider1" data-bs-slide-to="0" class="active">1</button>
+                    <button type="button" data-bs-target="#Slider1" data-bs-slide-to="1">2</button>
+                    <button type="button" data-bs-target="#Slider1" data-bs-slide-to="2">3</button>
+                  </div>
+                  <!-- The slideshow/carousel -->
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img loading="lazy" src="images/hotel-explore-1.png" alt="">
+                    </div>
+                    <div class="carousel-item">
+                      <img loading="lazy" src="images/hotel-explore-1.png" alt="">
+                    </div>
+                    <div class="carousel-item">
+                      <img loading="lazy" src="images/hotel-explore-1.png" alt="">
+                    </div>
+                  </div>
+                  <!-- Left and right controls/icons -->
+                  <button class="carousel-control-prev" type="button" data-bs-target="#Slider1" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#Slider1" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+                </div>
+                <button class="tr-anchor-btn tr-save" title="Wishlist Button">Wishlist Save Button</button>
+              </div>
+              <div class="tr-details">
+                <div class="tr-heading-with-distance">
+                  <div class="tr-category">Attraction</div>
+                </div>
+                <h3><a href="javascript:void(0);" target="_blank">Tower of London</a></h3>
+                <div class="tr-location">City of London</div>
+                <div class="tr-more-inform">
+                  <ul>
+                    <li><span>Open</span>until 5 PM</li>
+                    <li>5 hours.</li>
+                  </ul>
+                </div>
+                <div class="tr-like-review">
+                  <div class="tr-heart">
+                    <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  </div>
+                  <div class="tr-ranting-percent">89%</div>
+                </div>
+                <!--
+                <div class="tr-tickets tr-tickets-silder">
+                  <div>
+                    <ul>
+                      <li><span class="tr-rating">89%</span></li>
+                      <li>2.5 hours.</li>
+                    </ul>
+                    <h5>Tickets to Tower of London</h5>
+                    <span>Ticket</span>
+                  </div>
+                  <div>
+                    <ul>
+                      <li><span class="tr-rating">89%</span></li>
+                      <li>2.5 hours.</li>
+                    </ul>
+                    <h5>Tickets to Tower of London</h5>
+                    <span>Ticket</span>
+                  </div>
+                  <div>
+                    <ul>
+                      <li><span class="tr-rating">89%</span></li>
+                      <li>2.5 hours.</li>
+                    </ul>
+                    <h5>Tickets to Tower of London</h5>
+                    <span>Ticket</span>
+                  </div>
+                </div>
+                -->
+              </div>
+            </div>
+
+            <div class="tr-common-listing">
+              <div class="tr-list">
+                <a href="javascript:void(0);">
+                  <img loading="lazy" src="images/near-place-1.png" alt="Tickets to Tower of London">
+                  <button class="tr-anchor-btn tr-save" title="Wishlist Button">Wishlist Save Button</button>
+                </a>
+                <div class="tr-list-details">
+                  <div class="tr-category-type">Experiance</div>
+                  <div class="tr-like-review">
+                    <div class="tr-heart">
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="12" height="12" rx="6" fill="#28965A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99782 3.90601C5.36052 3.19235 4.29779 3.00038 3.49931 3.65387C2.70082 4.30737 2.58841 5.39997 3.21546 6.17285L5.99782 8.7496L8.78017 6.17285C9.40723 5.39997 9.30853 4.30049 8.49632 3.65387C7.68411 3.00726 6.63511 3.19235 5.99782 3.90601Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="tr-ranting-percent">89%</div>
+                  </div>
+                  <h3 class="tr-title-name">
+                    <a href="javascript:void(0);" title="Tickets to Tower of London">Tickets to Tower of London</a>
+                    <button type="button" class="tr-anchor-btn tr-share" title="Share Button" data-bs-toggle="modal" data-bs-target="#shareModal">Share</button>
+                  </h3>
+                </div>
+              </div>
+              <div class="tr-list">
+                <a href="javascript:void(0);">
+                  <img loading="lazy" src="images/near-place-2.png" alt="La Dame de Pic London">
+                  <button class="tr-anchor-btn tr-save" title="Wishlist Button">Wishlist Save Button</button>
+                </a>
+                <div class="tr-list-details">
+                  <div class="tr-category-type">Restaurant</div>
+                  <div class="tr-like-review">
+                    <div class="tr-heart">
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="12" height="12" rx="6" fill="#28965A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99782 3.90601C5.36052 3.19235 4.29779 3.00038 3.49931 3.65387C2.70082 4.30737 2.58841 5.39997 3.21546 6.17285L5.99782 8.7496L8.78017 6.17285C9.40723 5.39997 9.30853 4.30049 8.49632 3.65387C7.68411 3.00726 6.63511 3.19235 5.99782 3.90601Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="tr-ranting-percent">89%</div>
+                  </div>
+                  <h3 class="tr-title-name">
+                    <a href="javascript:void(0);" title="La Dame de Pic London">La Dame de Pic London</a>
+                    <button type="button" class="tr-anchor-btn tr-share" title="Share Button" data-bs-toggle="modal" data-bs-target="#shareModal">Share</button>
+                  </h3>
+                </div>
+              </div>
+              <div class="tr-list">
+                <a href="javascript:void(0);">
+                  <img loading="lazy" src="images/near-place-3.png" alt="">
+                  <button class="tr-anchor-btn tr-save" title="Wishlist Button">Wishlist Save Button</button>
+                </a>
+                <div class="tr-list-details">
+                  <div class="tr-category-type">Attraction</div>
+                  <div class="tr-like-review">
+                    <div class="tr-heart">
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="12" height="12" rx="6" fill="#28965A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99782 3.90601C5.36052 3.19235 4.29779 3.00038 3.49931 3.65387C2.70082 4.30737 2.58841 5.39997 3.21546 6.17285L5.99782 8.7496L8.78017 6.17285C9.40723 5.39997 9.30853 4.30049 8.49632 3.65387C7.68411 3.00726 6.63511 3.19235 5.99782 3.90601Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="tr-ranting-percent">89%</div>
+                  </div>
+                  <h3 class="tr-title-name">
+                    <a href="javascript:void(0);" title="La Dame de Pic London">La Dame de Pic London</a>
+                    <button type="button" class="tr-anchor-btn tr-share" title="Share Button" data-bs-toggle="modal" data-bs-target="#shareModal">Share</button>
+                  </h3>
+                </div>
+              </div>
+              <div class="tr-list">
+                <a href="javascript:void(0);">
+                  <img loading="lazy" src="images/near-place-1.png" alt="Tickets to Tower of London">
+                  <button class="tr-anchor-btn tr-save" title="Wishlist Button">Wishlist Save Button</button>
+                </a>
+                <div class="tr-list-details">
+                  <div class="tr-category-type">Experiance</div>
+                  <div class="tr-like-review">
+                    <div class="tr-heart">
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="12" height="12" rx="6" fill="#28965A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99782 3.90601C5.36052 3.19235 4.29779 3.00038 3.49931 3.65387C2.70082 4.30737 2.58841 5.39997 3.21546 6.17285L5.99782 8.7496L8.78017 6.17285C9.40723 5.39997 9.30853 4.30049 8.49632 3.65387C7.68411 3.00726 6.63511 3.19235 5.99782 3.90601Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="tr-ranting-percent">89%</div>
+                  </div>
+                  <h3 class="tr-title-name">
+                    <a href="javascript:void(0);" title="Tickets to Tower of London">Tickets to Tower of London</a>
+                    <button type="button" class="tr-anchor-btn tr-share" title="Share Button" data-bs-toggle="modal" data-bs-target="#shareModal">Share</button>
+                  </h3>
+                </div>
+              </div>
+              <div class="tr-list">
+                <a href="javascript:void(0);">
+                  <img loading="lazy" src="images/near-place-2.png" alt="La Dame de Pic London">
+                  <button class="tr-anchor-btn tr-save" title="Wishlist Button">Wishlist Save Button</button>
+                </a>
+                <div class="tr-list-details">
+                  <div class="tr-category-type">Restaurant</div>
+                  <div class="tr-like-review">
+                    <div class="tr-heart">
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="12" height="12" rx="6" fill="#28965A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99782 3.90601C5.36052 3.19235 4.29779 3.00038 3.49931 3.65387C2.70082 4.30737 2.58841 5.39997 3.21546 6.17285L5.99782 8.7496L8.78017 6.17285C9.40723 5.39997 9.30853 4.30049 8.49632 3.65387C7.68411 3.00726 6.63511 3.19235 5.99782 3.90601Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="tr-ranting-percent">89%</div>
+                  </div>
+                  <h3 class="tr-title-name">
+                    <a href="javascript:void(0);" title="La Dame de Pic London">La Dame de Pic London</a>
+                    <button type="button" class="tr-anchor-btn tr-share" title="Share Button" data-bs-toggle="modal" data-bs-target="#shareModal">Share</button>
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="tr-common-marketing">
+              <div class="tr-common-slider">
+                <div class="tr-slider">
+                  <a href="javascript:void(0);">
+                    <img loading="lazy" src="images/near-place-1.png" alt="Tickets to Tower of London">
+                    <button class="tr-anchor-btn tr-save" title="Wishlist Button">Wishlist Save Button</button>
+                  </a>
+                  <div class="tr-slider-details">
+                    <div class="tr-category-type">Experiance</div>
+                    <h3 class="tr-title-name">
+                      <a href="javascript:void(0);" title="Tickets to Tower of London">Tickets to Tower of London</a>
+                      <button type="button" class="tr-anchor-btn tr-share" title="Share Button" data-bs-toggle="modal" data-bs-target="#shareModal">Share</button>
+                    </h3>
+                    <div class="tr-like-review">
+                      <div class="tr-heart">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="12" height="12" rx="6" fill="#28965A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99782 3.90601C5.36052 3.19235 4.29779 3.00038 3.49931 3.65387C2.70082 4.30737 2.58841 5.39997 3.21546 6.17285L5.99782 8.7496L8.78017 6.17285C9.40723 5.39997 9.30853 4.30049 8.49632 3.65387C7.68411 3.00726 6.63511 3.19235 5.99782 3.90601Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </div>
+                      <div class="tr-ranting-percent">89%</div>
+                      <div class="tr-per-person">$22 per person</div>
+                    </div>
+                    <div class="tr-food-lists">
+                      <div>Italian,</div>
+                      <div>Chinese</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tr-slider">
+                  <a href="javascript:void(0);">
+                    <img loading="lazy" src="images/near-place-2.png" alt="La Dame de Pic London">
+                    <button class="tr-anchor-btn tr-save" title="Wishlist Button">Wishlist Save Button</button>
+                  </a>
+                  <div class="tr-slider-details">
+                    <div class="tr-category-type">Restaurant</div>
+                    <h3 class="tr-title-name">
+                      <a href="javascript:void(0);" title="La Dame de Pic London">La Dame de Pic London</a>
+                      <button type="button" class="tr-anchor-btn tr-share" title="Share Button" data-bs-toggle="modal" data-bs-target="#shareModal">Share</button>
+                    </h3>
+                    <div class="tr-like-review">
+                      <div class="tr-heart">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="12" height="12" rx="6" fill="#28965A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99782 3.90601C5.36052 3.19235 4.29779 3.00038 3.49931 3.65387C2.70082 4.30737 2.58841 5.39997 3.21546 6.17285L5.99782 8.7496L8.78017 6.17285C9.40723 5.39997 9.30853 4.30049 8.49632 3.65387C7.68411 3.00726 6.63511 3.19235 5.99782 3.90601Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </div>
+                      <div class="tr-ranting-percent">89%</div>
+                      <div class="tr-per-person">$$</div>
+                    </div>
+                    <div class="tr-food-lists">
+                      <div>Italian,</div>
+                      <div>Chinese</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tr-slider">
+                  <a href="javascript:void(0);">
+                    <img loading="lazy" src="images/near-place-3.png" alt="">
+                    <button class="tr-anchor-btn tr-save" title="Wishlist Button">Wishlist Save Button</button>
+                  </a>
+                  <div class="tr-slider-details">
+                    <div class="tr-category-type">Attraction</div>
+                    <h3 class="tr-title-name">
+                      <a href="javascript:void(0);" title="La Dame de Pic London">La Dame de Pic London</a>
+                      <button type="button" class="tr-anchor-btn tr-share" title="Share Button" data-bs-toggle="modal" data-bs-target="#shareModal">Share</button>
+                    </h3>
+                    <div class="tr-like-review">
+                      <div class="tr-heart">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="12" height="12" rx="6" fill="#28965A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99782 3.90601C5.36052 3.19235 4.29779 3.00038 3.49931 3.65387C2.70082 4.30737 2.58841 5.39997 3.21546 6.17285L5.99782 8.7496L8.78017 6.17285C9.40723 5.39997 9.30853 4.30049 8.49632 3.65387C7.68411 3.00726 6.63511 3.19235 5.99782 3.90601Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </div>
+                      <div class="tr-ranting-percent">89%</div>
+                      <div class="tr-per-person">$$</div>
+                    </div>
+                    <div class="tr-food-lists">
+                      <div>Italian,</div>
+                      <div>Chinese</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tr-slider">
+                  <a href="javascript:void(0);">
+                    <img loading="lazy" src="images/near-place-1.png" alt="Tickets to Tower of London">
+                    <button class="tr-anchor-btn tr-save" title="Wishlist Button">Wishlist Save Button</button>
+                  </a>
+                  <div class="tr-slider-details">
+                    <div class="tr-category-type">Experiance</div>
+                    <h3 class="tr-title-name">
+                      <a href="javascript:void(0);" title="Tickets to Tower of London">Tickets to Tower of London</a>
+                      <button type="button" class="tr-anchor-btn tr-share" title="Share Button" data-bs-toggle="modal" data-bs-target="#shareModal">Share</button>
+                    </h3>
+                    <div class="tr-like-review">
+                      <div class="tr-heart">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="12" height="12" rx="6" fill="#28965A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99782 3.90601C5.36052 3.19235 4.29779 3.00038 3.49931 3.65387C2.70082 4.30737 2.58841 5.39997 3.21546 6.17285L5.99782 8.7496L8.78017 6.17285C9.40723 5.39997 9.30853 4.30049 8.49632 3.65387C7.68411 3.00726 6.63511 3.19235 5.99782 3.90601Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </div>
+                      <div class="tr-ranting-percent">89%</div>
+                      <div class="tr-per-person">$22 per person</div>
+                    </div>
+                    <div class="tr-food-lists">
+                      <div>Italian,</div>
+                      <div>Chinese</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tr-slider">
+                  <a href="javascript:void(0);">
+                    <img loading="lazy" src="images/near-place-2.png" alt="La Dame de Pic London">
+                    <button class="tr-anchor-btn tr-save" title="Wishlist Button">Wishlist Save Button</button>
+                  </a>
+                  <div class="tr-slider-details">
+                    <div class="tr-category-type">Restaurant</div>
+                    <h3 class="tr-title-name">
+                      <a href="javascript:void(0);" title="La Dame de Pic London">La Dame de Pic London</a>
+                      <button type="button" class="tr-anchor-btn tr-share" title="Share Button" data-bs-toggle="modal" data-bs-target="#shareModal">Share</button>
+                    </h3>
+                    <div class="tr-like-review">
+                      <div class="tr-heart">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="12" height="12" rx="6" fill="#28965A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99782 3.90601C5.36052 3.19235 4.29779 3.00038 3.49931 3.65387C2.70082 4.30737 2.58841 5.39997 3.21546 6.17285L5.99782 8.7496L8.78017 6.17285C9.40723 5.39997 9.30853 4.30049 8.49632 3.65387C7.68411 3.00726 6.63511 3.19235 5.99782 3.90601Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </div>
+                      <div class="tr-ranting-percent">89%</div>
+                      <div class="tr-per-person">$$</div>
+                    </div>
+                    <div class="tr-food-lists">
+                      <div>Italian,</div>
+                      <div>Chinese</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="tr-historical-monument">
+              <div class="tr-heading-with-distance">
+                <div class="tr-line-row">
+                  <div class="tr-line tr-orange"></div>
+                </div>
+                <div class="tr-category">Attraction</div>
+                <div class="tr-distance">1.2 km from Tower of London</div>
+              </div>
+              <div class="tr-image">
+                <a href="javascript:void(0);">
+                  <img loading="lazy" src="images/hotel-explore-2.png" alt="">
+                  <button class="tr-anchor-btn tr-save" title="Wishlist Button">Wishlist Save Button</button>
+                </a>
+              </div>
+              <div class="tr-details">
+                <h3><a href="javascript:void(0);" target="_blank">Oxford Street</a></h3>
+                <div class="tr-location">City of London</div>
+                <div class="tr-more-inform">
+                  <ul>
+                    <li><span>Open</span>until 5 PM</li>
+                    <li>5 hours.</li>
+                  </ul>
+                </div>
+                <div class="tr-like-review">
+                  <div class="tr-heart">
+                    <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  </div>
+                  <div class="tr-ranting-percent">89%</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tr-experience">
+              <div class="tr-heading-with-distance">
+                <div class="tr-line-row">
+                  <div class="tr-line tr-yellow"></div>
+                </div>
+                <div class="tr-category">Experience</div>
+                <div class="tr-distance">1.2 km from Tower of London</div>
+              </div>
+              <div class="tr-images">
+                <button class="tr-anchor-btn tr-save" title="Wishlist Button">Wishlist Save Button</button>                
+                <div class="tr-experience-slider">
+                  <div class="tr-store">
+                    <a href="javascript:void(0);">
+                      <img src="images/experience-1.png" alt="">
+                    </a>
+                  </div>
+                  <div class="tr-store">
+                    <a href="javascript:void(0);">
+                      <img src="images/experience-2.png" alt="">
+                    </a>
+                  </div>
+                  <div class="tr-store">
+                    <a href="javascript:void(0);">
+                      <img src="images/experience-3.png" alt="">
+                    </a>
+                  </div>
+                  <div class="tr-store">
+                    <a href="javascript:void(0);">
+                      <img src="images/experience-1.png" alt="">
+                    </a>
+                  </div>
+                  <div class="tr-store">
+                    <a href="javascript:void(0);">
+                      <img src="images/experience-2.png" alt="">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="tr-details">
+                <h3><a href="javascript:void(0);" target="_blank">London in a Day Tour with Westminster</a></h3>
+                <div class="tr-location">City of London</div>
+                <div class="tr-more-inform">
+                  <ul>
+                    <li><span>Open</span>until 17:10</li>
+                    <li>5 hours.</li>
+                  </ul>
+                </div>
+                <div class="tr-like-review">
+                  <div class="tr-heart">
+                    <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  </div>
+                  <div class="tr-ranting-percent">89%</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tr-knights-bridge">
+              <div class="tr-heading-with-distance">
+                <div class="tr-line-row">
+                  <div class="tr-line tr-green"></div>
+                </div>
+                <div class="tr-category">Restaurant</div>
+                <div class="tr-distance">1.2 km from Tower of London</div>
+              </div>
+              <div class="tr-image">
+                <a href="javascript:void(0);">
+                  <img loading="lazy" src="images/knights-bridge.png" alt="">
+                  <button class="tr-anchor-btn tr-save" title="Wishlist Button">Wishlist Save Button</button>
+                </a>
+              </div>
+              <div class="tr-details">
+                <h3><a href="javascript:void(0);" target="_blank">La Dame de Pic London</a></h3>
+                <div class="tr-location">City of London</div>
+                <div class="tr-more-inform">
+                  <ul>
+                    <li><span>Open</span>until 5 PM</li>
+                    <li>5 hours.</li>
+                  </ul>
+                </div>
+                <div class="tr-like-review">
+                  <div class="tr-heart">
+                    <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  </div>
+                  <div class="tr-ranting-percent">89%</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tr-market">
+              <div class="tr-heading-with-distance">
+                <div class="tr-line-row">
+                  <div class="tr-line tr-purple"></div>
+                </div>
+                <div class="tr-category">Shopping Area</div>
+                <div class="tr-distance">1.2 km from Tower of London</div>
+              </div>
+              <div class="tr-market-slider">
+                <div class="tr-store">
+                  <a href="javascript:void(0);">
+                    <img loading="lazy" src="images/market-1.png" alt="">
+                    <button class="tr-anchor-btn tr-save" title="Wishlist Button">Wishlist Save Button</button>
+                  </a>
+                  <div class="tr-store-details">
+                    <div class="tr-like-review">
+                      <div class="tr-heart">
+                        <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                      </div>
+                      <div class="tr-ranting-percent">89%</div>
+                    </div>
+                    <div class="tr-store-type">Clothing Store</div>
+                    <h5 class="tr-store-name"><a href="javascript:void(0);">Louis Vuitton</a></h5>
+                  </div>
+                </div>
+                <div class="tr-store">
+                  <a href="javascript:void(0);">
+                    <img loading="lazy" src="images/market-2.png" alt="">
+                    <button class="tr-anchor-btn tr-save" title="Wishlist Button">Wishlist Save Button</button>
+                  </a>
+                  <div class="tr-store-details">
+                    <div class="tr-like-review">
+                      <div class="tr-heart">
+                        <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                      </div>
+                      <div class="tr-ranting-percent">89%</div>
+                    </div>
+                    <div class="tr-store-type">Clothing Store</div>
+                    <h5 class="tr-store-name"><a href="javascript:void(0);">Louis Vuitton</a></h5>
+                  </div>
+                </div>
+                <div class="tr-store">
+                  <a href="javascript:void(0);">
+                    <img loading="lazy" src="images/market-3.png" alt="">
+                    <button class="tr-anchor-btn tr-save" title="Wishlist Button">Wishlist Save Button</button>
+                  </a>
+                  <div class="tr-store-details">
+                    <div class="tr-like-review">
+                      <div class="tr-heart">
+                        <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                      </div>
+                      <div class="tr-ranting-percent">89%</div>
+                    </div>
+                    <div class="tr-store-type">Clothing Store</div>
+                    <h5 class="tr-store-name"><a href="javascript:void(0);">Louis Vuitton</a></h5>
+                  </div>
+                </div>
+                <div class="tr-store">
+                  <a href="javascript:void(0);">
+                    <img loading="lazy" src="images/market-1.png" alt="">
+                    <button class="tr-anchor-btn tr-save" title="Wishlist Button">Wishlist Save Button</button>
+                  </a>
+                  <div class="tr-store-details">
+                    <div class="tr-like-review">
+                      <div class="tr-heart">
+                        <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                      </div>
+                      <div class="tr-ranting-percent">89%</div>
+                    </div>
+                    <div class="tr-store-type">Clothing Store</div>
+                    <h5 class="tr-store-name"><a href="javascript:void(0);">Louis Vuitton</a></h5>
+                  </div>
+                </div>
+                <div class="tr-store">
+                  <a href="javascript:void(0);">
+                    <img loading="lazy" src="images/market-2.png" alt="">
+                    <button class="tr-anchor-btn tr-save" title="Wishlist Button">Wishlist Save Button</button>
+                  </a>
+                  <div class="tr-store-details">
+                    <div class="tr-like-review">
+                      <div class="tr-heart">
+                        <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                      </div>
+                      <div class="tr-ranting-percent">89%</div>
+                    </div>
+                    <div class="tr-store-type">Clothing Store</div>
+                    <h5 class="tr-store-name"><a href="javascript:void(0);">Louis Vuitton</a></h5>
+                  </div>
+                </div>
+              </div>
+              <div class="tr-details">
+                <h3><a href="javascript:void(0);" target="_blank">Camden Market</a></h3>
+                <div class="tr-location">City of London</div>
+                <div class="tr-more-inform">
+                  <ul>
+                    <li><span>Open</span>until 17:10</li>
+                    <li>5 hours.</li>
+                  </ul>
+                </div>
+                <div class="tr-like-review">
+                  <div class="tr-heart">
+                    <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  </div>
+                  <div class="tr-ranting-percent">89%</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tr-restaurant">
+              <div class="tr-heading-with-distance">
+                <div class="tr-line-row">
+                  <div class="tr-line tr-yellow"></div>
+                </div>
+                <div class="tr-category">Restaurant</div>
+                <div class="tr-distance">1.2 km from Tower of London</div>
+              </div>
+              <div class="tr-row">
+                <div class="tr-image">
+                  <a href="javascript:void(0);">
+                    <img loading="lazy" src="images/restaurant-1.png" alt="">
+                    <button class="tr-anchor-btn tr-save" title="Wishlist Button">Wishlist Save Button</button>
+                  </a>
+                </div>
+                <div class="tr-restaurant-details">
+                  <div class="tr-details">
+                    <h3><a href="javascript:void(0);" target="_blank">La Dame de Pic London</a></h3>
+                    <div class="tr-location">City of London</div>
+                    <div class="tr-like-review">
+                      <div class="tr-heart">
+                        <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                      </div>
+                      <div class="tr-ranting-percent">89%</div>
+                    </div>
+                    <div class="tr-more-inform">
+                      <ul>
+                        <li><span>Open</span>until 17:10</li>
+                        <li>$$</li>
+                      </ul>
+                    </div>
+                    <div class="tr-more-inform">
+                      <ul>
+                        <li>Free WIFI</li>
+                        <li>Speak English</li>
+                      </ul>
+                    </div>
+                    <div class="tr-food-type">
+                      <ul>
+                        <li>Indian</li>
+                        <li>Cafe</li>
+                        <li>Burgers</li>
+                      </ul>
+                    </div>
+                    <div class="tr-delivery-type">
+                      <ul>
+                        <li class="tr-no">Takeout</li>
+                        <li class="tr-yes">Seating</li>
+                        <li class="tr-yes">Delivery</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tr-market">
+              <div class="tr-heading-with-distance">
+                <div class="tr-line-row">
+                  <div class="tr-line tr-green"></div>
+                </div>
+                <div class="tr-category">Restaurant</div>
+                <div class="tr-distance">1.2 km from Tower of London</div>
+              </div>
+              <div class="tr-image">
+                <div class="tr-restaurant-images">
+                  <div>
+                    <a href="javascript:void(0);">
+                      <img loading="lazy" src="images/food-1.png" alt="">
+                    </a>
+                  </div>
+                  <div>
+                    <a href="javascript:void(0);">
+                      <img loading="lazy" src="images/food-2.png" alt="">
+                    </a>
+                  </div>
+                  <div>
+                    <a href="javascript:void(0);">
+                      <img loading="lazy" src="images/food-3.png" alt="">
+                    </a>
+                  </div>
+                  <div>
+                    <a href="javascript:void(0);">
+                      <img loading="lazy" src="images/food-4.png" alt="">
+                    </a>
+                  </div>
+                  <button class="tr-anchor-btn tr-save" title="Wishlist Button">Wishlist Save Button</button>
+                </div>
+              </div>
+              <div class="tr-details">
+                <h3>
+                  <a href="javascript:void(0);" target="_blank">La Dame de Pic London</a>
+                </h3>
+                <div class="tr-location">City of London</div>
+                <div class="tr-more-inform">
+                  <ul>
+                    <li><span>Open</span>until 17:10</li>
+                    <li>5 hours.</li>
+                  </ul>
+                </div>
+                <div class="tr-like-review">
+                  <div class="tr-heart">
+                    <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  </div>
+                  <div class="tr-ranting-percent">89%</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tr-common-marketing">
+              <div class="tr-heading-with-distance">
+                <div class="tr-category">NEARBY PICKS FOR YOU</div>
+              </div>
+              <div class="tr-common-slider">
+                <div class="tr-slider">
+                  <a href="javascript:void(0);">
+                    <img loading="lazy" src="images/near-place-1.png" alt="Tickets to Tower of London">
+                    <button class="tr-anchor-btn tr-save" title="Wishlist Button">Wishlist Save Button</button>
+                  </a>
+                  <div class="tr-slider-details">
+                    <div class="tr-category-type">Experiance</div>
+                    <h3 class="tr-title-name">
+                      <a href="javascript:void(0);" title="Tickets to Tower of London">Tickets to Tower of London</a>
+                      <button type="button" class="tr-anchor-btn tr-share" title="Share Button" data-bs-toggle="modal" data-bs-target="#shareModal">Share</button>
+                    </h3>
+                    <div class="tr-like-review">
+                      <div class="tr-heart">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="12" height="12" rx="6" fill="#28965A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99782 3.90601C5.36052 3.19235 4.29779 3.00038 3.49931 3.65387C2.70082 4.30737 2.58841 5.39997 3.21546 6.17285L5.99782 8.7496L8.78017 6.17285C9.40723 5.39997 9.30853 4.30049 8.49632 3.65387C7.68411 3.00726 6.63511 3.19235 5.99782 3.90601Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </div>
+                      <div class="tr-ranting-percent">89%</div>
+                      <div class="tr-per-person">$22 per person</div>
+                    </div>
+                    <div class="tr-food-lists">
+                      <div>Italian,</div>
+                      <div>Chinese</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tr-slider">
+                  <a href="javascript:void(0);">
+                    <img loading="lazy" src="images/near-place-2.png" alt="La Dame de Pic London">
+                    <button class="tr-anchor-btn tr-save" title="Wishlist Button">Wishlist Save Button</button>
+                  </a>
+                  <div class="tr-slider-details">
+                    <div class="tr-category-type">Restaurant</div>
+                    <h3 class="tr-title-name">
+                      <a href="javascript:void(0);" title="La Dame de Pic London">La Dame de Pic London</a>
+                      <button type="button" class="tr-anchor-btn tr-share" title="Share Button" data-bs-toggle="modal" data-bs-target="#shareModal">Share</button>
+                    </h3>
+                    <div class="tr-like-review">
+                      <div class="tr-heart">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="12" height="12" rx="6" fill="#28965A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99782 3.90601C5.36052 3.19235 4.29779 3.00038 3.49931 3.65387C2.70082 4.30737 2.58841 5.39997 3.21546 6.17285L5.99782 8.7496L8.78017 6.17285C9.40723 5.39997 9.30853 4.30049 8.49632 3.65387C7.68411 3.00726 6.63511 3.19235 5.99782 3.90601Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </div>
+                      <div class="tr-ranting-percent">89%</div>
+                      <div class="tr-per-person">$$</div>
+                    </div>
+                    <div class="tr-food-lists">
+                      <div>Italian,</div>
+                      <div>Chinese</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tr-slider">
+                  <a href="javascript:void(0);">
+                    <img loading="lazy" src="images/near-place-3.png" alt="">
+                    <button class="tr-anchor-btn tr-save" title="Wishlist Button">Wishlist Save Button</button>
+                  </a>
+                  <div class="tr-slider-details">
+                    <div class="tr-category-type">Attraction</div>
+                    <h3 class="tr-title-name">
+                      <a href="javascript:void(0);" title="La Dame de Pic London">La Dame de Pic London</a>
+                      <button type="button" class="tr-anchor-btn tr-share" title="Share Button" data-bs-toggle="modal" data-bs-target="#shareModal">Share</button>
+                    </h3>
+                    <div class="tr-like-review">
+                      <div class="tr-heart">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="12" height="12" rx="6" fill="#28965A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99782 3.90601C5.36052 3.19235 4.29779 3.00038 3.49931 3.65387C2.70082 4.30737 2.58841 5.39997 3.21546 6.17285L5.99782 8.7496L8.78017 6.17285C9.40723 5.39997 9.30853 4.30049 8.49632 3.65387C7.68411 3.00726 6.63511 3.19235 5.99782 3.90601Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </div>
+                      <div class="tr-ranting-percent">89%</div>
+                      <div class="tr-per-person">$$</div>
+                    </div>
+                    <div class="tr-food-lists">
+                      <div>Italian,</div>
+                      <div>Chinese</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tr-slider">
+                  <a href="javascript:void(0);">
+                    <img loading="lazy" src="images/near-place-1.png" alt="Tickets to Tower of London">
+                    <button class="tr-anchor-btn tr-save" title="Wishlist Button">Wishlist Save Button</button>
+                  </a>
+                  <div class="tr-slider-details">
+                    <div class="tr-category-type">Experiance</div>
+                    <h3 class="tr-title-name">
+                      <a href="javascript:void(0);" title="Tickets to Tower of London">Tickets to Tower of London</a>
+                      <button type="button" class="tr-anchor-btn tr-share" title="Share Button" data-bs-toggle="modal" data-bs-target="#shareModal">Share</button>
+                    </h3>
+                    <div class="tr-like-review">
+                      <div class="tr-heart">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="12" height="12" rx="6" fill="#28965A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99782 3.90601C5.36052 3.19235 4.29779 3.00038 3.49931 3.65387C2.70082 4.30737 2.58841 5.39997 3.21546 6.17285L5.99782 8.7496L8.78017 6.17285C9.40723 5.39997 9.30853 4.30049 8.49632 3.65387C7.68411 3.00726 6.63511 3.19235 5.99782 3.90601Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </div>
+                      <div class="tr-ranting-percent">89%</div>
+                      <div class="tr-per-person">$22 per person</div>
+                    </div>
+                    <div class="tr-food-lists">
+                      <div>Italian,</div>
+                      <div>Chinese</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tr-slider">
+                  <a href="javascript:void(0);">
+                    <img loading="lazy" src="images/near-place-2.png" alt="La Dame de Pic London">
+                    <button class="tr-anchor-btn tr-save" title="Wishlist Button">Wishlist Save Button</button>
+                  </a>
+                  <div class="tr-slider-details">
+                    <div class="tr-category-type">Restaurant</div>
+                    <h3 class="tr-title-name">
+                      <a href="javascript:void(0);" title="La Dame de Pic London">La Dame de Pic London</a>
+                      <button type="button" class="tr-anchor-btn tr-share" title="Share Button" data-bs-toggle="modal" data-bs-target="#shareModal">Share</button>
+                    </h3>
+                    <div class="tr-like-review">
+                      <div class="tr-heart">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="12" height="12" rx="6" fill="#28965A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99782 3.90601C5.36052 3.19235 4.29779 3.00038 3.49931 3.65387C2.70082 4.30737 2.58841 5.39997 3.21546 6.17285L5.99782 8.7496L8.78017 6.17285C9.40723 5.39997 9.30853 4.30049 8.49632 3.65387C7.68411 3.00726 6.63511 3.19235 5.99782 3.90601Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </div>
+                      <div class="tr-ranting-percent">89%</div>
+                      <div class="tr-per-person">$$</div>
+                    </div>
+                    <div class="tr-food-lists">
+                      <div>Italian,</div>
+                      <div>Chinese</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button type="button" class="tr-btn tr-load-more">Load More</button>
+
+            <div class="tr-map-and-filter">
+              <button type="button" class="tr-explore-map-btn map"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_2464_12970)"><path d="M0.583984 3.4974V12.8307L4.66732 10.4974L9.33398 12.8307L13.4173 10.4974V1.16406L9.33398 3.4974L4.66732 1.16406L0.583984 3.4974Z" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4.66602 1.16406V10.4974" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9.33398 3.5V12.8333" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2464_12970"><rect width="14" height="14" fill="white"></rect></clipPath></defs></svg>Map</button>
+            </div>
+          </div>
+
+          <div class="tr-explore-right-section">
+            <div class="tr-map-section">
+              <button type="button" class="btn-close"></button>
+              <div class="tr-hotel-on-map">
+                <form>
+                  <input type="text" class="form-control" id="" placeholder="Search on map" name="" autocomplete="off">
+                  <div class="tr-recent-searchs-modal" id="">
+                    <div class="tr-enable-location">Around Current Location</div>
+                    <h5>Recent searches</h5>
+                    <ul>
+                      <li>
+                        <div class="tr-place-info">
+                          <div class="tr-location-icon"></div>
+                          <div class="tr-location-info">
+                            <div class="tr-hotel-name">London Hotels</div>
+                            <div class="tr-hotel-city">England, United Kingdom</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="tr-place-info">
+                          <div class="tr-location-icon"></div>
+                          <div class="tr-location-info">
+                            <div class="tr-hotel-name">Morocco</div>
+                            <div class="tr-hotel-city">North Africa</div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <button type="button" hidden="" class="tr-btn">Countinue</button>                        
+                </form>
+              </div>
+              <div class="tr-map-tooltip tr-explore-listing">
+                <div class="tr-historical-monument">
+                  <div class="tr-heading-with-distance">
+                    <div class="tr-category">Shopping Area</div>
+                    <div class="tr-distance">1.2 km from Tower of London</div>
+                  </div>
+                  <div class="tr-image">
+                    <a href="javascript:void(0);">
+                      <img loading="lazy" src="images/hotel-explore-2.png" alt="">
+                    </a>
+                  </div>
+                  <div class="tr-details">
+                    <h3><a href="javascript:void(0);" target="_blank">Oxford Street</a></h3>
+                    <div class="tr-location">City of London</div>
+                    <div class="tr-like-review">
+                      <div class="tr-heart">
+                        <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99604 2.28959C5.02968 1.20745 3.41823 0.916356 2.20745 1.90727C0.996677 2.89818 0.826217 4.55494 1.77704 5.7269L5.99604 9.63412L10.215 5.7269C11.1659 4.55494 11.0162 2.88776 9.78463 1.90727C8.55304 0.92678 6.96239 1.20745 5.99604 2.28959Z" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                      </div>
+                      <div class="tr-ranting-percent">89%</div>
+                    </div>
+                  </div>
+                  <div class="tr-more-inform">
+                    <ul>
+                      <li><span>Open</span>until 5 PM</li>
+                      <li>5 hours.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <img src="images/map-2.png" class="tr-temp-img" alt="map"/>
+            </div>
+            <div class="tr-explore-overlay"></div>
+          </div>
+        </div>       
+      </div>
+    </div>
+
+    <!-- Map Modal With Filter & Hotel List - Start-->
+      
+    <!-- Map Modal With Filter & Hotel List - End-->
+    
+    <!--FOOTER-->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="tr-footer-top">
+              <div class="tr-footer-logo">
+                <a href="javascript:void(0);"><img loading="lazy" src="images/travell-white-logo.png" alt="travell-white-logo"></a>
+                <div class="tr-copy-right tr-mobile">&copy; 2024 Travell.co, Inc.</div>
+              </div>
+              <div class="tr-footer-links-section">
+                <div class="tr-footer-links-left-col">
+                  <div class="tr-footer-links">
+                    <h5>Support</h5>
+                    <ul>
+                      <li><a href="javascript:void(0);">Help Centre</a></li>
+                      <li><a href="javascript:void(0);">Guides</a></li>
+                      <li><a href="javascript:void(0);">Anti-discrimination</a></li>
+                      <li><a href="javascript:void(0);">Disability support</a></li>
+                      <li><a href="javascript:void(0);">Cancellation options</a></li>
+                      <li><a href="javascript:void(0);">Report neighbourhood concern</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="tr-footer-links-right-col">
+                  <div class="tr-footer-links">
+                    <h5>Rooms</h5>
+                    <ul>
+                      <li><a href="javascript:void(0);">Standard</a></li>
+                      <li><a href="javascript:void(0);">Deluxe</a></li>
+                      <li><a href="javascript:void(0);">Family</a></li>
+                    </ul>
+                  </div>
+                  <div class="tr-footer-links">
+                    <h5>Nearby</h5>
+                    <ul>
+                      <li><a href="javascript:void(0);">Hotels</a></li>
+                      <li><a href="javascript:void(0);">Restaurants</a></li>
+                      <li><a href="javascript:void(0);">Top attractions</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tr-footer-bottom">
+              <div class="tr-another-links">
+                <ul>
+                  <li>&copy; 2024 Travell.co, Inc.</li>
+                  <li><a href="javascript:void(0);">Privacy</a></li>
+                  <li><a href="javascript:void(0);">Terms</a></li>
+                  <li><a href="javascript:void(0);">Sitemap</a></li>
+                  <li><a href="javascript:void(0);">Company details</a></li>
+                </ul>
+              </div>
+              <div class="tr-social-links">
+                <ul>
+                  <li>English (IN)</li>
+                  <li>&#8377; INR</li>
+                  <li><a href="javascript:void(0);" class="tr-facebook" title="Facebook" target="_blank"></a></li>
+                  <li><a href="javascript:void(0);" class="tr-twitter" title="Twitter" target="_blank"></a></li>
+                  <li><a href="javascript:void(0);" class="tr-instagram" title="Instagram" target="_blank"></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="overlay" id="overLay"></div>
+
+    <!-- Share Modal -->
+    <div class="modal" id="shareModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          <h3>Share this experience</h3>
+          <div class="tr-share-infos">
+            <div class="tr-hotel-img">
+              <img loading="lazy" src="images/room-image-1.png" alt="Room Image">
+            </div>
+            <div class="tr-share-details">
+              <span class="tr-hotel-name">Things to do in London</span>
+              <p>3590 Attractions found in London</p>
+              <!--
+              <span class="tr-rating">4.83</span>
+              <span class="tr-bedrooms">
+                <span>2 bedrooms</span>
+                <span>3 beds</span>
+                <span>2 bathrooms</span>
+              </span>
+              -->
+            </div>
+          </div>
+          <div class="tr-share-options">
+            <div class="tr-share-option">
+              <a href="javascript:void(0);" class="tr-copy">Copy link</a>
+            </div>
+            <div class="tr-share-option">
+              <a href="javascript:void(0);" class="tr-email">Email</a>
+            </div>
+            <div class="tr-share-option">
+              <a href="javascript:void(0);" class="tr-messages">Messages</a>
+            </div>
+            <div class="tr-share-option">
+              <a href="javascript:void(0);" class="tr-whatsapp">Whatsapp</a>
+            </div>
+            <div class="tr-share-option">
+              <a href="javascript:void(0);" class="tr-messenger">Messenger</a>
+            </div>
+            <div class="tr-share-option">
+              <a href="javascript:void(0);" class="tr-facebook">Facebook</a>
+            </div>
+            <div class="tr-share-option">
+              <a href="javascript:void(0);" class="tr-twitter">Twitter</a>
+            </div>
+            <div class="tr-share-option">
+              <a href="javascript:void(0);" class="tr-embed">Embed</a>
+            </div>
+          </div>
+          <div class="tr-alert tr-copy-alert">Link copied</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script type="text/javascript" src="js/common.js"></script>
